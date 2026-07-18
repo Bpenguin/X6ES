@@ -1,0 +1,420 @@
+
+.pri-main {
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  font-size: 16px;
+}
+.content-full-page {
+  width: 100%;
+}
+.pri-dashboard-row:not(:last-child) {
+  margin-block-end: 40px;
+}
+.pri-dashboard-row-title {
+  text-align: center;
+}
+
+.pri-dashboard-content {
+  width: 100%;
+  display: flex;
+  margin-block-start: 20px;
+  column-gap: 35px;
+  .pri-dashboard-main {
+    min-width: 215px;
+    text-align: center;
+    margin: auto 0;
+  }
+  .pri-dashboard-main-icon {
+    position: relative;
+  }
+  .pri-dashboard-main-text {
+    text-align: center;
+    margin-block-start: 20px;
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .pri-dashboard-data {
+    width: 100%;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+  .pri-dashboard-data.grid-internet-container {
+    grid-template-areas:
+      'wan5G wan'
+      'dataUsage traffic';
+    grid-template-columns: 1fr 1fr;
+  }
+  .pri-dashboard-data-item-bg {
+    height: 100%;
+    // background-color: #242424;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .pri-dashboard-data-item-title {
+    border-block-end: 0.5px solid #3e3e3e;
+    text-align: center;
+    font-size: 12pt;
+    min-height: 45px;
+    padding: 10px 0;
+    margin: 0;
+  }
+  .pri-dashboard-data-item-content {
+    padding: 5%;
+  }
+  .pri-dashboard-data.grid-device-container {
+    grid-template-areas:
+      'host guest'
+      'ports ports';
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.section-card {
+  // border-left: 3px solid;
+  // border-image: linear-gradient(#00b4ff, #1eff96) 10;
+  background-color: $app-main-bg;
+  box-shadow: -3px 2px #000;
+  padding: 2%;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 0;
+}
+.pri-signal-logo {
+  width: 180px;
+  display: flex;
+  justify-content: space-around;
+  .pri-signal-bar {
+    margin: auto 0;
+  }
+  .pri-signal-gen {
+    margin: auto 0;
+    font-family: acer-bold;
+    font-size: 22px;
+    text-align: center;
+  }
+}
+.pri-dashboard-traffic-value {
+  text-align: center;
+  min-width: 120px;
+  margin: auto 20px;
+}
+
+.pri-ip-address {
+  width: 100%;
+  padding: 0 3%;
+  padding-block-end: 10px;
+}
+.pri-ip-text {
+  font-size: 10pt;
+}
+.pri-ipv6-text {
+  font-size: 8pt;
+}
+.pri-dashboard-traffic {
+  display: flex;
+  min-height: 150px;
+  justify-content: center;
+}
+.pri-dashboard-traffic.dataUsage {
+  margin-block: 20px;
+  justify-content: space-around;
+}
+.pri-dashboard-traffic-usage {
+  text-align: center;
+  margin: auto 20px;
+  width: 30%;
+  .pri-data-box-title {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #3e3e3e;
+    min-height: 45px;
+  }
+  .pri-data-box-value {
+    padding: 15px 5px;
+    min-height: 142px;
+    .pri-data-value {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin-bottom: 10px;
+      div {
+        font-size: 26px;
+        margin-right: 3%;
+      }
+    }
+  }
+}
+.pri-speedtest {
+  text-align: center;
+  margin: 0 10px;
+  a {
+    color: $light-style-color;
+  }
+}
+.pri-wan-icon {
+  width: fit-content;
+  min-width: 145px;
+  min-height: 145px;
+  text-align: center;
+  // transform: translateY(110%);
+  margin: 0 auto;
+  .pri-device-amount {
+    position: absolute;
+    background-color: $light-style-color;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    line-height: 52px;
+    right: 40px;
+    top: 12px;
+    font-size: 22px;
+    border: 4px solid #242424;
+    transition: all 0.2s ease-in-out;
+  }
+}
+.pri-more {
+  position: absolute;
+  width: 6px;
+  height: 24px;
+  inset-block-start: 30px;
+  inset-inline-start: calc(50% + 70px);
+}
+.grid-5g {
+  grid-area: wan5G;
+}
+.grid-wan {
+  grid-area: wan;
+}
+.grid-dataUsage {
+  grid-area: dataUsage;
+}
+.grid-traffic {
+  grid-area: traffic;
+}
+.grid-host {
+  grid-area: host;
+}
+.grid-guest {
+  grid-area: guest;
+}
+.grid-ports {
+  grid-area: ports;
+}
+.pri-text-color-green {
+  color: $light-style-color;
+}
+.pri-traffic-text {
+  font-size: 16px;
+  margin: 0;
+}
+.pri-data-usage-line {
+  border-left: 0.5px solid #ccc;
+  height: 100%;
+  margin: 0 10px;
+  width: 0 !important;
+  flex: unset;
+}
+.pri-dashboard-wifi {
+  padding: 15px 10px;
+  min-height: 180px;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  flex-direction: column;
+}
+.pri-dashboard-wifi-item {
+  display: flex;
+  align-items: center;
+}
+.pri-amount-circle {
+  line-height: 38px;
+  width: 35px;
+  height: 35px;
+  border-radius: 60%;
+  text-align: center;
+  margin-left: 10px;
+}
+.priBgConnect {
+  background-color: $light-style-color;
+}
+.unBgConnect {
+  background-color: $gray-svg-color;
+}
+.pri-dashboard-wifi-ssid {
+  font-size: 14px;
+  flex-grow: 1;
+  white-space: pre;
+  text-overflow: ellipsis;
+  width: 100px;
+  overflow: hidden;
+  margin-inline-start: 10px;
+  text-align: start;
+}
+.pri-dashboard-wifi-steering {
+  width: 100%;
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+.pri-dashboard-ports {
+  display: flex;
+  justify-content: center;
+}
+.pri-dashboard-ports-item {
+  padding: 3px;
+  border: 2px solid $light-style-color;
+}
+.pri-dashboard-ports-item.pri-lan-port {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.pri-amount-circle.pri-lan-port-amount {
+  margin: auto 10px;
+}
+.link-svg {
+  width: 140px !important;
+  height: 140px !important;
+}
+.client-svg {
+  width: 53px !important;
+  height: 45px !important;
+}
+.speed-svg {
+  width: 21px !important;
+  height: 16px !important;
+}
+.port-svg {
+  width: 37px !important;
+  height: 32px !important;
+}
+.flow-dir {
+  width: 40px;
+  height: 40px;
+}
+.pri-device-icon {
+  width: 140px;
+  height: 140px;
+  transition: all 0.2s ease-in-out;
+}
+
+.fill-light-color {
+  fill: $light-style-color;
+}
+// .fill-light-color {
+//   fill: $light-style-color;
+// }
+.fill-color-gray {
+  fill: $gray-svg-color;
+}
+
+@media screen and (max-width: 1599px) {
+  .contentWrapperMainPage {
+    width: 826px;
+  }
+  .pri-signal-logo {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1251px) and (max-width: 1598px){
+  .pri-dashboard-content {
+      flex-direction: column;
+  }
+  .pri-dashboard-content .pri-dashboard-data.grid-internet-container {
+    grid-template-areas:
+        "wan5G"
+        "wan"
+        "traffic"
+        "dataUsage";
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .contentWrapperMainPage {
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: auto;
+    min-height: calc(100vh - 200px);
+  }
+  .pri-dashboard-content .pri-dashboard-data.grid-internet-container {
+    grid-template-areas:
+        "wan5G wan"
+        "dataUsage traffic";
+    grid-template-columns: 1fr 1fr;
+  }
+  .pri-signal-logo {
+    width: 140px;
+  }
+}
+@media screen and (min-width: 980px) and (max-width: 1250px){
+  .pri-dashboard-traffic-value {
+    min-width: 86px;
+    margin: auto 0;
+  }
+  .pri-traffic-text {
+    display: block;
+    text-align: center;
+    width: 100% !important; 
+  }
+}
+
+@media screen and (max-width: 980px){
+  .pri-dashboard-content .pri-dashboard-data.grid-internet-container {
+    grid-template-areas:
+        "wan5G"
+        "wan"
+        "traffic"
+        "dataUsage"
+        "speedTest";
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pri-dashboard-content {
+    flex-direction: column;
+  }
+  .pri-dashboard-content .pri-dashboard-main-icon {
+    margin: 25px 0;
+  }
+  .pri-traffic-text {
+    display: block;
+    text-align: center;
+    width: 100% !important; 
+  }
+  
+}
+@media screen and (max-width: 550px){
+
+  .pri-dashboard-content .pri-dashboard-data.grid-device-container {
+    grid-template-areas:
+        "host"
+        "guest"
+        "smartHome"
+        "ports";
+    grid-template-columns: 1fr;
+  }
+  .pri-dashboard-traffic-value {
+    min-width: 86px;
+    margin: auto 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .pri-dashboard-content {
+    flex-direction: column;
+  }
+  .pri-main
+    .pri-dash-board-row
+    .pri-dash-board-card
+    .pri-data-box-block.pri-data-box-padding {
+    padding: 0;
+  }
+}
+
+

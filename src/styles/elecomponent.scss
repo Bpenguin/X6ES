@@ -1,0 +1,224 @@
+@import './gaming/variables.scss';
+
+// 导航栏
+.el-menu{
+border-right: none;
+}
+.sidebar.pri-main-sidebar{
+  border-right: solid 1px $main-style-color;
+}
+
+// select组件样式
+.x6-select {
+  background-color: $app-main-bg;
+  border: 1px solid $light-style-color;
+  margin: 0;
+  .el-select-dropdown__item {
+    color: white !important;
+  }
+  .el-select-dropdown__item.hover,
+  .el-select-dropdown__item:hover {
+    color: white;
+    background-color: gray !important;
+  }
+  .popper__arrow {
+    display: none;
+  }
+}
+.el-select {
+  display: block !important;
+}
+.el-select .el-input .el-select__caret {
+  color: $main-style-color !important;
+}
+// .el-input--medium {
+//   background: $black-bg !important;
+// }
+.el-select:hover .el-input__inner{
+  border: 1px solid $menuBg;
+}
+.el-select .el-input .el-input__inner:hover{
+  border: 1px solid $light-style-color;
+}
+.el-select .el-input.is-focus .el-input__inner{
+  border: 1px solid $light-style-color;
+}
+.el-select .el-input__inner:focus {
+  border: 1px solid $light-style-color;
+}
+
+// 加载loading
+.el-icon-loading-mine {
+  background:  url('../assets/img/loading.png') 50% 50% no-repeat;
+  background-size:40px;
+  -webkit-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
+  width: 40px;
+  height: 40px;
+  }
+
+
+label {
+font-weight: 500;
+}
+.el-radio__label {
+  font-size: 18px;
+  color: $default-font-color;
+}
+
+
+// 设置el-form的样式
+// elform的上下间距
+.el-form-item--mini.el-form-item, .el-form-item--small.el-form-item {
+  margin-bottom: 30px;
+}
+
+.el-form-item__label {
+  color: white !important;
+}
+.el-form-item--mini .el-form-item__label{
+  line-height: 40PX;
+  font-size: 18px;
+  height: 40px;
+}
+
+.el-form-item__error {
+position: relative;
+font-size: 16px;
+line-height: 20PX;
+}
+
+// 设置input的样式
+.el-input__inner {
+  color: white;
+  background-color: $menuBg !important;
+  border: 1px solid $main-style-color ;
+}
+.el-input__inner:hover, .el-input--mini .el-input__inner:hover{
+  border: 1px solid $light-style-color ;
+}
+.el-input__inner:focus ,.el-input--mini .el-input__inner:focus{
+  border: 1px solid $light-style-color ;
+}
+.el-input--mini .el-input__inner{
+  height: 40px !important;
+  line-height: 40PX !important;
+  font-size: 18px;
+  border: 1px solid $main-style-color ;
+}
+.el-input.is-disabled .el-input__inner{
+  border: 1px solid $gray-svg-color;
+}
+.el-input--medium {
+  font-size: 18px;
+}
+.el-input--medium .el-input__inner {
+  height: 40px;
+  line-height: 40px;
+}
+// 设置table样式
+.el-table {
+  background-color: transparent !important;
+  font-size: 18px;
+  th {
+    // padding: 10px !important;
+    height: 70px;
+    background-color: #646464 !important;
+    font-weight: 400 !important;
+  }
+  td {
+    text-align: left !important;
+    width: 100% !important;
+    background-color: rgb(67, 67, 67) !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  td.el-table__cell,
+  th.el-table__cell.is-leaf {
+    border-bottom: 1px solid transparent;
+  }
+  thead {
+    color: $default-font-color;
+  }
+}
+.el-table::before {
+  background-color: transparent !important;
+  height: 0;
+}
+.el-table__empty-block {
+  display: none;
+}
+
+// radio的样式
+.el-radio__input.is-checked .el-radio__inner{
+  border-color: $light-style-color;
+  background: $light-style-color;
+}
+.el-radio__input.is-checked+.el-radio__label {
+  color: $light-style-color;
+}
+
+//导航栏菜单
+.el-submenu__title {
+padding-left: 0 !important;
+color: $login-font-color !important;
+}
+
+.el-submenu__icon-arrow{
+font-size: 20PX;
+font-family: acer-bold;
+font-weight: 800;
+}
+
+// 进度条
+.el-progress-bar__innerText{
+  font-size: 16PX;
+  color: white !important;
+}
+
+::placeholder{
+color: $gray-font-color !important;
+}
+
+
+.el-form-item__content {
+font-size: 18px;
+}
+
+// radio选择框
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: $light-style-color;
+  border-color: $light-style-color;
+}
+.el-checkbox__inner {
+  width: 20px;
+  height: 20px;
+}
+.el-checkbox__inner::after{
+  height: 10px;
+  width: 6px;
+  left: 6px
+}
+@media screen and (max-width: 768px) {
+  .el-col {
+    padding: 5px;
+  }
+  // select组件样式
+.x6-select {
+  background-color: $app-main-bg;
+  border: 1px solid $light-style-color;
+  margin: 0;
+  left: 0;
+  max-width: 350px;
+  .el-select-dropdown__item {
+    color: white !important;
+  }
+  .el-select-dropdown__item.hover,
+  .el-select-dropdown__item:hover {
+    color: white;
+    background-color: gray !important;
+  }
+  .popper__arrow {
+    display: none;
+  }
+}
+}

@@ -1,0 +1,38 @@
+// base color
+// $app-back-color:#03313A;
+$app-main-bg:#03313A;
+$main-style-color: #00c8ec;
+$black-bg:#041E23;
+$login-font-color: #fff;
+
+$default-font-color: #fff;
+$gray-font-color: #8d9092;
+$table-head-bag-color: #646464;
+$table-content-bag-color: #434343;
+$nav-bg-color: rgba(255,255,255,0.5);
+
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$sideBarWidth: 421px;
+
+$font-family-Yahei:"Microsoft Yahei", sans-serif;
+$font-family-STSong: SimSun, "STSong", "宋体", sans-serif;
+$font-family-STKaiti: KaiTi, "STKaiti", "楷体", sans-serif;
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+// :export {
+//   menuText: $menuText;
+//   menuActiveText: $menuActiveText;
+//   subMenuActiveText: $subMenuActiveText;
+//   menuBg: $menuBg;
+//   menuHover: $menuHover;
+//   subMenuBg: $subMenuBg;
+//   subMenuHover: $subMenuHover;
+//   sideBarWidth: $sideBarWidth;
+// }

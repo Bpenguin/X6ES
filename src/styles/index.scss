@@ -1,0 +1,163 @@
+// @import './gaming/variables.scss';
+@font-face {
+  font-family: 'pre-china';
+  src: url('./gaming/fontFace/ZH-CN.ttf');
+}
+@font-face {
+  font-family: 'pre-black';
+  src: url('./gaming/fontFace/Predator-Black.ttf');
+}
+@font-face {
+  font-family: 'pre-bold';
+  src: url('./gaming/fontFace/Predator-Bold.ttf');
+}
+@font-face {
+  font-family: 'pre-light';
+  src: url('./gaming/fontFace/Predator-Light.ttf');
+}
+@font-face {
+  font-family: 'pre-regular';
+  src: url('./gaming/fontFace/Predator-Regular.ttf');
+}
+@font-face {
+  font-family: 'pre-thin';
+  src: url('./gaming/fontFace/Predator-Thin.ttf');
+}
+
+
+@font-face {
+  font-family: 'acer-china';
+  src: url('./gaming/fontFace/AcerFoco_Rg.ttf');
+}
+@font-face {
+  font-family: 'acer-black';
+  src: url('./gaming/fontFace/AcerFoco_Blk.ttf');
+}
+@font-face {
+  font-family: 'acer-bold';
+  src: url('./gaming/fontFace/AcerFoco_Bd.ttf');
+}
+@font-face {
+  font-family: 'acer-light';
+  src: url('./gaming/fontFace/AcerFoco_Lt.ttf');
+}
+@font-face {
+  font-family: 'acer-regular';
+  src: url('./gaming/fontFace/AcerFoco_Rg.ttf');
+}
+@font-face {
+  font-family: 'acer-thin';
+  src: url('./gaming/fontFace/AcerFoco_Lt.ttf');
+}
+
+
+body {
+  height: 100%;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.general-font-size {
+  height: 100%;
+  // font-family: pre-regular !important;
+  font-family: acer-thin,acer-china !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// div {
+//   box-sizing: initial;
+// }
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
