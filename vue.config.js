@@ -55,7 +55,7 @@ module.exports = defineConfig({
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = 'Acer Connect X6E'
+        args[0].title = 'Acer Connect X6ES'
         return args
       })
     config.module
