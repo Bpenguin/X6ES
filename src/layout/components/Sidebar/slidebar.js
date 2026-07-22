@@ -98,9 +98,9 @@ export const navMenus = [
       {
         title: 'wifiAcs', name: '/wifi/acs', childMenu: true, topath: '/wifi/acs',
       },
-      {
-        title: 'NFC', name: '/wifi/NFC', childMenu: true, topath: '/wifi/NFC'
-      },
+      // {
+      //   title: 'NFC', name: '/wifi/NFC', childMenu: true, topath: '/wifi/NFC'
+      // },
     ]
   },
   {

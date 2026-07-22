@@ -14,7 +14,7 @@
         <svg-icon @click="showMenuMobile" :class-name="'icon-svg pri-sidebar-menu'" icon-class="head-mobile"></svg-icon>
         <img class="logo_img" src="../../assets/img/acer.png" alt="">
       </div>
-      <div class="pri-header-title">Acer Connect X6E</div>
+      <div class="pri-header-title">Acer Connect X6ES</div>
       <div class="pri-header-placeholder"></div>
     </div>
 

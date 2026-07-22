@@ -232,7 +232,7 @@ export default {
             this.usageDatainfo.start_date =
               data.statistics_month.statistics_start_date
             this.usageDatainfo.used = data.statistics_month.statistics_used
-            this.usageDatainfo.dataRemaining = '--'
+            // this.usageDatainfo.dataRemaining = '--'
             // this.usageDatainfo.dataRemaining =
             //   data.statistics_month.monthly_data_remaining
             getUsageCfgInfoApi({ hiddenLoading: true }).then((res) => {
