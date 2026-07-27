@@ -211,7 +211,7 @@
               <div class="pri-dashboard-data-item-content">
                 <network-echart :rate-num="Wan5GRateNum" :eth-rate-num="ethWanRateNum"></network-echart>
                 <div class="pri-ip-address pri-speedtest">
-                  <a href="https://connect-m5.speedtestcustom.com" target="_blank">
+                  <a href="https://www.speedtest.net/" target="_blank">
                     <svg-icon :icon-class="'speed'" class-name="speed-svg fill-light-color"></svg-icon>
                     {{$t('other.speedTest')}}
                   </a>

@@ -76,7 +76,7 @@ export const timeZoneList = [
   { value: 18, label: '(UTC-04:00) ' + i18n.t('timeZone.time19') },
   { value: 19, label: '(UTC-03:30) ' + i18n.t('timeZone.time20') },
   { value: 20, label: '(UTC-03:00) ' + i18n.t('timeZone.time21') },
-  { value: 21, label: '(UTC-03:00) ' + i18n.t('timeZone.time22') },
+  { value: 21, label: '(UTC-02:00) ' + i18n.t('timeZone.time22') },
   { value: 22, label: '(UTC-02:00) ' + i18n.t('timeZone.time23') },
 
   { value: 23, label: '(UTC-01:00) ' + i18n.t('timeZone.time24') },

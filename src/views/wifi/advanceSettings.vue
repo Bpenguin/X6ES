@@ -9,22 +9,22 @@
         <div>
           <div class="block-header">2.4GHz</div>
           <div v-if="advancedSettingsInfo.status" class="block-body">
-            <el-form-item :label="$t('wifi.channel')" prop="channel">
+            <el-form-item :label="$t('wifi.channel') +':'" prop="channel">
               <el-select v-model="advancedSettingsInfo.channel" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in channels_4G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.modeWifi')" prop="mode">
+            <el-form-item :label="$t('wifi.modeWifi')+':'" prop="mode">
               <el-select v-model="advancedSettingsInfo.mode" @change="modeChange4G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in modes_4G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.isolation')" prop="isolation">
+            <el-form-item :label="$t('wifi.isolation')+':'" prop="isolation">
               <el-switch v-model="advancedSettingsInfo.isolation" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
             </el-form-item>
-            <el-form-item :label="$t('wifi.bandwidth')" prop="bandwidth">
+            <el-form-item :label="$t('wifi.bandwidth')+':'" prop="bandwidth">
               <el-select v-model="advancedSettingsInfo.bandwidth" @change="bandChange4G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in bandwidth_4G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
@@ -38,28 +38,28 @@
         <div>
           <div class="block-header">5GHz</div>
           <div v-if="advancedSettingsInfo.status5G" class="block-body">
-            <el-form-item :label="$t('wifi.channel')" prop="channel">
+            <el-form-item :label="$t('wifi.channel')+':'" prop="channel">
               <el-select v-model="advancedSettingsInfo.channel5G" @change="channelChange5G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in channels_5G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.modeWifi')" prop="mode">
+            <el-form-item :label="$t('wifi.modeWifi')+':'" prop="mode">
               <el-select v-model="advancedSettingsInfo.mode5G" @change="modeChange5G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in modes_5G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.isolation')" prop="isolation">
+            <el-form-item :label="$t('wifi.isolation')+':'" prop="isolation">
               <el-switch v-model="advancedSettingsInfo.isolation5G" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
             </el-form-item>
-            <el-form-item :label="$t('wifi.bandwidth')" prop="bandwidth">
+            <el-form-item :label="$t('wifi.bandwidth')+':'" prop="bandwidth">
               <el-select v-model="advancedSettingsInfo.bandwidth5G" @change="bandChange5G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in bandwidth_5G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.dfs')" prop="dfs5G">
+            <el-form-item :label="$t('wifi.dfs')+':'" prop="dfs5G">
               <div class="dfs-view">
                 <el-tooltip class="item" effect="light" placement="bottom">
                   <div class="pop-view" slot="content">{{$t('wifi.dfsTip1')}}<br /><br />{{$t('wifi.dfsTip2')}}<br /><br />{{$t('wifi.dfsTip3')}}</div>
@@ -89,31 +89,31 @@
         <div>
           <div class="block-header">6GHz</div>
           <div v-if="advancedSettingsInfo.status6G" class="block-body">
-            <el-form-item :label="$t('other.psc')" prop="psc6G">
+            <el-form-item :label="$t('other.psc')+':'" prop="psc6G">
               <el-switch v-model="advancedSettingsInfo.psc6G" @change="pscChange" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
             </el-form-item>
-            <el-form-item v-show="!advancedSettingsInfo.psc6G" :label="$t('wifi.channel')" prop="channel6G">
+            <el-form-item v-show="!advancedSettingsInfo.psc6G" :label="$t('wifi.channel')+':'" prop="channel6G">
               <el-select v-model="advancedSettingsInfo.channel6G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in channels_6G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item v-show="advancedSettingsInfo.psc6G" :label="$t('other.psc')+ ' ('+$t('other.ChannelPsc')+') '" prop="channel6G">
+            <el-form-item v-show="advancedSettingsInfo.psc6G" :label="$t('other.psc')+ ' ('+$t('other.ChannelPsc')+') '+':'" prop="channel6G">
               <el-select v-model="advancedSettingsInfo.channel6G" @change="modeChange6G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in channels_6G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.modeWifi')" prop="mode6G">
+            <el-form-item :label="$t('wifi.modeWifi')+':'" prop="mode6G">
               <el-select v-model="advancedSettingsInfo.mode6G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in modes_6G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item :label="$t('wifi.isolation')" prop="isolation6G">
+            <el-form-item :label="$t('wifi.isolation')+':'" prop="isolation6G">
               <el-switch v-model="advancedSettingsInfo.isolation6G" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
             </el-form-item>
-            <el-form-item :label="$t('wifi.bandwidth')" prop="bandwidth6G">
+            <el-form-item :label="$t('wifi.bandwidth')+':'" prop="bandwidth6G">
               <el-select v-model="advancedSettingsInfo.bandwidth6G" @change="bandChange6G" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in bandwidth_6G" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>

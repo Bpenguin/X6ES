@@ -64,7 +64,7 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item v-if="wifiInfo_4G.hzSwitch && wifiInfo_4G.securitymode != 0 && wifiInfo_4G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd')" prop="securitykey">
+            <el-form-item v-if="wifiInfo_4G.hzSwitch && wifiInfo_4G.securitymode != 0 && wifiInfo_4G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd') +':'" prop="securitykey">
               <pwd-input :key="'securitykey'" v-model="wifiInfo_4G.securitykey" :maxlength='63'></pwd-input>
             </el-form-item>
           </el-form>
@@ -98,7 +98,7 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item v-if="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd')" prop="securitykey">
+            <el-form-item v-if="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd') +':'" prop="securitykey">
               <pwd-input :key="'securitykey'" v-model="wifiInfo_5G.securitykey" :maxlength='63'></pwd-input>
             </el-form-item>
           </el-form>
@@ -114,7 +114,7 @@
             <el-form-item :label="$t('quickSetup.wifi6G')+':'" prop="hzSwitch">
               <el-switch v-model="wifiInfo_6G.hzSwitch" :disabled='wifiInfo_6G.Support6G == 0' @change="changeSwitch('6G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
             </el-form-item>
-            <el-form-item v-if="wifiInfo_6G.hzSwitch " :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiSSID')" prop="ssid">
+            <el-form-item v-if="wifiInfo_6G.hzSwitch " :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiSSID') +':'" prop="ssid">
               <mine-input :key="'ssid'" v-model="wifiInfo_6G.ssid"></mine-input>
             </el-form-item>
             <el-form-item v-if="wifiInfo_6G.hzSwitch && fromType!= 'guest'" :label="$t('quickSetup.SSIDBroadcast')+':'" prop="broadcastSwitch">
@@ -126,13 +126,13 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item v-if="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('quickSetup.encryption')" prop="encryption">
+            <el-form-item v-if="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('quickSetup.encryption')+':'" prop="encryption">
               <el-select v-model="wifiInfo_6G.encryption" popper-class="x6-select" :placeholder="''">
                 <el-option v-for="item in encryptions" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item v-if="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd')" prop="securitykey">
+            <el-form-item v-if="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="(fromType == 'guest'?$t('wifi.guest')+' ':'')+$t('quickSetup.wifiPwd') +':'" prop="securitykey">
               <pwd-input :key="'securitykey'" v-model="wifiInfo_6G.securitykey" :maxlength='63'></pwd-input>
             </el-form-item>
           </el-form>
@@ -379,9 +379,9 @@ export default {
         console.log('finish')
         let params = this.initFormParams()
         if (this.fromType == 'wifiBasic') {
-          // 关闭guest相关开关
-          this.getGuestWifiParams(params)
-          await setWlanGuestBasicInfoApi(this.guestData).then((data) => {})
+          // // 关闭guest相关开关
+          // this.getGuestWifiParams(params)
+          // await setWlanGuestBasicInfoApi(this.guestData).then((data) => {})
           setWlanBasicInfo(params).then((data) => {
             if (data.retcode == 0) {
               this.$publicFun.showSucMessage(this)

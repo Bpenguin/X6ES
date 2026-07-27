@@ -9,7 +9,7 @@
       <div class="block-body">
         <el-form ref="wifiInfo_4G" key="wifiInfo_4G" :model="wifiInfo_4G" :rules="formRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('quickSetup.wifi2G')+':'" prop="hzSwitch">
-            <el-switch v-model="wifiInfo_4G.hzSwitch" :disabled='wifiInfo_4G.unSupport== 0' active-color="#00dc50" inactive-color="#8d9092"></el-switch>
+            <el-switch v-model="wifiInfo_4G.hzSwitch" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
           </el-form-item>
           <el-form-item v-show="wifiInfo_4G.hzSwitch" :label="($t('wifi.guest')+' ')+$t('quickSetup.wifiSSID')+':'" prop="ssid">
             <mine-input :key="'ssid'" v-model="wifiInfo_4G.ssid"></mine-input>
@@ -39,24 +39,24 @@
       <div class="block-body">
         <el-form ref="wifiInfo_5G" key="wifiInfo_5G" :model="wifiInfo_5G" :rules="formRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('quickSetup.wifi5G')+':'" prop="hzSwitch">
-            <el-switch v-model="wifiInfo_5G.hzSwitch" :disabled='wifiInfo_5G.unSupport== 0' @change="changeSwitch('5G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
+            <el-switch v-model="wifiInfo_5G.hzSwitch" @change="changeSwitch('5G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
           </el-form-item>
           <el-form-item v-show="wifiInfo_5G.hzSwitch" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiSSID')+':'" prop="ssid">
             <mine-input :key="'ssid'" v-model="wifiInfo_5G.ssid"></mine-input>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_5G.hzSwitch" :label="$t('quickSetup.security')" prop="security">
+          <el-form-item v-show="wifiInfo_5G.hzSwitch" :label="$t('quickSetup.security') +':'" prop="security">
             <el-select v-model="wifiInfo_5G.securitymode" popper-class="x6-select" :placeholder="''">
               <el-option v-for="item in securitys" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="$t('quickSetup.encryption')" prop="encryption">
+          <el-form-item v-show="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="$t('quickSetup.encryption') +':'" prop="encryption">
             <el-select v-model="wifiInfo_5G.encryption" popper-class="x6-select" :placeholder="''">
               <el-option v-for="item in encryptions" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiPwd')" prop="securitykey">
+          <el-form-item v-show="wifiInfo_5G.hzSwitch && wifiInfo_5G.securitymode != 0 && wifiInfo_5G.securitymode != 5" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiPwd') +':'" prop="securitykey">
             <pwd-input :key="'securitykey'" v-model="wifiInfo_5G.securitykey" :maxlength='63'></pwd-input>
           </el-form-item>
         </el-form>
@@ -70,24 +70,24 @@
       <div class="block-body">
         <el-form ref="wifiInfo_6G" key="wifiInfo_6G" :model="wifiInfo_6G" :rules="formRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('quickSetup.wifi6G')+':'" prop="hzSwitch">
-            <el-switch v-model="wifiInfo_6G.hzSwitch" :disabled='wifiInfo_6G.unSupport== 0' @change="changeSwitch('6G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
+            <el-switch v-model="wifiInfo_6G.hzSwitch" @change="changeSwitch('6G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
           </el-form-item>
           <el-form-item v-show="wifiInfo_6G.hzSwitch" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiSSID')+':'" prop="ssid">
             <mine-input :key="'ssid'" v-model="wifiInfo_6G.ssid"></mine-input>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_6G.hzSwitch" :label="$t('quickSetup.security')" prop="security">
+          <el-form-item v-show="wifiInfo_6G.hzSwitch" :label="$t('quickSetup.security') +':'" prop="security">
             <el-select v-model="wifiInfo_6G.securitymode" popper-class="x6-select" :placeholder="''">
               <el-option v-for="item in securitys_6G" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('quickSetup.encryption')" prop="encryption">
+          <el-form-item v-show="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('quickSetup.encryption')+':'" prop="encryption">
             <el-select v-model="wifiInfo_6G.encryption" popper-class="x6-select" :placeholder="''">
               <el-option v-for="item in encryptions" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item v-show="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiPwd')" prop="securitykey">
+          <el-form-item v-show="wifiInfo_6G.hzSwitch && wifiInfo_6G.securitymode != 0 && wifiInfo_6G.securitymode != 5" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiPwd') +':'" prop="securitykey">
             <pwd-input :key="'securitykey'" v-model="wifiInfo_6G.securitykey" :maxlength='63'></pwd-input>
           </el-form-item>
         </el-form>
@@ -125,8 +125,7 @@ export default {
         ssid: '',
         securitymode: 4,
         encryption: 2,
-        securitykey: '',
-        unSupport: 0
+        securitykey: ''
       },
       formRules: {
         ssid: [
@@ -171,16 +170,14 @@ export default {
         ssid: '',
         securitymode: 4,
         encryption: 2,
-        securitykey: '',
-        unSupport: 0 // // 0 不支持修改
+        securitykey: ''
       },
       wifiInfo_6G: {
         hzSwitch: false,
         ssid: '',
         securitymode: 4,
         encryption: 2,
-        securitykey: '',
-        unSupport: 0 // 0 不支持修改
+        securitykey: ''
       }
     }
   },
@@ -208,10 +205,6 @@ export default {
           this.wifiInfo_6G.ssid = data.Guest3Ssid
           this.wifiInfo_6G.securitymode = data.Guest3Security
           this.wifiInfo_6G.securitykey = data.Guest3Password
-
-          this.wifiInfo_4G.unSupport = data.Support2G
-          this.wifiInfo_5G.unSupport = data.Support5G
-          this.wifiInfo_6G.unSupport = data.Support6G
         }
       })
 

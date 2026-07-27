@@ -327,7 +327,6 @@ export default {
     getNewPIN: 'Get new PIN',
     // wpsBottomScr1: 'Note',
     wpsBottomScr2: "Using method 1 or method 2 to connect a wireless device to the {ProductName} SSID via WPS within 2 minutes. With method 1 you can enter your personal client’s PIN and click 'Connect', or enter the router’s PIN on your personal device.",
-    wpsBottomScr3: "WPS will be disabled if WiFi is set to WPA3 mode, or if SSID broadcast is turned off.",
     guestScr: "This provides Internet connection for guests, but blocks access to devices on your local network.",
     guest: 'Guest',
     // method2: "Method 2",
@@ -580,12 +579,13 @@ export default {
     IncorrectFile: "Incorrect file",
     dataUsageApplySrc: "Please note that if you enable the data usage limit, your internet connection will be disconnected when your usage reaches the limit.",
     ethernet: 'Ethernet',
-    // 新增
     errPwdReset: "You have entered an incorrect password too many times. You need to reboot the device or wait 5 minutes and try to log in again.",
     dfsOn1: "The current configuration will use a DFS channel. The router will take 1 minute to scan the area to check if any radar is using this channel. 5GHz WiFi will not work at this time. Do you want to do it?",
     dfsOn10: "The current configuration will use a DFS channel. The router will take 10 minutes to scan the area to check if any radar is using this channel. 5GHz WiFi will not work at this time. Do you want to do it?",
     portForwardRule: "The rule you added has duplicate IP/port/protocol with other rules. Please change it and try again.",
     lanRestartSrcNew: "The updated settings will only take effect after the device is restarted. Would you like to restart the device now?",
+    // 新增
+    wpsBottomScr4: "WPS will be disabled if WiFi is set to WPA3 mode, or if SSID broadcast is turned off.",
   },
   timeZone: {
     // time1: "Kwajalein",
@@ -675,6 +675,7 @@ export default {
     time84: 'Auckland, Wellington',
     time85: 'Fiji, Kamchatka, Marshall Islands',
     time86: 'Petropavlovsk-Kamchatsky',
+    // 新增
     time87: "Tongatapu",
   },
   // timeZone: {

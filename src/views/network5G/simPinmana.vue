@@ -59,7 +59,7 @@
             <mine-input v-model="changePinFormData.confirmNewPIN" :maxlength='8' :validate-event="true"></mine-input>
           </el-form-item>
           <el-form-item :label="$t('network5G.remaining')+':'" prop="remaining">
-            <div>{{ pin_retry_times }}</div>
+            <div class="remian-num">{{ pin_retry_times }}</div>
           </el-form-item>
         </el-form>
         <div class="c-row btn-row">
@@ -299,6 +299,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.remian-num {
+  height: 40px;
+  line-height: 40px;
+}
 .flex-cent {
   justify-content: center !important;
 }

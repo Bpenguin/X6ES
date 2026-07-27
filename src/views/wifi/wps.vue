@@ -241,7 +241,7 @@
       <div>{{$t('common.disabled')}}</div>
     </div>
     <div class="block-body">
-      <div class="page-note">{{ $t('common.note') }}:<br />{{ $t('wifi.wpsBottomScr2',{ProductName:GLOBAL.PRODUCT_NAME})  }}<br />{{ $t('wifi.wpsBottomScr3')  }}</div>
+      <div class="page-note">{{ $t('common.note') }}:<br />{{ $t('wifi.wpsBottomScr2',{ProductName:GLOBAL.PRODUCT_NAME})  }}<br />{{ $t('other.wpsBottomScr4')  }}</div>
     </div>
     <mine-dialog :show-dialog='showWpsSwitchDialogInfo.showDialog' :show-close-btn="showWpsSwitchDialogInfo.showCloseBtn" :title="showWpsSwitchDialogInfo.title" :msg-title="showWpsSwitchDialogInfo.msgTitle" :left-btn-text="showWpsSwitchDialogInfo.leftBtnText" :right-btn-text="showWpsSwitchDialogInfo.rightBtnText" @leftBtnClick="cancelChangeWpsSwitch" @rightBtnClick="showWpsSwitchDialogInfo.showDialog = false" @closeDialog="cancelChangeWpsSwitch"></mine-dialog>
     <mine-dialog :show-dialog='showSwitchDialogInfo.showDialog' :show-close-btn="showSwitchDialogInfo.showCloseBtn" :title="showSwitchDialogInfo.title" :msg-title="showSwitchDialogInfo.msgTitle" :left-btn-text="showSwitchDialogInfo.leftBtnText" @leftBtnClick="showSwitchDialogInfo.showDialog = false" @closeDialog="showSwitchDialogInfo.showDialog = false">

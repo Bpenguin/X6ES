@@ -54,7 +54,7 @@
               <mine-input v-model="PukFormData.confirmNewPIN" :maxlength='8'></mine-input>
             </el-form-item>
             <el-form-item :label="$t('network5G.remaining')+':'" prop="remaining">
-              <div>{{ puk_retry_times }}</div>
+              <div class="remian-num">{{ puk_retry_times }}</div>
             </el-form-item>
           </el-form>
         </div>
@@ -255,6 +255,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.remian-num {
+  height: 40px;
+  line-height: 40px;
+}
 .sim-svg {
   width: 120px !important;
   height: 120px !important;
