@@ -586,6 +586,8 @@ export default {
     lanRestartSrcNew: "The updated settings will only take effect after the device is restarted. Would you like to restart the device now?",
     // 新增
     wpsBottomScr4: "WPS will be disabled if WiFi is set to WPA3 mode, or if SSID broadcast is turned off.",
+    curPwdErr: "The current password is incorrect.",
+    newUnSameCur: "The new password cannot be the same as the current password.",
   },
   timeZone: {
     // time1: "Kwajalein",

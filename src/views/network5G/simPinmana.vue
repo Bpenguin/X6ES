@@ -77,9 +77,7 @@
 
 <script>
 import NoSim from './noSim.vue'
-import { Message } from 'element-ui'
 import formVaRule from '@/formValidator/index'
-
 import { getSimPinMngInfoApi, setSimPinMngInfoApi } from '@/api/network5G'
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -131,7 +129,7 @@ export default {
             message: this.$t('ruleTip.oldPinRqRule'),
             trigger: ['blur', 'change']
           },
-          { validator: formVaRule.PUKPinRule, trigger: ['blur', 'change'] }
+          { validator: formVaRule.SIMPinRule, trigger: ['blur', 'change'] }
         ],
         newPIN: [
           {
@@ -212,7 +210,13 @@ export default {
           // parma.enable = 1
           setSimPinMngInfoApi(parma).then((data) => {
             if (data.retcode == 0) {
+              const rememberInfo = {
+                localPinTag: true,
+                SIMPinNum: this.pinFormData.SIMPinNum
+              }
+              localStorage.setItem('SIMPinInfo', JSON.stringify(rememberInfo))
               this.$publicFun.showSucMessage(this)
+              this.pin_retry_times = 3
               this.initData()
             } else if (data.retcode == 12) {
               this.pin_retry_times -= 1
@@ -258,6 +262,7 @@ export default {
             if (data.retcode == 0) {
               this.$refs.changePinFormData.resetFields()
               this.changePinStatus = false
+              this.pin_retry_times = 3
               this.$publicFun.showSucMessage(this)
             } else if (data.retcode == 12) {
               if (this.pin_retry_times <= 0) {

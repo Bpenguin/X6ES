@@ -13,8 +13,6 @@ export const SIMPinRule = (rule, value, callback) => {
 export const PUKPinRule = (rule, value, callback) => {
   // var re = /^[0-9]+.?[0-9]*/
   var re = /^\d+$/
-  console.log(value, 'value')
-  console.log(re.test(value), 'value')
   if (!re.test(value)) {
     callback(new Error(i18n.t('ruleTip.PUKPinRule')))
   } else if (value.length < 4) {

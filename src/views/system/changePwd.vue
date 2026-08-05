@@ -41,6 +41,17 @@ export default {
   // components: { PwdInput, MineButton, AgreementIframe, MineDialog },
   components: { PwdInput, MineButton, MineDialog },
   data() {
+    var curPwdRuleNew = (rule, value, callback) => {
+      let re = /^[\x00-\x7F]*$/
+      if (!re.test(value)) {
+        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+      } else if (value.length < 8) {
+        callback(new Error(this.$t('ruleTip.loginPasswordLengthRule')))
+      } else {
+        callback()
+      }
+    }
+
     var passwordRuleNew = (rule, value, callback) => {
       if (this.passwordForm.confirmNewPwd != '') {
         this.$refs.passwordForm.validateField('confirmNewPwd')
@@ -92,6 +103,11 @@ export default {
           {
             required: true,
             message: this.$t('ruleTip.loginPasswordRqRule'),
+            trigger: ['blur', 'change']
+          },
+          {
+            required: true,
+            validator: curPwdRuleNew,
             trigger: ['blur', 'change']
           }
         ],
@@ -204,6 +220,12 @@ export default {
                 // this.showIframeDialogInfo.showDialog = true  // X6E 跳过阅读协议
                 this.showQuickSetupDialogInfo.showDialog = true
               }
+            } else if (data.retcode == 209) {
+              // 新旧密码不能一致
+              this.$publicFun.showErrMessage(this, 'other.newUnSameCur')
+            } else if (data.retcode == 203) {
+              // d当期密码错误
+              this.$publicFun.showErrMessage(this, 'other.curPwdErr')
             } else {
               this.$publicFun.showErrMessage(this)
               // this.showPwdDialogInfo.msgTitle = 'login.errPwd'
