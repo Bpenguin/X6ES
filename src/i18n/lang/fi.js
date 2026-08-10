@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "Voit aloittaa {ProductName}:n käytön välittömästi tai muuttaa järjestelmän oletusasetuksia pika-asetuksella.",
-    "startX6E": "Käynnistä X6E",
+    "startX6E": "Käynnistä X6ES",
     "installation": "Installatie",
     "pageOneText1": "Liitä virtalähde {ProductName}:en ja kytke sitten {ProductName}:n virta päälle.",
     "pageOneText2": "Liitä RJ-45-kaapein toinen pää DSL- tai kaapelimodeemiin ja toinen pää {ProductName}:n WAN-porttiin.",
@@ -519,6 +519,9 @@ export default {
     "dfsOn10": "Nykyinen kokoonpano käyttää DFS-kanavaa. Reititin käyttää 10 minuutin alueen skannaamiseen tarkistaakseen, käyttääkö joku tutka tätä kanavaa. 5GHz WiFi ei toimi tänä aikana. Haluatko jatkaa?",
     "portForwardRule": "Lisäämäsi sääntö sisältää IP/portti/protokolla-päällekkäisyyksiä muiden sääntöjen kanssa. Muuta sääntöä ja yritä uudelleen.",
     "lanRestartSrcNew": "Päivitetyt asetukset tulevat voimaan vasta laitteen uudelleenkäynnistyksen jälkeen. Haluatko käynnistää laitteen uudelleen nyt?",
+    "wpsBottomScr4": "WPS poistetaan käytöstä, jos WiFi on asetettu WPA3-tilaan tai jos SSID-lähetys on poistettu käytöstä.",
+    "curPwdErr": "Nykyinen salasana on virheellinen.",
+    "newUnSameCur": "Uusi salasana ei voi olla sama kuin nykyinen salasana.",
   },
   "timeZone": {
     "time1": "Kansainvälinen vuorokausiraja Länsi", "time2": "Midwaysaaret", "time3": "Hawaiji", "time4": "Alaska",

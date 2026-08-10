@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "Můžete začít používat {ProductName} přímo nebo změnit výchozí nastavení systému v krátkém nastavení.",
-    "startX6E": "Spustit X6E",
+    "startX6E": "Spustit X6ES",
     "installation": "Instalace",
     "pageOneText1": "Připojte napájecí zdroj k routeru {ProductName} a poté zapněte napájení routeru {ProductName}.",
     "pageOneText2": "Připojte jeden konec kabelu RJ-45 k vašemu DSL nebo kabelovému modemu a druhý konec k portu WAN routeru {ProductName}.",
@@ -519,6 +519,9 @@ export default {
     "dfsOn10": "Aktuální konfigurace použije DFS kanál. Router bude 10 minutu skenovat oblast, aby ověřil, zda tento kanál nepoužívá radar. Během této doby nebude 5GHz WiFi funkční. Chcete pokračovat?",
     "portForwardRule": "Přidané pravidlo má duplicitní IP/port/protokol s jinými pravidly. Změňte jej a zkuste to znovu.",
     "lanRestartSrcNew": "Aktualizovaná nastavení se projeví až po restartování zařízení. Chcete zařízení nyní restartovat?",
+    "wpsBottomScr4": "Funkce WPS bude zakázána, pokud je WiFi nastavena do režimu WPA3 nebo je vypnuto vysílání SSID.",
+    "curPwdErr": "Aktuální heslo je nesprávné.",
+    "newUnSameCur": "Nové heslo nesmí být stejné jako aktuální heslo.",
   },
   "timeZone": {
     "time1": "Mezinárodní datová čára, západ", "time2": "Ostrov Midway", "time3": "Havajské ostrovy", "time4": "Aljaška",

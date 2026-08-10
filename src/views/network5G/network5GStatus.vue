@@ -11,7 +11,6 @@
           <div>{{ $t('network5G.SIMNormal') }}</div>
         </el-col>
       </el-row>
-
       <el-row class="c-row">
         <el-col :span="12" :xs="12">
           <div>{{ $t('network5G.ConnectionStatus') }}:</div>
@@ -146,7 +145,12 @@ export default {
   components: { NoSim },
   computed: {
     SIMStatus() {
-      this.initData(true)
+      if (
+        this.$store.state.status.simStatus == 1 ||
+        this.$store.state.status.simStatus == 2
+      ) {
+        this.initData()
+      }
       return this.$store.state.status.simStatus
     },
     ConnectionStatusFillter() {
@@ -182,11 +186,14 @@ export default {
     this.$store.dispatch('status/setSimInfo')
   },
   mounted() {
-    this.initData()
+    // this.initData()
     this.initSimStatus() // 循环获取SIM卡状态
   },
   methods: {
     async initData(type) {
+      this.getMainInfo()
+    },
+    getMainInfo() {
       this.getProfieInfo()
       this.getDeviceInfo()
       this.getMobileInfo()
@@ -224,11 +231,6 @@ export default {
           this.cancelClick = data.connection_mode == 1 ? false : true
         }
       })
-      if (type) {
-        setTimeout(() => {
-          this.initData()
-        }, 5000)
-      }
     },
     // 获取APN信息
     getProfieInfo() {

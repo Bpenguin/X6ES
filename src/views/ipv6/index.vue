@@ -1,5 +1,9 @@
 <template>
   <div class="container-main-content-body">
+    <div class="head-view">{{$t('nav.ipv6')}}</div>
+    <div class="block-header radio-item">{{ $t('other.curPriWAN')+': ' + $t(PrimaryWanType)}}</div>
+    <div class="block-header">{{ $t('other.ipv6Src')}}</div>
+    <div class="block-divide-line"></div>
     <div class="block-body">
       <el-form ref="ipv6Info" key="ipv6Info" label-width="40%" :label-position="formLablePos" size="mini">
         <el-form-item :label="$t('quickSetup.connectMode')+':'" prop="connectMode">
@@ -10,8 +14,8 @@
         </el-form-item>
       </el-form>
     </div>
-    <div v-show="connectMode != 0" class="block-divide-line"></div>
-    <div v-show="connectMode != 0" class="block-header">{{ $t('ipv6.ipv6WanSetting')+':' }}</div>
+    <div v-show="connectMode != 0 && connectMode != 4" class="block-divide-line"></div>
+    <div v-show="connectMode != 0 && connectMode != 4" class="block-header">{{ $t('ipv6.ipv6WanSetting')+':' }}</div>
     <!-- // DHCPv6的页面展示 -->
     <div class="block-body">
       <el-form v-show="connectMode == 1" ref="formdata0" key="formdata0" :rules="formdata0Rule" :model="formdata0" label-width="40%" :label-position="formLablePos" size="mini">
@@ -63,45 +67,11 @@
         </el-form-item>
       </el-form>
     </div>
-    <!-- // 464xlat的页面展示 -->
-    <div class="block-body">
-      <el-form v-show="connectMode == 4" ref="formdata3" key="formdata3" :model="formdata3" :rules="formdata3Rule" label-width="40%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('ipv6.nat64Prefix')+':'" prop="nat64Prefix">
-          <mine-input :key="'nat64Prefix'" v-model="formdata3.nat64Prefix" :placeholder="''"></mine-input>
-        </el-form-item>
-      </el-form>
-    </div>
-    <!-- // 6rd的页面展示 -->
-    <div class="block-body">
-
-      <el-form v-show="connectMode == 5" ref="formdata4" key="formdata4" :model="formdata4" :rules="formdata4Rule" label-width="40%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('ipv6.ipv6Prefix')+':'" prop="ipv6Prefix">
-          <mine-input :key="'ipv6Prefix'" v-model="formdata4.ipv6Prefix" :placeholder="''"></mine-input>
-        </el-form-item>
-        <el-form-item :label="$t('ipv6.ipv6PrefixLength')+':'" prop="ipv6PrefixLength">
-          <mine-input :key="'ipv6PrefixLength'" v-model="formdata4.ipv6PrefixLength" :placeholder="''"></mine-input>
-        </el-form-item>
-        <el-form-item :label="$t('ipv6.peerIPv4Address')+':'" prop="peerIPv4Address">
-          <mine-input :key="'peerIPv4Address'" v-model="formdata4.peerIPv4Address" :placeholder="''"></mine-input>
-        </el-form-item>
-        <el-form-item :label="$t('ipv6.ipv4MaskLength')+':'" prop="ipv4MaskLength">
-          <mine-input :key="'ipv4MaskLength'" v-model="formdata4.ipv4MaskLength" :placeholder="''"></mine-input>
-        </el-form-item>
-      </el-form>
-    </div>
-    <!-- // DS-Lite的页面展示 -->
-    <div class="block-body">
-      <el-form v-show="connectMode == 6" ref="formdata5" key="formdata5" :model="formdata5" :rules="formdata5Rule" label-width="40%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('ipv6.aftrIPv6Address')+':'" prop="aftrIPv6Address">
-          <mine-input :key="'aftrIPv6Address'" v-model="formdata5.aftrIPv6Address" :placeholder="''"></mine-input>
-        </el-form-item>
-      </el-form>
-    </div>
-    <div v-show="connectMode != 0" class="block-divide-line"></div>
-    <div v-show="connectMode != 0" class="block-header">{{ $t('ipv6.ipv6LanSetting')+':' }}</div>
+    <div v-show="connectMode != 0 && connectMode != 4" class="block-divide-line"></div>
+    <div v-show="connectMode != 0 && connectMode != 4" class="block-header">{{ $t('ipv6.ipv6LanSetting')+':' }}</div>
     <!-- // IPv6 LAN setting的页面展示 -->
     <div class="block-body">
-      <el-form v-show="connectMode != 0" ref="lanSettingInfo" key="lanSettingInfo" :model="lanSettingInfo" label-width="40%" :label-position="formLablePos" size="mini">
+      <el-form v-show="connectMode != 0 && connectMode != 4" ref="lanSettingInfo" key="lanSettingInfo" :model="lanSettingInfo" label-width="40%" :label-position="formLablePos" size="mini">
         <el-form-item :label="$t('ipv6.ipAssignment')+':'" prop="ipAssignment">
           <div class="radio-item">
             <el-radio :label="1" v-model="lanSettingInfo.ipAssignment">{{$t('ipv6.statefulDHCPv6')}}</el-radio>
@@ -136,11 +106,14 @@
 
 <script>
 import formVaRule from '@/formValidator/index'
+import { getDualWanConfigurationApi } from '@/api/wan'
 import { getIpv6ConfigurationApi, setIpv6ConfigurationApi } from '@/api/ipv6'
 export default {
   name: 'Ipv6Index',
   data() {
     return {
+      PrimaryWanType: 'nav.wan',
+      primaryWan: 1,
       connectMode: 0,
       formdata0: {
         automaticDNS: true,
@@ -230,66 +203,6 @@ export default {
           }
         ]
       },
-      formdata3: {
-        nat64Prefix: ''
-      },
-      formdata3Rule: {
-        nat64Prefix: [
-          {
-            required: true,
-            validator: formVaRule.IPv6PrefixRule,
-            trigger: ['blur', 'change']
-          }
-        ]
-      },
-      formdata4: {
-        ipv6Prefix: '',
-        ipv6PrefixLength: '',
-        peerIPv4Address: '',
-        ipv4MaskLength: ''
-      },
-      formdata4Rule: {
-        ipv6Prefix: [
-          {
-            required: true,
-            validator: formVaRule.IPv6PrefixRule,
-            trigger: ['blur', 'change']
-          }
-        ],
-        ipv6PrefixLength: [
-          {
-            required: true,
-            validator: formVaRule.IPv6PrefixLengthRule,
-            trigger: ['blur', 'change']
-          }
-        ],
-        peerIPv4Address: [
-          {
-            required: true,
-            validator: formVaRule.IPv4PeerAddrRule,
-            trigger: ['blur', 'change']
-          }
-        ],
-        ipv4MaskLength: [
-          {
-            required: true,
-            validator: formVaRule.IPv4MaskLengthRule,
-            trigger: ['blur', 'change']
-          }
-        ]
-      },
-      formdata5: {
-        aftrIPv6Address: ''
-      },
-      formdata5Rule: {
-        aftrIPv6Address: [
-          {
-            required: true,
-            validator: formVaRule.IPv6AFTRAddrRule,
-            trigger: ['blur', 'change']
-          }
-        ]
-      },
       lanSettingInfo: {
         ipAssignment: 1,
         ipv6Prefix: ''
@@ -311,9 +224,7 @@ export default {
         { value: 1, label: 'DHCPv6' },
         { value: 2, label: 'Static IPv6' },
         { value: 3, label: 'PPPoE' },
-        { value: 4, label: '464xlat' },
-        { value: 5, label: '6rd' },
-        { value: 6, label: 'DS-Lite' }
+        { value: 4, label: 'Passthrough' }
       ]
     }
   },
@@ -328,6 +239,28 @@ export default {
   },
   methods: {
     initData() {
+      getDualWanConfigurationApi().then((data) => {
+        if (data.retcode == 0) {
+          this.primaryWan = data.PrimaryWanType
+          this.PrimaryWanType =
+            data.PrimaryWanType == 1 ? 'nav.wan' : 'wan.WAN5G'
+          if (data.PrimaryWanType == 1) {
+            this.connectModes = [
+              { value: 0, label: 'Disable' },
+              { value: 1, label: 'DHCPv6' },
+              { value: 2, label: 'Static IPv6' },
+              { value: 3, label: 'PPPoE' },
+              { value: 4, label: 'Passthrough' }
+            ]
+          } else {
+            this.connectModes = [
+              { value: 0, label: 'Disable' },
+              { value: 1, label: 'DHCPv6' },
+              { value: 4, label: 'Passthrough' }
+            ]
+          }
+        }
+      })
       getIpv6ConfigurationApi().then((data) => {
         if (data.retcode == 0) {
           this.connectMode = data.IPv6ConnectionMode
@@ -354,18 +287,6 @@ export default {
             data.PPPoEIPv6.IPv6DNSObtainMethod == 0 ? true : false
           this.formdata2.primaryDNSServer = data.PPPoEIPv6.IPv6PrimaryDNS
           this.formdata2.secondaryDNSServer = data.PPPoEIPv6.IPv6SecondaryDNS
-
-          //464xlat
-          this.formdata3.nat64Prefix = data.XLAT.IPv6NAT64Prefix
-
-          //IPv6RD
-          this.formdata4.ipv6Prefix = data.IPv6RD.IPv6Prefix6RD
-          this.formdata4.ipv6PrefixLength = data.IPv6RD.IPv6PrefixLen6RD
-          this.formdata4.peerIPv4Address = data.IPv6RD.PeerAddress6RD
-          this.formdata4.ipv4MaskLength = data.IPv6RD.IPv4MaskLen6RD
-
-          //DSLITE
-          this.formdata5.aftrIPv6Address = data.DSLITE.IPv6AFTRAddress
         }
       })
     },
@@ -373,7 +294,6 @@ export default {
     applyForm() {
       let params = {}
       params.IPv6ConnectionMode = this.connectMode
-      let formName = ''
       if (this.connectMode == 1) {
         //  DHCP
         params.IPv6DNSObtainMethod = this.formdata0.automaticDNS ? 0 : 1
@@ -397,16 +317,8 @@ export default {
           params.IPv6SecondaryDNS = this.formdata2.secondaryDNSServer
         }
       } else if (this.connectMode == 4) {
-        params.IPv6NAT64Prefix = this.formdata3.nat64Prefix
-      } else if (this.connectMode == 5) {
-        params.IPv6Prefix6RD = this.formdata4.ipv6Prefix
-        params.IPv6PrefixLen6RD = this.formdata4.ipv6PrefixLength
-        params.PeerAddress6RD = this.formdata4.peerIPv4Address
-        params.IPv4MaskLen6RD = this.formdata4.ipv4MaskLength
-      } else if (this.connectMode == 6) {
-        params.IPv6AFTRAddress = this.formdata5.aftrIPv6Address
       }
-      if (this.connectMode != 0) {
+      if (this.connectMode != 0 && connectMode != 4) {
         params.LanIPv6Assign = this.lanSettingInfo.ipAssignment
         console.log('formdata' + (this.connectMode - 1))
         this.$refs['formdata' + (this.connectMode - 1)].validate((valid) => {
@@ -448,6 +360,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.head-view {
+  width: 100%;
+  text-align: left;
+  color: $light-style-color;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
 .main-view {
   padding: 30px 0;
 }

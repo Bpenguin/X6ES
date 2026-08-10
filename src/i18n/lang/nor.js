@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "Du kan begynne å bruke {ProductName} med en gang eller endre systemets standardinnstillinger gjennom hurtigoppsett.",
-    "startX6E": "Start X6E",
+    "startX6E": "Start X6ES",
     "installation": "Montering",
     "pageOneText1": "Koble strømforsyningen til {ProductName}, og slå så på strømmen til {ProductName}.",
     "pageOneText2": "Koble den ene enden av RJ-45-kabelen til DSL- eller kabelmodemet og den andre enden til {ProductName} sin WAN-port.",
@@ -519,6 +519,9 @@ export default {
     "dfsOn10": "Den nåværende konfigurasjonen vil bruke en DFS-kanal. Ruteren vil bruke 10 minutt på å skanne området for å sjekke om noen radar bruker denne kanalen. 5GHz WiFi vil ikke fungere i løpet av denne tiden. Vil du fortsette?",
     "portForwardRule": "Regelen du la til har duplisert IP/port/protokoll med andre regler. Endre den og prøv igjen.",
     "lanRestartSrcNew": "De oppdaterte innstillingene trer i kraft etter at enheten er startet på nytt. Vil du starte enheten på nytt nå?",
+    "wpsBottomScr4": "WPS deaktiveres hvis WiFi er satt til WPA3-modus eller hvis SSID-kringkasting er slått av.",
+    "curPwdErr": "Det gjeldende passordet er feil.",
+    "newUnSameCur": "Det nye passordet kan ikke være det samme som det gjeldende passordet.",
   },
   "timeZone": {
     "time1": "Internasjonal datolinje vest", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska", "time5": "Tijuana Baja California",

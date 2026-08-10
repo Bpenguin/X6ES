@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "Puede comenzar a usar {ProductName} inmediatamente o cambiar la configuración predeterminada del sistema con la configuración rápida.",
-    "startX6E": "Inicie X6E",
+    "startX6E": "Inicie X6ES",
     "installation": "Instalación",
     "pageOneText1": "Conecte el tomacorriente a {ProductName} y luego encienda la alimentación del {ProductName}.",
     "pageOneText2": "Conecte un extremo del cable RJ-45 a su módem DSL o módem de cable y el otro extremo al puerto WAN del {ProductName}.",
@@ -519,7 +519,9 @@ export default {
     "dfsOn10": "La configuración actual usará un canal DFS. El router tomará 10 minuto para escanear el área y verificar si algún radar está utilizando este canal. El WiFi de 5GHz no funcionará durante este tiempo. ¿Deseas continuar?",
     "portForwardRule": "La regla que agregó tiene un IP/puerto/protocolo duplicado con otras reglas. Modifique y vuelva a intentarlo.",
     "lanRestartSrcNew": "La configuración actualizada se aplicará después de reiniciar el dispositivo. ¿Quieres reiniciar el dispositivo ahora?",
-
+    "wpsBottomScr4": "WPS se desactivará si el WiFi está configurado en modo WPA3 o si la transmisión del SSID está desactivada.",
+    "curPwdErr": "La contraseña actual es incorrecta.",
+    "newUnSameCur": "La nueva contraseña no puede ser igual a la contraseña actual.",
   },
   "timeZone": {
     "time1": "Línea internacional de fecha oeste", "time2": "Isla Midway", "time3": "Hawái", "time4": "Alaska", "time5": "Tijuana, Baja California",

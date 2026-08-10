@@ -519,7 +519,9 @@ export default {
     "dfsOn10": "Die aktuelle Konfiguration verwendet einen DFS-Kanal. Der Router benötigt 10 Minute, um den Bereich zu scannen und zu überprüfen, ob ein Radar diesen Kanal nutzt. Während dieser Zeit funktioniert das 5GHz-WiFi nicht. Möchten Sie fortfahren?",
     "portForwardRule": "Die hinzugefügte Regel weist doppelte IP/Port/Protokoll-Angaben mit anderen Regeln auf. Bitte ändern Sie sie und versuchen Sie es erneut.",
     "lanRestartSrcNew": "Die aktualisierten Einstellungen werden erst nach einem Neustart des Geräts wirksam. Möchten Sie das Gerät jetzt neu starten?",
-
+    "wpsBottomScr4": "WPS wird deaktiviert, wenn WiFi auf den WPA3-Modus eingestellt ist oder die SSID-Übertragung deaktiviert ist.",
+    "curPwdErr": "Das aktuelle Passwort ist falsch.",
+    "newUnSameCur": "Das neue Passwort darf nicht mit dem aktuellen Passwort identisch sein.",
   },
   "timeZone": {
     "time1": "Internationale Datumsgrenze im Westen", "time2": "Midwayinseln", "time3": "Hawaii", "time4": "Alaska",

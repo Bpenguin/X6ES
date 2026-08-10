@@ -588,6 +588,9 @@ export default {
     wpsBottomScr4: "WPS will be disabled if WiFi is set to WPA3 mode, or if SSID broadcast is turned off.",
     curPwdErr: "The current password is incorrect.",
     newUnSameCur: "The new password cannot be the same as the current password.",
+
+    curPriWAN: "Current Primary WAN",
+    ipv6Src: "IPv6 configuration for connected devices",
   },
   timeZone: {
     // time1: "Kwajalein",

@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "È possibile iniziare a utilizzare {ProductName} immediatamente o modificare le impostazioni predefinite del sistema tramite una configurazione rapida.",
-    "startX6E": "Avvio di X6E",
+    "startX6E": "Avvio di X6ES",
     "installation": "Installazione",
     "pageOneText1": "Collegare l'alimentatore a {ProductName}, quindi accendere {ProductName}.",
     "pageOneText2": "Collegare un'estremità del cavo RJ-45 al modem DSL o via cavo e l'altra estremità alla porta WAN di {ProductName}.",
@@ -518,7 +518,10 @@ export default {
     "dfsOn1": "La configurazione corrente utilizzerà un canale DFS. Il router impiegherà 1 minuto per scansionare l'area e verificare se qualche radar sta utilizzando questo canale. Durante questo periodo, il WiFi a 5GHz non sarà operativo. Vuoi procedere?",
     "dfsOn10": "La configurazione corrente utilizzerà un canale DFS. Il router impiegherà 10 minuto per scansionare l'area e verificare se qualche radar sta utilizzando questo canale. Durante questo periodo, il WiFi a 5GHz non sarà operativo. Vuoi procedere?",
     "portForwardRule": "La regola aggiunta ha IP/porta/protocollo duplicati con altre regole. Modificala e riprova.",
-    "lanRestartSrcNew": "Le impostazioni aggiornate avranno effetto solo dopo il riavvio del dispositivo. Vuoi riavviare il dispositivo ora?"
+    "lanRestartSrcNew": "Le impostazioni aggiornate avranno effetto solo dopo il riavvio del dispositivo. Vuoi riavviare il dispositivo ora?",
+    "wpsBottomScr4": "WPS verrà disabilitato se il WiFi è impostato in modalità WPA3 o se la trasmissione dell'SSID è disattivata.",
+    "curPwdErr": "La password corrente non è corretta.",
+    "newUnSameCur": "La nuova password non può essere uguale alla password corrente.",
 
   },
   "timeZone": {

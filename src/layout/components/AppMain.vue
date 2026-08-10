@@ -1,7 +1,7 @@
 <template>
   <div class="contentWrapperMainPage" :class="showNav?'sidebarIsOpen':''">
     <div class="container-main-content content-full-page">
-      <div v-show="headTitle != 'dashboard'" class="head-view">
+      <div v-show="headTitle != 'dashboard' && headTitle != 'ipv6'" class="head-view">
         <div>{{ $t('nav.' + headTitle) }}</div>
         <div class="line-view"></div>
       </div>

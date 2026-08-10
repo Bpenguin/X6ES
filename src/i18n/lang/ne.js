@@ -519,6 +519,9 @@ export default {
     "dfsOn10": "De huidige configuratie maakt gebruik van een DFS-kanaal. De router zal 10 minuut nemen om het gebied te scannen om te controleren of een radar dit kanaal gebruikt. 5GHz WiFi zal in deze tijd niet werken. Wil je doorgaan?",
     "portForwardRule": "De toegevoegde regel heeft een dubbele IP/poort/protocol-configuratie met andere regels. Pas het aan en probeer opnieuw.",
     "lanRestartSrcNew": "De bijgewerkte instellingen worden pas van kracht na het opnieuw opstarten van het apparaat. Wilt u het apparaat nu opnieuw opstarten?",
+    "wpsBottomScr4": "WPS wordt uitgeschakeld als WiFi is ingesteld op de WPA3-modus of als SSID-uitzending is uitgeschakeld.",
+    "curPwdErr": "Het huidige wachtwoord is onjuist.",
+    "newUnSameCur": "Het nieuwe wachtwoord mag niet hetzelfde zijn als het huidige wachtwoord.",
   },
   "timeZone": {
     "time1": "Internationale datumgrens west", "time2": "Midway Island", "time3": "Hawai", "time4": "Alaska",

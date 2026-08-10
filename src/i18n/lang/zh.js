@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "您可以立即開始使用 {ProductName} 或通過快速設定更改系統預設的設定。",
-    "startX6E": "啟動 X6E",
+    "startX6E": "啟動 X6ES",
     "installation": "安裝",
     "pageOneText1": "將電源連接到 {ProductName}，然後打開 {ProductName} 的電源。",
     "pageOneText2": "將 RJ-45 纜線的一端插入您的 DSL 或纜線數據機，另一端插入 {ProductName} 的 WAN 連接埠。",
@@ -520,6 +520,9 @@ export default {
     "dfsOn10": "當前配置將使用 DFS 頻道。路由器將花費 10 分鐘掃描區域以檢查是否有雷達在使用此頻道。在此期間，5GHz WiFi 將無法使用。您是否要這麼做？",
     "portForwardRule": "您新增的規則與其他規則有重複的 IP/連接埠/通訊協定設定。請修改後再試一次。",
     "lanRestartSrcNew": "更新後的設定將在裝置重新啟動後生效。您現在要重新啟動裝置嗎？",
+    "wpsBottomScr4": "如果 WiFi 設定為 WPA3 模式，或關閉 SSID 廣播，WPS 將會停用。",
+    "curPwdErr": "目前密碼錯誤。",
+    "newUnSameCur": "新密碼不可與目前密碼相同。",
   },
   "timeZone": {
     "time1": "國際換日線西", "time2": "中途島", "time3": "夏威夷", "time4": "阿拉斯加", "time5": "蒂華納，下加利福尼亞州", "time6": "亞利桑那州", "time7": "馬薩特蘭", "time8": "契瓦瓦州", "time9": "北美山區時區（美國和加拿大）", "time10": "中部時間（美國和加拿大）", "time11": "瓜達拉哈拉市，墨西哥市，蒙特雷", "time12": "薩克其萬省", "time13": "波哥大，利馬，基多", "time14": "東部時間（美國和加拿大）", "time15": "印第安那州（東部）", "time16": "喬治城，拉巴斯，聖胡安", "time17": "大西洋時間（加拿大）", "time18": "加拉加斯", "time19": "聖地亞哥", "time20": "紐芬蘭島", "time21": "布宜諾斯艾利斯",
@@ -544,6 +547,7 @@ export default {
     "time82": "馬加丹，索羅門群島，新赫里多尼亞",
     "time83": "新赫里多尼亞",
     "time84": "奧克蘭，威靈頓", "time85": "裴濟，堪察加半島，馬紹爾群島", "time86": "堪察加彼得羅巴甫洛夫斯克",
+    time87: "東加塔布",
   },
   "ruleTip": {
     "pppoeUserNameRule": "請輸入使用者名稱。",

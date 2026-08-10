@@ -115,7 +115,7 @@ export default {
   },
   "quickSetup": {
     "toSetupTips": "Można natychmiast rozpocząć używanie routera {ProductName} lub zmienić domyślne ustawienia systemu przez szybkie ustawienia.",
-    "startX6E": "Uruchom X6E",
+    "startX6E": "Uruchom X6ES",
     "installation": "Instalacja",
     "pageOneText1": "Podłącz zasilacz do routera {ProductName}, a następnie włącz zasilanie routera {ProductName}.",
     "pageOneText2": "Podłącz jeden koniec kabla RJ-45 do używanego modemu DSL lub kablowego, a drugi koniec do portu WAN routera {ProductName}.",
@@ -519,6 +519,9 @@ export default {
     "dfsOn10": "Obecna konfiguracja użyje kanału DFS. Router poświęci 10 minutę na skanowanie obszaru w celu sprawdzenia, czy któryś radar korzysta z tego kanału. WiFi 5GHz nie będzie działać w tym czasie. Czy chcesz kontynuować?",
     "portForwardRule": "Dodana reguła ma zduplikowany IP/port/protokół z innymi regułami. Proszę zmienić i spróbować ponownie.",
     "lanRestartSrcNew": "Zaktualizowane ustawienia zostaną zastosowane po ponownym uruchomieniu urządzenia. Czy chcesz teraz zrestartować urządzenie?",
+    "wpsBottomScr4": "Funkcja WPS zostanie wyłączona, jeśli WiFi jest ustawione w trybie WPA3 lub jeśli rozgłaszanie identyfikatora SSID jest wyłączone.",
+    "curPwdErr": "Bieżące hasło jest nieprawidłowe.",
+    "newUnSameCur": "Nowe hasło nie może być takie samo jak bieżące hasło.",
   },
   "timeZone": {
     "time1": "Międzynarodowa Linia Zmiany Daty Zachód", "time2": "Wyspa Midway", "time3": "Hawaje", "time4": "Alaska",
