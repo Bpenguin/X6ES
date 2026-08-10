@@ -122,7 +122,7 @@ export const timeZoneList = [
   { value: 63, label: '(UTC+07:00) ' + i18n.t('timeZone.time64') },
   { value: 64, label: '(UTC+08:00) ' + i18n.t('timeZone.time65') },
   { value: 65, label: '(UTC+08:00) ' + i18n.t('timeZone.time66') },
-  { value: 66, label: '(UTC+08:00) ' + i18n.t('timeZone.time67') },
+  // { value: 66, label: '(UTC+08:00) ' + i18n.t('timeZone.time67') },
   { value: 67, label: '(UTC+08:00) ' + i18n.t('timeZone.time68') },
   { value: 68, label: '(UTC+08:00) ' + i18n.t('timeZone.time69') },
   { value: 69, label: '(UTC+08:00) ' + i18n.t('timeZone.time70') },
