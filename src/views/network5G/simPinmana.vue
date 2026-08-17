@@ -211,7 +211,7 @@ export default {
           setSimPinMngInfoApi(parma).then((data) => {
             if (data.retcode == 0) {
               const rememberInfo = {
-                localPinTag: true,
+                localPinTag: this.localPinTag ? true : false,
                 SIMPinNum: this.pinFormData.SIMPinNum
               }
               localStorage.setItem('SIMPinInfo', JSON.stringify(rememberInfo))

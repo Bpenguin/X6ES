@@ -5,14 +5,14 @@ export const WIFIPassworkRule = (rule, value, callback) => {
   if (value.length < 8) {
     callback(new Error(i18n.t('ruleTip.WIFIPassworkRule')))
   } else if (!re.test(value)) {
-    callback(new Error(i18n.t('ruleTip.wifiPwdRule')))
+    callback(new Error(i18n.t('other.wifiPwdRuleNew')))
   } else {
     callback()
   }
 }
 export const wifiSSIDRule = (rule, value, callback) => {
   // rule规则对象
-  var re = /^[A-Za-z0-9_.-]+$/
+  var re = /^[A-Za-z0-9_. -]+$/
   if (value.length < 1) {
     callback(new Error(i18n.t('ruleTip.wifiSSIDLenRule')))
   } else if (!re.test(value)) {

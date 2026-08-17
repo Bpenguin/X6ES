@@ -39,7 +39,7 @@
       <div class="block-body">
         <el-form ref="wifiInfo_5G" key="wifiInfo_5G" :model="wifiInfo_5G" :rules="formRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('quickSetup.wifi5G')+':'" prop="hzSwitch">
-            <el-switch v-model="wifiInfo_5G.hzSwitch" @change="changeSwitch('5G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
+            <el-switch v-model="wifiInfo_5G.hzSwitch" :disabled="wifiInfo_5G.unSupport==1" @change="changeSwitch('5G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
           </el-form-item>
           <el-form-item v-show="wifiInfo_5G.hzSwitch" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiSSID')+':'" prop="ssid">
             <mine-input :key="'ssid'" v-model="wifiInfo_5G.ssid"></mine-input>
@@ -70,7 +70,7 @@
       <div class="block-body">
         <el-form ref="wifiInfo_6G" key="wifiInfo_6G" :model="wifiInfo_6G" :rules="formRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('quickSetup.wifi6G')+':'" prop="hzSwitch">
-            <el-switch v-model="wifiInfo_6G.hzSwitch" @change="changeSwitch('6G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
+            <el-switch v-model="wifiInfo_6G.hzSwitch" :disabled="wifiInfo_6G.unSupport==1" @change="changeSwitch('6G')" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
           </el-form-item>
           <el-form-item v-show="wifiInfo_6G.hzSwitch" :label="$t('wifi.guest')+' '+$t('quickSetup.wifiSSID')+':'" prop="ssid">
             <mine-input :key="'ssid'" v-model="wifiInfo_6G.ssid"></mine-input>
@@ -208,13 +208,12 @@ export default {
         }
       })
 
-      // getWifiSettingNotificationApi().then((data) => {
-      //   if (data.retcode == 0) {
-      //     this.wifiInfo_4G.unSupport = data.Host1Status
-      //     this.wifiInfo_5G.unSupport = data.Host2Status
-      //     this.wifiInfo_6G.unSupport = data.Host3Status
-      //   }
-      // })
+      getWifiSettingNotificationApi().then((data) => {
+        if (data.retcode == 0) {
+          this.wifiInfo_5G.unSupport = data.Host3Status
+          this.wifiInfo_6G.unSupport = data.Host2Status
+        }
+      })
     },
 
     applyForm() {

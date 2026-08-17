@@ -120,7 +120,7 @@ export default {
   },
   quickSetup: {
     toSetupTips: 'You can start using {ProductName} immediately or change the system default settings through quick setup.', // 首次登录修改密码后的引导弹框
-    startX6E: 'Start X6E', // 首次登录修改密码后的引导弹框
+    startX6E: 'Start X6ES', // 首次登录修改密码后的引导弹框
     installation: 'Installation',
     pageOneText1: 'Connect the power supply to {ProductName}, and then turn on the power of {ProductName}.',
     pageOneText2: 'Plug one end of the RJ-45 cable into your DSL or cable modem and the other end into {ProductName}\'s WAN port.',
@@ -584,13 +584,15 @@ export default {
     dfsOn10: "The current configuration will use a DFS channel. The router will take 10 minutes to scan the area to check if any radar is using this channel. 5GHz WiFi will not work at this time. Do you want to do it?",
     portForwardRule: "The rule you added has duplicate IP/port/protocol with other rules. Please change it and try again.",
     lanRestartSrcNew: "The updated settings will only take effect after the device is restarted. Would you like to restart the device now?",
-    // 新增
     wpsBottomScr4: "WPS will be disabled if WiFi is set to WPA3 mode, or if SSID broadcast is turned off.",
     curPwdErr: "The current password is incorrect.",
     newUnSameCur: "The new password cannot be the same as the current password.",
-
+    // 新增
     curPriWAN: "Current Primary WAN",
     ipv6Src: "IPv6 configuration for connected devices",
+    PPPoEValidMTURule: "Please enter a valid PPPoE MTU.",
+    PPPoEMTUAreaRule: "PPPoE MTU must be between 576 and 1492.",
+    wifiPwdRuleNew: "Invalid password.Your Wi-Fi password should consist of ASCII printable characters."
   },
   timeZone: {
     // time1: "Kwajalein",
@@ -855,10 +857,10 @@ export default {
     limitationRule: "Please enter a invalid limitation value.",
     warningRule: "Please enter a invalid warning value.",
     loginPasswordRule: "Invalid password. Your password can only contain characters a-z, A-Z, 0-9 or standard ASCII special characters, excluding spaces.",
-    // 新增
     startipRule: "Please enter a valid start IP address.",
     endipRule: "Please enter a valid end IP address.",
     gatewayipRule: 'Please enter a valid gateway IP address.',
+
   },
   placeHolder: {
     ipAddressPH: 'e.g., 192.168.0.100',

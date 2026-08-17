@@ -53,7 +53,7 @@ export const WanIPRule = (rule, value, callback) => {
 }
 
 export const SubnetmaskRule = (rule, value, callback) => {
-  var subnetMaskReg = /^(254|252|248|240|224|192|128|0)\.0\.0\.0|255\.(254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(254|252|248|240|224|192|128|0)$/
+  const subnetMaskReg = /^(255\.0\.0\.0|255\.128\.0\.0|255\.192\.0\.0|255\.224\.0\.0|255\.240\.0\.0|255\.248\.0\.0|255\.252\.0\.0|255\.254\.0\.0|255\.255\.0\.0|255\.255\.128\.0|255\.255\.192\.0|255\.255\.224\.0|255\.255\.240\.0|255\.255\.248\.0|255\.255\.252\.0|255\.255\.254\.0|255\.255\.255\.0|255\.255\.255\.128|255\.255\.255\.192|255\.255\.255\.224|255\.255\.255\.240|255\.255\.255\.248|255\.255\.255\.252)$/;
   if (!subnetMaskReg.test(value)) {
     callback(new Error(i18n.t('ruleTip.SubnetmaskRule')))
   } else {
@@ -88,9 +88,9 @@ export const MtuRule = (rule, value, callback) => {
 export const MtuPpoeRule = (rule, value, callback) => {
   var MTUReg = /^[0-9]*$/
   if (!MTUReg.test(value)) {
-    callback(new Error(i18n.t('ruleTip.defaultGatewayRule')))
+    callback(new Error(i18n.t('other.PPPoEValidMTURule')))
   } else if (value < 576 || value > 1492) {
-    callback(new Error(i18n.t('ruleTip.defaultGatewayRule')))
+    callback(new Error(i18n.t('other.PPPoEMTUAreaRule')))
   } else {
     callback()
   }

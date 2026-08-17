@@ -60,18 +60,18 @@ service.interceptors.request.use(
   config => {
     console.log('logoutTimeNum==:', logoutTimeNum)
     const params = config?.params;
-    if (!params) {
-      autoLogOut();
-    } else {
-      const cgiName = params.CgiName;
-      // 合法接口白名单，新增接口只需往数组加
-      const allowCgiList = ['web_get_usage_info', 'web_get_network_status_bar_info', 'web_get_wifi_setting_notification', 'web_get_guest_wifi_setting_notification', 'web_get_mobile_rx_tx_rate', 'web_get_mobile_info', 'web_get_ethernet_wan_rate_info', 'web_get_wan_connect_status', 'web_get_ethernet_cable_access_state', 'web_get_ethernet_wan_dial_info', 'web_get_usage_cfg_info'];
-      if (allowCgiList.includes(cgiName)) {
-        console.log('web_get_usage_info');
-      } else {
-        autoLogOut();
-      }
-    }
+    // if (!params) {
+    //   autoLogOut();
+    // } else {
+    //   const cgiName = params.CgiName;
+    //   // 合法接口白名单，新增接口只需往数组加
+    //   const allowCgiList = ['web_get_usage_info', 'web_get_network_status_bar_info', 'web_get_wifi_setting_notification', 'web_get_guest_wifi_setting_notification', 'web_get_mobile_rx_tx_rate', 'web_get_mobile_info', 'web_get_ethernet_wan_rate_info', 'web_get_wan_connect_status', 'web_get_ethernet_cable_access_state', 'web_get_ethernet_wan_dial_info', 'web_get_usage_cfg_info'];
+    //   if (allowCgiList.includes(cgiName)) {
+    //     console.log('web_get_usage_info');
+    //   } else {
+    //     autoLogOut();
+    //   }
+    // }
     // if (config.params && (config.params['CgiName'] == "web_get_usage_info" || config.params['CgiName'] == "web_get_network_status_bar_info")) {
     //   console.log('web_get_usage_info')
     // } else {

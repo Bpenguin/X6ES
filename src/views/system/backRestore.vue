@@ -162,6 +162,8 @@ export default {
             }
           })
           this.showRestartLoading = true
+        } else {
+          this.$publicFun.showErrMessage(this)
         }
         console.log(data)
       })
@@ -219,6 +221,8 @@ export default {
             }
           })
           this.showRestartLoading = true
+        } else {
+          this.$publicFun.showErrMessage(this)
         }
         console.log(data)
       })

@@ -310,15 +310,15 @@ export default {
     initFormData(data) {
       this.connectMode = data.EthConnectMode
       const { DHCP, PPPoE, Static } = data
-      if (DHCP.DHCPPrimaryDNS == '') {
-        DHCP.DHCPPrimaryDNS = '8.8.8.8'
-      }
+      // if (DHCP.DHCPPrimaryDNS == '') {
+      //   DHCP.DHCPPrimaryDNS = '8.8.8.8'
+      // }
       if (Static.StaticIPPrimaryDNS == '') {
         Static.StaticIPPrimaryDNS = '8.8.8.8'
       }
-      if (PPPoE.PPPoEPrimaryDNS == '') {
-        PPPoE.PPPoEPrimaryDNS = '8.8.8.8'
-      }
+      // if (PPPoE.PPPoEPrimaryDNS == '') {
+      //   PPPoE.PPPoEPrimaryDNS = '8.8.8.8'
+      // }
       this.DHCPform = { ...this.DHCPform, ...DHCP }
       this.PPPoEform = { ...this.PPPoEform, ...PPPoE }
       this.staticIPform = { ...this.staticIPform, ...Static }
@@ -376,7 +376,12 @@ export default {
           // }
           setWANInfo(parmas).then((data) => {
             if (data.retcode == 0) {
-              this.defaultForm = data // 更新默认值
+              getWANModeInfo().then((data) => {
+                if (data.retcode == 0) {
+                  // data.eth_connect_mode_fill = connectMode_fill(data.eth_connect_mode)
+                  this.defaultForm = data
+                }
+              })
               this.$publicFun.showSucMessage(this)
             } else if (data.retcode == 401) {
               console.log('userName or pwd error')

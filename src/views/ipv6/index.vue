@@ -318,7 +318,7 @@ export default {
         }
       } else if (this.connectMode == 4) {
       }
-      if (this.connectMode != 0 && connectMode != 4) {
+      if (this.connectMode != 0 && this.connectMode != 4) {
         params.LanIPv6Assign = this.lanSettingInfo.ipAssignment
         console.log('formdata' + (this.connectMode - 1))
         this.$refs['formdata' + (this.connectMode - 1)].validate((valid) => {

@@ -136,6 +136,7 @@ export default {
     },
     //将秒转化为时分秒
     formateSeconds(endTime) {
+      if (!endTime) return ''
       let secondTime = parseInt(endTime) //将传入的秒的值转化为Number
       console.log('secondTime', secondTime)
       let min = 0 // 初始化分
