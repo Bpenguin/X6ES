@@ -41,6 +41,7 @@ export default {
       timer: null,
       options: {},
       currentRate: 0
+      // hoverIndex: null // 保存当前悬浮的索引
     }
   },
   mounted() {
@@ -58,14 +59,21 @@ export default {
     })
   },
   beforeDestroy() {
-    window.removeEventListener('touchmove', this.reSizeChart)
-    if (!this.chart) {
-      return
+    // ✅关键点：注册什么事件，就移除什么事件，原代码写的touchmove是错误！
+    window.removeEventListener('resize', this.reSizeChart)
+
+    // 清除定时器
+    if (this.timer) {
+      clearInterval(this.timer)
+      this.timer = null
     }
-    clearInterval(this.timer)
-    this.timer = null
-    this.chart.dispose()
-    this.chart = null
+    //销毁echart实例
+    if (this.chart) {
+      // this.chart.off('mouseover')
+      // this.chart.off('globalout')
+      this.chart.dispose()
+      this.chart = null
+    }
   },
   methods: {
     initChart(currentTime = '') {
@@ -286,7 +294,22 @@ export default {
       this.options.series[0].data = new Array(61).fill(0)
       this.options.series[1].data = new Array(61).fill(0)
       this.chart.setOption(this.options)
+
+      // // ========== 监听鼠标移入，记录悬浮索引 ==========
+      // this.chart.on('mouseover', (params) => {
+      //   if (params.dataIndex !== undefined) {
+      //     this.hoverIndex = params.dataIndex
+      //   }
+      // })
+
+      // // ========== 鼠标离开图表，清空，隐藏tooltip ==========
+      // this.chart.on('globalout', () => {
+      //   this.hoverIndex = null
+      //   this.chart.dispatchAction({ type: 'hideTip' })
+      // })
+
       this.timer = setInterval(() => {
+        if (!this.chart) return
         this.options.xAxis[0].data.shift()
         this.options.series[0].data.shift()
         this.options.series[1].data.shift()
@@ -298,11 +321,23 @@ export default {
         this.options.series[1].data.push(this.rateNum)
         console.log(this.rateNum, 'this.rateNum')
         this.chart.setOption(this.options)
+
+        // // ✅关键：如果有保存hoverIndex，刷新完成后重新唤起tooltip
+        // if (this.hoverIndex !== null) {
+        //   // 因为数组shift，原来的下标会-1；hoverIndex最小不能小于0
+        //   this.hoverIndex = Math.max(this.hoverIndex - 1, 0)
+        //   this.chart.dispatchAction({
+        //     type: 'showTip',
+        //     seriesIndex: 0,
+        //     dataIndex: this.hoverIndex
+        //   })
+        // }
       }, 1000)
     },
     reSizeChart() {
-      this.chart = echarts.init(document.getElementById(this.id))
-      this.chart.resize()
+      if (this.chart) {
+        this.chart.resize()
+      }
     }
   }
 }

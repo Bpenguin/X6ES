@@ -38,10 +38,10 @@
         </el-row>
       </div>
     </div>
-    <div class="block-body mar-top" v-show="!(wanType == '5G' && (!(SIMStatus == 1 || SIMStatus == 2)))">
+    <div class="block-body mar-top">
       <div class="c-row btn-row">
         <mine-button :btn-title="$t('common.back')" @clickBtn="toPage"></mine-button>
-        <mine-button :btn-title="$t('common.next')" @clickBtn="goToPageIndex"></mine-button>
+        <mine-button v-show="!(wanType == '5G' && (!(SIMStatus == 1 || SIMStatus == 2)))" :btn-title="$t('common.next')" @clickBtn="goToPageIndex"></mine-button>
       </div>
     </div>
   </div>

@@ -132,6 +132,7 @@ export default {
         secondaryDNSServer: [
           {
             required: false,
+            validator: formVaRule.ipv6SecDNSRule,
             trigger: ['blur', 'change']
           }
         ]
@@ -163,6 +164,7 @@ export default {
         secondaryDNSServer: [
           {
             required: false,
+            validator: formVaRule.ipv6SecDNSRule,
             trigger: ['blur', 'change']
           }
         ]
@@ -199,6 +201,7 @@ export default {
         secondaryDNSServer: [
           {
             required: false,
+            validator: formVaRule.ipv6SecDNSRule,
             trigger: ['blur', 'change']
           }
         ]

@@ -4,8 +4,13 @@
       <div class="page-description">{{ $t ('wan.wanPortForwardingscri') }}</div>
     </div>
     <div class="block-body">
-      <div class="add-btn" @click="addFile">
-        <svg-icon icon-class="add" class-name="link-svg"></svg-icon>
+      <div class="add-btn">
+        <div class="add-view" v-if="tableData.length<20" @click="addFile">
+          <svg-icon icon-class="add" class-name="link-svg"></svg-icon>
+        </div>
+        <div class="add-view" v-else>
+          <svg-icon icon-class="add" class-name="link-svg  un-click"></svg-icon>
+        </div>
       </div>
       <el-table :data="tableData" style="width: 100%">
         <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
@@ -297,6 +302,7 @@ export default {
                 this.$publicFun.showSucMessage(this)
                 setTimeout(() => {
                   this.$refs.formData.resetFields()
+                  this.deviceIp = ''
                   this.showAddDialogInfo.showDialog = false
                   this.initData()
                 }, 2000)
@@ -310,6 +316,7 @@ export default {
                 this.$publicFun.showSucMessage(this)
                 setTimeout(() => {
                   this.$refs.formData.resetFields()
+                  this.deviceIp = ''
                   this.showAddDialogInfo.showDialog = false
                   this.initData()
                 }, 2000)
@@ -322,6 +329,7 @@ export default {
       })
     },
     cancelEdit() {
+      this.deviceIp = ''
       this.$refs.formData.resetFields()
       this.showAddDialogInfo.showDialog = false
     },
@@ -402,6 +410,11 @@ export default {
   font-size: 20px;
   color: $light-style-color;
   text-align: right;
+  .add-view {
+    width: 40px;
+    height: 100%;
+    float: right;
+  }
 }
 .device-btn {
   color: $light-style-color;
@@ -440,6 +453,9 @@ export default {
   div {
     margin-right: 20px;
   }
+}
+.un-click {
+  fill: $gray-svg-color;
 }
 // .row-head-class {
 //   background-color: $table-head-bag-color;

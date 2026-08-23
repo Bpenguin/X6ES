@@ -4,8 +4,13 @@
       <div class="page-description">{{ $t ('wan.wanFirewallscri') }}</div>
     </div>
     <div class="block-body">
-      <div class="add-btn" @click="addFile">
-        <svg-icon icon-class="add" class-name="link-svg"></svg-icon>
+      <div class="add-btn">
+        <div class="add-view" v-if="tableData.length<20" @click="addFile">
+          <svg-icon icon-class="add" class-name="link-svg"></svg-icon>
+        </div>
+        <div class="add-view" v-else>
+          <svg-icon icon-class="add" class-name="link-svg  un-click"></svg-icon>
+        </div>
       </div>
       <div class="block-body" style="overflow: auto;">
         <el-table :data="tableData" style="width: 100%;">
@@ -211,11 +216,11 @@ export default {
       targetModes: [
         { value: 0, label: 'Drop' },
         { value: 1, label: 'Accept' },
-        { value: 2, label: 'REJECT' }
+        { value: 2, label: 'Reject' }
       ],
       statusModes: [
         { value: 1, label: 'ON' },
-        { value: 0, label: 'Off' }
+        { value: 0, label: 'OFF' }
       ]
     }
   },
@@ -316,6 +321,7 @@ export default {
           } else {
             addPortFilterRulesApi(params).then((data) => {
               if (data.retcode == 0) {
+                this.$refs.formData.resetFields()
                 this.showAddDialogInfo.showDialog = false
                 this.$publicFun.showSucMessage(this)
                 this.initData()
@@ -373,6 +379,11 @@ export default {
   font-size: 20px;
   color: $light-style-color;
   text-align: right;
+  .add-view {
+    width: 40px;
+    height: 100%;
+    float: right;
+  }
 }
 .table-bg {
   overflow-x: auto;
@@ -400,6 +411,8 @@ export default {
     margin-left: 6px;
   }
 }
-
+.un-click {
+  fill: $gray-svg-color;
+}
 // .row-head-class {
 </style>

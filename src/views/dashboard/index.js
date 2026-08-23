@@ -23,6 +23,7 @@ export default {
   components: { NetworkEchart, MineDialog },
   data () {
     return {
+      showChart: true,
       connectionStatus: false,
       dualModeData: {
         dualModeStatus: '',
@@ -30,6 +31,7 @@ export default {
         wanEthDualType: 1
       },
       wan5GInfo: {
+        sim_card_state: 0,
         signal_level: 0,
         net_type: '',
         service_state: 0,
@@ -42,6 +44,7 @@ export default {
       },
       ethWanInfo: {
         ipAddr: '--.--.--.--',
+        ipv6Addr: '--.--.--.--.--.--.--.--.--.--.--',
         rx_rate: 0, // 接收
         tx_rate: 0, // 上传
         rx_unit: 'bps',
@@ -205,6 +208,7 @@ export default {
           if (data.retcode == 0) {
             this.wan5GInfo.signal_level = data.signal_level
             this.wan5GInfo.service_state = data.service_state
+            this.wan5GInfo.sim_card_state = data.sim_card_state
             this.wan5GInfo.net_type = data.net_type // 待API添加该字段
             if (data.sim_card_state == 3) {
               if (!sessionStorage.getItem('needSIMPINKey')) {
@@ -277,8 +281,13 @@ export default {
           if (data.retcode == 0) {
             this.ethWanInfo.ipAddr =
               data.IPv4Address == '' ? '--.--.--.--' : data.IPv4Address
+            this.ethWanInfo.ipv6Addr =
+              data.IPv6Address == ''
+                ? '--.--.--.--.--.--.--.--.--.--.--'
+                : data.IPv6Address
           } else {
             this.ethWanInfo.ipAddr = '--.--.--.--'
+            this.ethWanInfo.ipv6Addr = '--.--.--.--.--.--.--.--.--.--.--'
           }
         })
       }, 2000)
@@ -429,10 +438,12 @@ export default {
     }
   },
   beforeDestroy () {
+    this.showChart = false
     clearInterval(this.duraTimer)
     this.timer = null
   },
   destroyed () {
+    this.showChart = false
     this.duraTimer = null
   }
 }

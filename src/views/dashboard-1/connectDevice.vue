@@ -92,7 +92,7 @@ export default {
       },
       statusModes: [
         { value: 0, label: 'ON' },
-        { value: 1, label: 'Off' }
+        { value: 1, label: 'OFF' }
       ],
       // 编辑规则的弹框
       showAddDialogInfo: {

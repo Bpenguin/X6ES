@@ -176,7 +176,11 @@ export const fillWallPortRule = (rule, value, callback) => {
         return item != '' && /^[0-9]*$/.test(item) && item > 0 && item < 65536
       })
       if (arr.length == 2) {
-        callback()
+        if (arr[0] < arr[1]) {
+          callback()
+        } else {
+          callback(new Error(i18n.t('other.fillWallPortNumRule')))
+        }
       } else {
         callback(new Error(i18n.t('ruleTip.fillWallPortRule')))
       }

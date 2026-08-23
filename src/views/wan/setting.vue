@@ -142,7 +142,7 @@ export default {
       },
       DHCPformformRules: {
         DHCPPrimaryDNS: [
-          { required: false, trigger: 'change' },
+          { required: true, trigger: 'change' },
           { validator: formVaRule.primaryDNSRule, trigger: ['blur', 'change'] }
         ],
         DHCPSecondaryDNS: [
@@ -310,9 +310,9 @@ export default {
     initFormData(data) {
       this.connectMode = data.EthConnectMode
       const { DHCP, PPPoE, Static } = data
-      // if (DHCP.DHCPPrimaryDNS == '') {
-      //   DHCP.DHCPPrimaryDNS = '8.8.8.8'
-      // }
+      if (DHCP.DHCPPrimaryDNS == '') {
+        DHCP.DHCPPrimaryDNS = '8.8.8.8'
+      }
       if (Static.StaticIPPrimaryDNS == '') {
         Static.StaticIPPrimaryDNS = '8.8.8.8'
       }

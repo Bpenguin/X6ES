@@ -50,7 +50,10 @@
                   </div>
                 </div>
               </div>
-              <div class="pri-ip-address"><label>IP: {{ethWanInfo.ipAddr}}</label></div>
+              <div class="pri-ip-address">
+                <div class="pri-ip-text"><label>IP: {{ethWanInfo.ipAddr}}</label></div>
+                <div class="pri-ipv6-text"><label>{{$t('nav.ipv6')}}: {{ethWanInfo.ipv6Addr}}</label></div>
+              </div>
             </div>
             <div class="pri-dashboard-data-item-bg" v-else>
               <p class="pri-dashboard-data-item-title">
@@ -67,7 +70,8 @@
                     <svg-icon v-show="wan5GInfo.signal_level ==1" :icon-class="'client1'" class-name="client-svg"></svg-icon>
                     <svg-icon v-show='wan5GInfo.signal_level ==0' :icon-class="'client0'" class-name="client-svg"></svg-icon>
                   </div>
-                  <div class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type}}</div>
+                  <div v-if="wan5GInfo.sim_card_state == 0">{{ $t('other.noSimText') }}</div>
+                  <div v-else class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type}}</div>
                 </div>
                 <div class="pri-dashboard-traffic-value">
                   <svg-icon :icon-class="'down'" class-name="flow-dir"></svg-icon>
@@ -108,7 +112,8 @@
                       <svg-icon v-show='wan5GInfo.signal_level ==0' :icon-class="'client0'" class-name="client-svg"></svg-icon>
                     </div>
                   </div>
-                  <div class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type }}</div>
+                  <div v-if="wan5GInfo.sim_card_state == 0" class="pri-signal-gen">{{ $t('other.noSimText') }}</div>
+                  <div v-else class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type}}</div>
                 </div>
                 <div class="pri-dashboard-traffic-value">
                   <svg-icon :icon-class="'down'" class-name="flow-dir"></svg-icon>
@@ -155,7 +160,10 @@
                   </div>
                 </div>
               </div>
-              <div class="pri-ip-address"><label>IP: {{ethWanInfo.ipAddr}}</label></div>
+              <div class="pri-ip-address">
+                <div class="pri-ip-text"><label>IP: {{ethWanInfo.ipAddr}}</label></div>
+                <div class="pri-ipv6-text"><label>{{$t('nav.ipv6')}}: {{ethWanInfo.ipv6Addr}}</label></div>
+              </div>
             </div>
           </div>
           <div class="pri-dashboard-data-item grid-dataUsage">
@@ -209,7 +217,7 @@
                   {{$t('other.NetworkTraffic')}}
                 </span></p>
               <div class="pri-dashboard-data-item-content">
-                <network-echart :rate-num="Wan5GRateNum" :eth-rate-num="ethWanRateNum"></network-echart>
+                <network-echart v-if="showChart" :rate-num="Wan5GRateNum" :eth-rate-num="ethWanRateNum"></network-echart>
                 <div class="pri-ip-address pri-speedtest">
                   <a href="https://www.speedtest.net/" target="_blank">
                     <svg-icon :icon-class="'speed'" class-name="speed-svg fill-light-color"></svg-icon>

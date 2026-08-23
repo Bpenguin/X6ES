@@ -81,7 +81,7 @@
           <mine-input :key="'macAddress'" v-model="formData.macAddress" :placeholder="$t('placeHolder.macFilterAddrPH')"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('homeNet.url')" prop="url">
-          <mine-input :key="'url'" v-model="formData.url" :placeholder="$t('placeHolder.URLPH')"></mine-input>
+          <mine-input :key="'url'" v-model="formData.url" :maxlength='256' :placeholder="$t('placeHolder.URLPH')"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('wan.tableStatus')" prop="protocol">
           <el-select v-model="formData.status" popper-class="x6-select">
@@ -191,7 +191,7 @@ export default {
       stop_time_visible: false,
       statusModes: [
         { value: 1, label: 'ON' },
-        { value: 0, label: 'Off' }
+        { value: 0, label: 'OFF' }
       ],
       timeAreas: [
         { value: '0000', label: '00:00' },
@@ -274,6 +274,10 @@ export default {
           }
         }
       })
+      this.getOnlineDevice()
+    },
+
+    getOnlineDevice() {
       // 获取连接设备的信息
       getConnectedDevicesInfo().then((data) => {
         if (data.retcode == 0) {
@@ -393,6 +397,7 @@ export default {
     // 添加规则
     addFile() {
       if (this.urlControllerSwitch) {
+        this.getOnlineDevice()
         this.showAddDialogInfo.showDialog = true
       }
     },

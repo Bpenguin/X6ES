@@ -197,7 +197,7 @@ export default {
       },
       DHCPformformRules: {
         DHCPPrimaryDNS: [
-          { required: false, trigger: 'change' },
+          { required: true, trigger: 'change' },
           { validator: formVaRule.primaryDNSRule, trigger: ['blur', 'change'] }
         ],
         DHCPSecondaryDNS: [

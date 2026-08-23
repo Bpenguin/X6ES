@@ -64,6 +64,8 @@
     margin: 0;
   }
   .pri-dashboard-data-item-content {
+    // overflow: visible;
+    // margin: 0 5%;
     padding: 5%;
   }
   .pri-dashboard-data.grid-device-container {
@@ -107,12 +109,13 @@
   width: 100%;
   padding: 0 3%;
   padding-block-end: 10px;
+  font-size: 14px;
 }
 .pri-ip-text {
-  font-size: 10pt;
+  font-size: 12px;
 }
 .pri-ipv6-text {
-  font-size: 8pt;
+  font-size: 12px;
 }
 .pri-dashboard-traffic {
   display: flex;

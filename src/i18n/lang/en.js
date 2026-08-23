@@ -589,7 +589,10 @@ export default {
     ipv6Src: "IPv6 configuration for connected devices",
     PPPoEValidMTURule: "Please enter a valid PPPoE MTU.",
     PPPoEMTUAreaRule: "PPPoE MTU must be between 576 and 1492.",
-    wifiPwdRuleNew: "Invalid password.Your Wi-Fi password should consist of ASCII printable characters."
+    wifiPwdRuleNew: "Invalid password.Your Wi-Fi password should consist of ASCII printable characters.",
+    // 新增
+    DMZUnsameIP: "The DMZ host IP address must be in the same subnet as gateway IP address.",
+    fillWallPortNumRule: "End port numbers should be higher than the start port numbers.",
   },
   timeZone: {
     // time1: "Kwajalein",
@@ -856,7 +859,6 @@ export default {
     startipRule: "Please enter a valid start IP address.",
     endipRule: "Please enter a valid end IP address.",
     gatewayipRule: 'Please enter a valid gateway IP address.',
-
   },
   placeHolder: {
     ipAddressPH: 'e.g., 192.168.0.100',

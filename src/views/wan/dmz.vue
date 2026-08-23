@@ -42,11 +42,20 @@
 <script>
 import { Message } from 'element-ui'
 import { getWanDMZInfo, setWanDMZInfo } from '@/api/wan'
+import { getLanDhcpInfoApi } from '@/api/system'
+
 import formVaRule from '@/formValidator/index'
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'DMZ',
   data() {
+    var IpAddressRule = (rule, value, callback) => {
+      if (this.lanIp != value.split('.').slice(0, 3).join('.')) {
+        callback(new Error(this.$t('other.DMZUnsameIP')))
+        return
+      }
+      callback()
+    }
     return {
       defaultDmzSwitch: false, // 已设置的信息
       defaultDmzHostIP: '', // 已设置的信息
@@ -66,9 +75,14 @@ export default {
           {
             validator: formVaRule.DMZIPAddrRule,
             trigger: ['blur', 'change']
+          },
+          {
+            validator: IpAddressRule,
+            trigger: ['blur', 'change']
           }
         ]
-      }
+      },
+      lanIp: ''
     }
   },
   computed: {
@@ -87,6 +101,11 @@ export default {
       }
       this.dmzFormData.dmzSwitch = this.defaultDmzSwitch
       this.dmzFormData.dmzHostIP = this.defaultDmzHostIP
+    })
+    getLanDhcpInfoApi().then((data) => {
+      if (data.retcode == 0) {
+        this.lanIp = data.ipaddr.split('.').slice(0, 3).join('.')
+      }
     })
   },
   methods: {

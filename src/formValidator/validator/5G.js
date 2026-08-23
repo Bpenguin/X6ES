@@ -76,16 +76,7 @@ export const APNRule = (rule, value, callback) => {
   }
 }
 
-// IPV6  DNS校验
-export const ipv6PriDNSRule = (rule, value, callback) => {
-  var re = /^[A-Za-z0-9.-]+$/
-  if (value == '') callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))
-  // if (!re.test(value)) {
-  //   callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))
-  // } else {
-  callback()
-  // }
-}
+
 
 // IPV6 IP校验
 export const ipv6IPRule = (rule, value, callback) => {
@@ -100,7 +91,7 @@ export const ipv6IPRule = (rule, value, callback) => {
 
 // IPV6 Gateway校验
 export const ipv6GatewayRule = (rule, value, callback) => {
-  var re = /^[A-Za-z0-9.-]+$/
+  var re = /^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/
   if (value == '') callback(new Error(i18n.t('ruleTip.ipv6GatewayRule')))
   // if (!re.test(value)) {
   //   callback(new Error(i18n.t('ruleTip.ipv6GatewayRule')))
@@ -184,6 +175,27 @@ export const IPv6AFTRAddrRule = (rule, value, callback) => {
   // }
 }
 
+// IPV6  DNS校验
+export const ipv6PriDNSRule = (rule, value, callback) => {
+  var re = /^(?:[0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:)|:((?::[0-9A-Fa-f]{1,4}){1,7}|:)$/
+  if (!re.test(value)) {
+    callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))
+  } else {
+    callback()
+  }
+}
+
+
+export const ipv6SecDNSRule = (rule, value, callback) => {
+  var re = /^(?:[0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:)|:((?::[0-9A-Fa-f]{1,4}){1,7}|:)$/
+  if (value == '') callback()
+  if (!re.test(value)) {
+    callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))
+  } else {
+    callback()
+  }
+}
+
 export default {
   SIMPinRule,
   PUKPinRule,
@@ -193,6 +205,7 @@ export default {
   APNNameRule, // APN 名称校验
   APNRule,
   ipv6PriDNSRule,
+  ipv6SecDNSRule,
   ipv6IPRule,
   ipv6GatewayRule,
   IPv6PrefixRule,

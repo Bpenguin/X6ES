@@ -115,17 +115,17 @@ export const navMenus = [
     ]
   },
   { title: 'ipv6', icon: 'IPv6', name: '/ipv6/index', topath: '/ipv6/index' },
-  // {
-  //   title: 'homeNetwork', icon: 'home', name: '/homeNetwork', topath: '/homeNetwork/parentalControl',
-  //   children: [
-  //     // {
-  //     //   title: 'networkSecuritySetting', name: '/homeNetwork/networkSetting', childMenu: true, topath: '/homeNetwork/networkSetting'
-  //     // },
-  //     {
-  //       title: 'parentalControl', name: '/homeNetwork/parentalControl', childMenu: true, topath: '/homeNetwork/parentalControl'
-  //     }
-  //   ]
-  // },
+  {
+    title: 'homeNetwork', icon: 'home', name: '/homeNetwork', topath: '/homeNetwork/parentalControl',
+    children: [
+      // {
+      //   title: 'networkSecuritySetting', name: '/homeNetwork/networkSetting', childMenu: true, topath: '/homeNetwork/networkSetting'
+      // },
+      {
+        title: 'parentalControl', name: '/homeNetwork/parentalControl', childMenu: true, topath: '/homeNetwork/parentalControl'
+      }
+    ]
+  },
   {
     title: 'system', icon: 'system', name: 'system', topath: '/system/password',
     children: [
