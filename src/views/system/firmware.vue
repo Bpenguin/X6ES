@@ -23,8 +23,8 @@
       <el-row class="c-row">
         <el-col :span="8" :xs="18">
           <!-- <div v-if="devType == 1 && checking">{{ $t('system.checking')+'...'}}</div>
-          <div v-else>{{ $t('other.ModemVersion') + ': '}}</div> -->
-          <div>{{ $t('other.ModemVersion') + ': '}}</div>
+          <div v-else>{{ $t('system.firmwareVersionModule') + ': '}}</div> -->
+          <div>{{ $t('system.firmwareVersionModule') + ': '}}</div>
         </el-col>
         <el-col :span="10" :xs="18">
           <!-- <div v-if="devType == 1 && checking"></div>

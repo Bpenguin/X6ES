@@ -153,8 +153,10 @@ export default {
             })
           )
           if (sessionStorage.getItem('login_flag') == 0) {
+            this.$store.dispatch('user/setDefaultLoginPwd', false)
             this.$router.replace({ path: '/' })
           } else {
+            this.$store.dispatch('user/setDefaultLoginPwd', true)
             this.dialogInfo.showDialog = true
           }
         } else if (data.retcode === 203 && data.remainTimes === 0) {
@@ -172,6 +174,10 @@ export default {
         if (data.retcode === 0) {
           const { login_flag, priKey } = data
           sessionStorage.setItem('login_flag', login_flag)
+          this.$store.dispatch(
+            'user/setDefaultLoginPwd',
+            login_flag == 1 ? true : false
+          )
           this.$store.dispatch('user/setLoginInfo', {
             login_flag,
             priKey

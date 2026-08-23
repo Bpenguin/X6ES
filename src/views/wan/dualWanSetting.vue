@@ -174,7 +174,7 @@ export default {
         title: 'other.enableDualMode', // 标题
         msgTitle: 'other.enableDualModeMsg',
         leftBtnText: 'common.cancel', //右侧按钮的描述
-        rightBtnText: 'other.changeSetting' //右侧按钮的描述
+        rightBtnText: 'wan.changeSetting' //右侧按钮的描述
       }
     }
   },

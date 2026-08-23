@@ -104,7 +104,11 @@
 </template>
 <script>
 import PwdInput from '@/components/PwdInput'
-import { getWlanGuestBasicInfoApi, setWlanGuestBasicInfoApi } from '@/api/wifi'
+import {
+  getWlanGuestBasicInfoApi,
+  setWlanGuestBasicInfoApi,
+  getWlanBasicInfo
+} from '@/api/wifi'
 import { getWifiSettingNotificationApi } from '@/api/doshboard'
 import formVaRule from '@/formValidator/index'
 export default {
@@ -170,14 +174,16 @@ export default {
         ssid: '',
         securitymode: 4,
         encryption: 2,
-        securitykey: ''
+        securitykey: '',
+        unSupport: 1
       },
       wifiInfo_6G: {
         hzSwitch: false,
         ssid: '',
         securitymode: 4,
         encryption: 2,
-        securitykey: ''
+        securitykey: '',
+        unSupport: 1
       }
     }
   },
@@ -207,8 +213,7 @@ export default {
           this.wifiInfo_6G.securitykey = data.Guest3Password
         }
       })
-
-      getWifiSettingNotificationApi().then((data) => {
+      getWlanBasicInfo().then((data) => {
         if (data.retcode == 0) {
           this.wifiInfo_5G.unSupport = data.Host3Status
           this.wifiInfo_6G.unSupport = data.Host2Status

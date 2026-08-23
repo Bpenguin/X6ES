@@ -36,6 +36,7 @@ import MineButton from '@/components/MineButton'
 // import AgreementIframe from './agreement.vue'
 import MineDialog from '@/components/MineDialog'
 import { changeLoginPwd, setFirstLoginFlag } from '@/api/user'
+import bus from '@/utils/bus'
 export default {
   name: 'ChangePwd',
   // components: { PwdInput, MineButton, AgreementIframe, MineDialog },
@@ -207,6 +208,8 @@ export default {
           changeLoginPwd(pargmas).then((data) => {
             if (data.retcode == 0) {
               this.setLocalPassword(this.passwordForm.newPwd)
+              this.$store.dispatch('user/setDefaultLoginPwd', false) //
+              bus.$emit('updatePwd', false)
               if (sessionStorage.getItem('login_flag') == 0) {
                 this.$publicFun.showSucMessage(this)
                 this.$refs['passwordForm'].resetFields()
@@ -215,9 +218,10 @@ export default {
                 }, 2000)
               } else {
                 this.$refs['passwordForm'].resetFields()
+                sessionStorage.setItem('login_flag', 0)
                 // 配置快速导航标记
                 setFirstLoginFlag({ login_flag: 0 }).then(() => {})
-                // this.showIframeDialogInfo.showDialog = true  // X6E 跳过阅读协议
+                // this.showIframeDialogInfo.showDialog = true  // X6ES 跳过阅读协议
                 this.showQuickSetupDialogInfo.showDialog = true
               }
             } else if (data.retcode == 209) {

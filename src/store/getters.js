@@ -8,5 +8,6 @@ const getters = {
   prikey: state => state.user.prikey,
   token: state => state.user.token,
   simStatus: state => state.status.simStatus,
+  defaultLogPwd: state => state.user.defaultLoginPwd,
 }
 export default getters

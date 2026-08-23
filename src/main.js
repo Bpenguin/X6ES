@@ -111,7 +111,18 @@ router.beforeEach((to, from, next) => {
   }
   if (token) {
     // const lang = to.params.lang
-    loadLanguageAsync(lang).then(() => next())
+    if (sessionStorage.getItem('login_flag') == 1) {
+      // 默认密码
+      if (to.path == '/system/password' || to.path == '/login' || to.path == '/logOut') {
+        loadLanguageAsync(lang).then(() => next())
+        return
+      } else {
+        loadLanguageAsync(lang).then(() => next('/system/password'))
+        return
+      }
+    } else {
+      loadLanguageAsync(lang).then(() => next())
+    }
   } else {
     sessionStorage.clear()
     if (to.path == '/login') {

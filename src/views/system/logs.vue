@@ -31,7 +31,7 @@ export default {
       tableData: [
         // {
         //   dateTime: '15.08.2023 16:26:45',
-        //   event: 'Acer Connect X6E started'
+        //   event: 'Acer Connect X6ES started'
         // }
       ]
     }

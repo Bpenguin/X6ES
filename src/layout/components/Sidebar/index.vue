@@ -37,6 +37,7 @@ import SidebarItemMobile from './SidebarItemMobile.vue'
 import theme from '@/styles/theme.module.scss'
 // eslint-disable-next-line no-unused-vars
 import { navMenus } from './slidebar.js'
+import bus from '@/utils/bus'
 
 export default {
   name: 'SideBar',
@@ -47,7 +48,8 @@ export default {
       subMenus: [],
       isShowSubMenu: false,
       // activeMenu: '0',
-      subActiveMenu: '0'
+      subActiveMenu: '0',
+      defaultLogPwd: false
     }
   },
   computed: {
@@ -70,6 +72,11 @@ export default {
     const route = this.$route
     const { meta, path } = route
     console.log('1111111', route, meta, path)
+    this.defaultLogPwd =
+      sessionStorage.getItem('login_flag') == 1 ? true : false
+    bus.$on('updatePwd', (data) => {
+      this.defaultLogPwd = data
+    })
     this.showSubMenu(this.activeIndex(path))
   },
   methods: {
@@ -103,6 +110,11 @@ export default {
       return 0
     },
     showSubMenu(index) {
+      console.log('this.defaultLogPwd:', this.defaultLogPwd)
+      if (this.defaultLogPwd) {
+        // 默认密码，不跳转
+        return
+      }
       this.subMenus = []
       this.isShowSubMenu = false
       let beforeActiveMenu = this.activeMenu

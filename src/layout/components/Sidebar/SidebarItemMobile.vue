@@ -95,6 +95,7 @@ svg {
 }
 
 /deep/.el-menu-item.is-active {
+  background-color: transparent;
   color: $light-style-color !important;
   svg {
     fill: $light-style-color !important;

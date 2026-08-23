@@ -4,7 +4,8 @@ const state = {
     priKey: '' // 登录密码加密的key
   },
   showNav: false,
-  token: '' // token
+  token: '', // token
+  defaultLoginPwd: false
 }
 
 const getters = {
@@ -22,7 +23,16 @@ const getters = {
   },
   getToken (state) {
     return state.token
-  }
+  },
+  getDefaultLoginPwd (state) {
+    let tempStatus = state.defaultLoginPwd
+    console.log('tempStatus:', tempStatus)
+    if (!tempStatus) {
+      tempStatus = sessionStorage.getItem('login_flag') == 2 ? true : false
+      console.log('tempStatus:', tempStatus)
+    }
+    return tempStatus
+  },
 }
 
 const mutations = {
@@ -35,6 +45,9 @@ const mutations = {
   },
   SET_SHOW_NAV (state, data) {
     state.showNav = data
+  },
+  SET_DEFAULTLOGINPWD: (state, pwdStatus) => {
+    state.defaultLoginPwd = pwdStatus
   }
 }
 
@@ -47,7 +60,11 @@ const actions = {
   },
   setShowNav ({ commit }, data) {
     commit('SET_SHOW_NAV', data)
-  }
+  },
+
+  setDefaultLoginPwd ({ commit }, data) {
+    commit('SET_DEFAULTLOGINPWD', data)
+  },
 }
 export default {
   namespaced: true,

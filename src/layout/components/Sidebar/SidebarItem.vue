@@ -3,7 +3,7 @@
     <!-- <div>这是单个菜单</div> -->
     <template>
       <app-link :to="item.topath">
-        <el-menu-item class="sidebar-item" :index="indexNum">
+        <el-menu-item class="sidebar-item" :class="defaultLogPwd?'diable-item':''" :index="indexNum">
           <div v-if="!item.childMenu" class="icon">
             <svg-icon :icon-class="item.icon" class-name="''"></svg-icon>
             <!-- <img :src="require('@/styles/gaming/'+item.icon + '.png')" alt=""> -->
@@ -21,6 +21,7 @@
 <script>
 import AppLink from './Link'
 import theme from '@/styles/theme.module.scss'
+import bus from '@/utils/bus'
 
 export default {
   name: 'SidebarItem',
@@ -51,10 +52,16 @@ export default {
   },
   data() {
     return {
-      onlyOneChild: null
+      onlyOneChild: null,
+      defaultLogPwd: false
     }
   },
   mounted() {
+    this.defaultLogPwd =
+      sessionStorage.getItem('login_flag') == 1 ? true : false
+    bus.$on('updatePwd', (data) => {
+      this.defaultLogPwd = data
+    })
     // console.log('', this.item)
   },
   methods: {}
@@ -98,9 +105,17 @@ export default {
 }
 
 /deep/.el-menu-item.is-active {
+  background-color: transparent;
   color: $light-style-color !important;
   svg {
     fill: $light-style-color !important;
+  }
+}
+/deep/.el-menu-item.diable-item {
+  background-color: transparent;
+  color: $tip-bg-color !important;
+  svg {
+    fill: $tip-bg-color !important;
   }
 }
 /deep/.el-menu-item:hover {
