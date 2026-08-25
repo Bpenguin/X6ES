@@ -45,7 +45,7 @@ export default {
     var curPwdRuleNew = (rule, value, callback) => {
       let re = /^[\x00-\x7F]*$/
       if (!re.test(value)) {
-        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+        callback(new Error(this.$t('other.loginPasswordRule')))
       } else if (value.length < 8) {
         callback(new Error(this.$t('ruleTip.loginPasswordLengthRule')))
       } else {
@@ -63,11 +63,11 @@ export default {
       }
       let reg1 = / /
       if (reg1.test(value)) {
-        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+        callback(new Error(this.$t('other.loginPasswordRule')))
       }
       let re = /^[\x00-\x7F]*$/
       if (!re.test(value)) {
-        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+        callback(new Error(this.$t('other.loginPasswordRule')))
       } else if (value.length < 8) {
         callback(new Error(this.$t('ruleTip.loginPasswordLengthRule')))
       } else {
@@ -81,12 +81,12 @@ export default {
       }
       let reg1 = / /
       if (reg1.test(value)) {
-        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+        callback(new Error(this.$t('other.loginPasswordRule')))
       }
       let re = /^[\x00-\x7F]*$/
       // rule规则对象
       if (!re.test(value)) {
-        callback(new Error(this.$t('ruleTip.loginPasswordRule')))
+        callback(new Error(this.$t('other.loginPasswordRule')))
       } else if (value != this.passwordForm.newPwd) {
         callback(callback(new Error(this.$t('ruleTip.loginConfirmPwdRule'))))
       } else {

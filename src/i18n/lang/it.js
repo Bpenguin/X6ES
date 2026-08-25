@@ -125,7 +125,7 @@ export default {
     "primaryDNSServer": "Server DNS primario",
     "secondaryDNSServer": "Server DNS secondario",
     "ipAddress": "Indirizzo IP",
-    "subnetMask": "Subnet mask",
+    "subnetMask": "Maschera di sottorete",
     "defaultGateway": "Gateway predefinito",
     "MTU": "MTU",
     "wifi2G": "WiFi 2,4 GHz",
@@ -209,6 +209,7 @@ export default {
     "dmzScri": "Se gli utenti esterni non possono accedere a determinati servizi di rete forniti dalla rete locale (LAN), utilizzare la funzione DMZ per impostare il client che fornisce i servizi di rete richiesti come host DMZ. Gli utenti esterni hanno quindi accesso a tutti i servizi. Si tenga presente che i client nella DMZ saranno esposti al traffico WAN.",
     "dmzHostIP": "Indirizzo IP host DMZ",
     "wanSetScriTop": "Impostare la modalità di connessione WAN Ethernet. Può essere IP dinamico, IP statico, PPPoE. È inoltre possibile impostare questa porta come porta LAN.",
+
     "wanSetScribottom": "Una volta passati in modalità Bridge,",
     "wanSetScribottom1": "Disattivare il server DHCP su {ProductName} in base alla topologia di rete.",
     "wanSetScribottom2": "Alcune funzioni potrebbero non funzionare come in modalità router. Esempio: Protezione della rete domestica, QoS ibrido, WiFi guest, WiFi per smart home, IPv6, DMZ, Firewall, Pass-through NAT, Port forwarding, VPN, Ping WAN, Impostazione WAN, ecc.",
