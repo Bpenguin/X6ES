@@ -260,6 +260,22 @@ export default {
           }
           setSimPinMngInfoApi(parma).then((data) => {
             if (data.retcode == 0) {
+              let rememberInfoLocal = localStorage.getItem('SIMPinInfo')
+              if (rememberInfoLocal) {
+                rememberInfoLocal = JSON.parse(rememberInfoLocal)
+                this.localPinTag = rememberInfoLocal.localPinTag
+                if (rememberInfoLocal.localPinTag) {
+                  const rememberInfo = {
+                    localPinTag: true,
+                    SIMPinNum: this.changePinFormData.newPIN
+                  }
+                  localStorage.setItem(
+                    'SIMPinInfo',
+                    JSON.stringify(rememberInfo)
+                  )
+                }
+              }
+
               this.$refs.changePinFormData.resetFields()
               this.changePinStatus = false
               this.pin_retry_times = 3

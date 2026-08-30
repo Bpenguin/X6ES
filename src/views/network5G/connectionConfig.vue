@@ -88,7 +88,7 @@
       <mine-dialog :show-dialog='showDelDialogInfo.showDialog' :title="showDelDialogInfo.title" :msg-title="showDelDialogInfo.msgTitle" :left-btn-text="showDelDialogInfo.leftBtnText" @leftBtnClick="showDelDialogInfo.showDialog = false" :right-btn-text="showDelDialogInfo.rightBtnText" @rightBtnClick="deleteApnProfile" @closeDialog="showDelDialogInfo.showDialog = false">
         <template>
           <span>
-            {{ $t('other.deleAPNTip') }} "{{ currentData.apn }}".{{$t('network5G.continue')}}?
+            {{ $t('other.deleAPNTip') }} "{{ currentData.apn }}". {{$t('network5G.continue')}}?
           </span>
         </template>
       </mine-dialog>
@@ -96,7 +96,7 @@
       <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" :left-btn-text="showAddDialogInfo.leftBtnText" :right-btn-text="showAddDialogInfo.rightBtnText" @leftBtnClick="cancelEdit" @closeDialog="cancelEdit" @rightBtnClick="apply">
         <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="60%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('network5G.ConfigurationName')" prop="profilename">
-            <mine-input :key="'profilename'" v-model="formData.profilename" :maxlength='15' :placeholder="'e.g, ABC'"></mine-input>
+            <mine-input :key="'profilename'" v-model="formData.profilename" :maxlength='32' :placeholder="'e.g, ABC'"></mine-input>
           </el-form-item>
           <!-- <el-form-item :label="$t('network5G.DialNumber')" prop="dialNum">
             <mine-input :key="'dialNum'" v-model="formData.dialNum" :placeholder="''"></mine-input>

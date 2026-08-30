@@ -193,6 +193,13 @@ export default {
       }
       setSimPinMngInfoApi(parma).then((data) => {
         if (data.retcode == 0) {
+          if (this.simStatus == 3) {
+            const rememberInfo = {
+              localPinTag: this.localPinTag ? true : false,
+              SIMPinNum: this.pinFormData.SIMPinNum
+            }
+            localStorage.setItem('SIMPinInfo', JSON.stringify(rememberInfo))
+          }
           this.$publicFun.showSucMessage(this)
           setTimeout(() => {
             this.$store.dispatch('status/setSimInfo')
