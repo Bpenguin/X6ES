@@ -22,9 +22,7 @@
       </el-row>
       <el-row class="c-row">
         <el-col :span="8" :xs="18">
-          <!-- <div v-if="devType == 1 && checking">{{ $t('system.checking')+'...'}}</div>
-          <div v-else>{{ $t('system.firmwareVersionModule') + ': '}}</div> -->
-          <div>{{ $t('system.firmwareVersionModule') + ': '}}</div>
+          <div>{{ $t('other.firmwareVersionModule') + ': '}}</div>
         </el-col>
         <el-col :span="10" :xs="18">
           <!-- <div v-if="devType == 1 && checking"></div>
@@ -47,7 +45,7 @@
     <mine-dialog :show-dialog='showDialogInfo.showDialog' :show-close-btn="showDialogInfo.showCloseBtn" :title="showDialogInfo.title" :msg-title="showDialogInfo.msgTitle" :left-btn-text="showDialogInfo.leftBtnText" :right-btn-text="showDialogInfo.rightBtnText" @leftBtnClick="showDialogInfo.showDialog = false" @rightBtnClick="downNewVersion" @closeDialog="showDialogInfo.showDialog = false">
       <template>
         <div v-show="devType== 0">{{$t('system.firmwareVersion')+": "+ newVerison }}</div>
-        <div v-show="devType== 1">{{$t('system.firmwareVersionModule')+": "+ newVerison }}</div>
+        <div v-show="devType== 1">{{$t('other.firmwareVersionModule')+": "+ newVerison }}</div>
       </template>
     </mine-dialog>
     <mine-dialog :show-dialog='showDownDialogInfo.showDialog' :title="showDownDialogInfo.title">

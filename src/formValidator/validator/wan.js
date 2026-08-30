@@ -111,9 +111,9 @@ export const intervalRule = (rule, value, callback) => {
 export const failuresFailoverRule = (rule, value, callback) => {
   var MTUReg = /^[0-9]*$/
   if (!MTUReg.test(value)) {
-    callback(new Error(i18n.t('ruleTip.failuresFailoverRule')))
+    callback(new Error(i18n.t('other.failuresFailoverRule')))
   } else if (value < 0 || value > 10) {
-    callback(new Error(i18n.t('ruleTip.failuresFailoverRule')))
+    callback(new Error(i18n.t('other.failuresFailoverRule')))
   } else {
     callback()
   }
@@ -122,9 +122,9 @@ export const failuresFailoverRule = (rule, value, callback) => {
 export const successfulBackRule = (rule, value, callback) => {
   var MTUReg = /^[0-9]*$/
   if (!MTUReg.test(value)) {
-    callback(new Error(i18n.t('ruleTip.successfulBackRule')))
+    callback(new Error(i18n.t('other.successfulBackRule')))
   } else if (value < 0 || value > 10) {
-    callback(new Error(i18n.t('ruleTip.successfulBackRule')))
+    callback(new Error(i18n.t('other.successfulBackRule')))
   } else {
     callback()
   }
