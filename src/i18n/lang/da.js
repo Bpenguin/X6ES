@@ -252,7 +252,7 @@ export default {
     "tableDestinationPort": "Destinationsport",
     "tableTarget": "Mål",
     "wanFirewallscri": "Opret en firewallregel for at acceptere eller afvise netværksanmodninger fra internettet.",
-    "noData": "Ingen data",
+    "NoData": "Ingen data",
     "commonServices": "Общие сервисы",
     "getDeviceIP": "Получить IP-адрес устройства",
     "vpnServerScri": "Настройте сервер VPN, чтобы пользователь мог подключиться к внутреннему Интернету удаленно.",
@@ -631,4 +631,9 @@ export default {
     "startTime": "Starttidspunkt",
     "endTime": "Sluttidspunkt"
   },
+  "el": {
+    select: {
+      noData: "Ingen data" // 置为空字符串
+    }
+  }
 }

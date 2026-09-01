@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Puerto de destino",
     "tableTarget": "Destino",
     "wanFirewallscri": "Configure la regla del cortafuegos para aceptar o rechazar las solicitudes de red de Internet.",
-    "noData": "Sin datos",
+    "NoData": "Sin datos",
     "commonServices": "Servicios comunes",
     "getDeviceIP": "Obtener la IP del dispositivo",
     "vpnServerScri": "Configure el servidor VPN para que un usuario remoto utilice la conexión interna a Internet.",
@@ -626,4 +626,9 @@ export default {
     "startTime": "Hora de inicio",
     "endTime": "Hora de finalización"
   },
+  "el": {
+    select: {
+      noData: "Sin datos" // 置为空字符串
+    }
+  }
 }

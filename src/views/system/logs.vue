@@ -5,7 +5,7 @@
     </div>
     <div class="block-body">
       <el-table :data="tableData">
-        <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+        <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
         <el-table-column prop="dateTime" :label="$t('homeNet.deviceName')" min-width="33%"></el-table-column>
         <el-table-column prop="event" :label="$t('wan.macAddress')" min-width="67%"></el-table-column>
       </el-table>

@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Destinationsport",
     "tableTarget": "Mål",
     "wanFirewallscri": "Konfigurera en brandväggsregel för att acceptera eller avvisa nätverksförfrågningar från Internet.",
-    "noData": "Inga uppgifter",
+    "NoData": "Inga uppgifter",
     "commonServices": "Vanlige tjenester",
     "getDeviceIP": "Hent enhets-IP",
     "vpnServerScri": "Sett opp VPN-server for ekstern bruker for å koble til intern-nettet.",
@@ -626,4 +626,9 @@ export default {
     "startTime": "Starttid",
     "endTime": "Sluttid"
   },
+  "el": {
+    select: {
+      noData: "Inga uppgifter",// 置为空字符串
+    }
+  }
 }

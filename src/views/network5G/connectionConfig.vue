@@ -95,28 +95,28 @@
 
       <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" :left-btn-text="showAddDialogInfo.leftBtnText" :right-btn-text="showAddDialogInfo.rightBtnText" @leftBtnClick="cancelEdit" @closeDialog="cancelEdit" @rightBtnClick="apply">
         <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="60%" :label-position="formLablePos" size="mini">
-          <el-form-item :label="$t('network5G.ConfigurationName')" prop="profilename">
+          <el-form-item :label="$t('network5G.ConfigurationName') +':'" prop="profilename">
             <mine-input :key="'profilename'" v-model="formData.profilename" :maxlength='32' :placeholder="'e.g, ABC'"></mine-input>
           </el-form-item>
           <!-- <el-form-item :label="$t('network5G.DialNumber')" prop="dialNum">
             <mine-input :key="'dialNum'" v-model="formData.dialNum" :placeholder="''"></mine-input>
           </el-form-item> -->
-          <el-form-item :label="$t('network5G.APN')" prop="apn">
+          <el-form-item :label="$t('network5G.APN') +':'" prop="apn">
             <mine-input :key="'apn'" v-model="formData.apn" :placeholder="'e.g, A123'"></mine-input>
           </el-form-item>
-          <el-form-item :label="$t('network5G.IPType')" prop="iptype">
+          <el-form-item :label="$t('network5G.IPType') +':'" prop="iptype">
             <el-select v-model="formData.iptype" popper-class="x6-select">
               <el-option v-for="item in iptypeModels" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item :label="$t('common.username')" prop="username">
+          <el-form-item :label="$t('common.username') +':'" prop="username">
             <mine-input :key="'username'" v-model="formData.username" :maxlength='32'></mine-input>
           </el-form-item>
-          <el-form-item :label="$t('common.password')" prop="password">
+          <el-form-item :label="$t('common.password') +':'" prop="password">
             <mine-input :key="'password'" :maxlength='15' v-model="formData.password"></mine-input>
           </el-form-item>
-          <el-form-item :label="$t('wan.tableProtocol')" prop="authmode">
+          <el-form-item :label="$t('wan.tableProtocol') +':'" prop="authmode">
             <el-select v-model="formData.authmode" popper-class="x6-select">
               <el-option v-for="item in protoModels" :key="item.value" :label="item.label" :value="item.value">
               </el-option>

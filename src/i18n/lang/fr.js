@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Port de destination",
     "tableTarget": "Cible",
     "wanFirewallscri": "Configurer la règle du pare-feu pour accepter ou rejeter une demande de réseau provenant d’Internet.",
-    "noData": "Pas de données",
+    "NoData": "Pas de données",
     "commonServices": "Services communs",
     "getDeviceIP": "Obtenir l’IP de l’appareil",
     "vpnServerScri": "Configurer le serveur VPN pour que l’utilisateur à distance se connecte à l’Internet interne.",
@@ -626,4 +626,9 @@ export default {
     "startTime": "Heure de début",
     "endTime": "Heure de fin"
   },
+  "el": {
+    select: {
+      noData: "Pas de données" // 置为空字符串
+    }
+  }
 }

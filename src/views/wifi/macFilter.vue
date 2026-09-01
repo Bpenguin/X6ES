@@ -21,7 +21,7 @@
         <svg-icon icon-class="add" class-name="link-svg un-click"></svg-icon>
       </div>
       <el-table :data="tableData" style="width: 100%;">
-        <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+        <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
         <el-table-column prop="status" :label="$t('wan.tableStatus')" min-width="20%">
           <template slot-scope="scope1">
             <!-- <el-switch v-model="macFilterStatus" class="drawer-switch" active-color="#00dc50" inactive-color="#8d9092" /> -->
@@ -46,13 +46,13 @@
     </div>
     <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" @leftBtnClick="cancelEdlt" @closeDialog="cancelEdlt" @rightBtnClick="apply">
       <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="60%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('wan.tableName')" prop="hostname">
+        <el-form-item :label="$t('wan.tableName') +':'" prop="hostname">
           <mine-input :key="'name'" v-model="formData.hostname" :placeholder="$t('placeHolder.macFilterNamePH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.macAddress')" prop="mac">
+        <el-form-item :label="$t('wan.macAddress') +':'" prop="mac">
           <mine-input :key="'mac'" v-model="formData.mac" :placeholder="$t('placeHolder.macFilterAddrPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableStatus')" prop="status">
+        <el-form-item :label="$t('wan.tableStatus') +':'" prop="status">
           <el-switch v-model="formData.status" class="drawer-switch" active-color="#00dc50" inactive-color="#8d9092" />
         </el-form-item>
       </el-form>

@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Bestemmingspoort",
     "tableTarget": "Doel",
     "wanFirewallscri": "Stel de firewall-regel in om netwerkaanvragen van internet te accepteren of te verwijderen.",
-    "noData": "Geen gegevens",
+    "NoData": "Geen gegevens",
     "commonServices": "Gemeenschappelijke services",
     "getDeviceIP": "IP-adres van apparaat ophalen",
     "vpnServerScri": "VPN-server instellen voor externe gebruikers om verbinding te maken met het interne internet.",
@@ -627,4 +627,9 @@ export default {
     "startTime": "Begintijd",
     "endTime": "Eindtijd"
   },
+  "el": {
+    select: {
+      noData: "Geen gegevens", // 置为空字符串
+    }
+  }
 }

@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Målport",
     "tableTarget": "Mål",
     "wanFirewallscri": "Konfigurer brannmurregelen for å godta eller forkaste nettverksforespørsel fra internett.",
-    "noData": "Ingen data",
+    "NoData": "Ingen data",
     "commonServices": "Fælles tjenester",
     "getDeviceIP": "Hent enhedens IP",
     "vpnServerScri": "Opret en VPN-server, så en fjernbruger kan oprette forbindelse til det interne internet.",
@@ -626,4 +626,9 @@ export default {
     "startTime": "Starttid",
     "endTime": "Sluttid"
   },
+  "el": {
+    select: {
+      noData: "Ingen data", // 置为空字符串
+    }
+  }
 }

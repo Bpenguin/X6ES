@@ -70,7 +70,7 @@
                     <svg-icon v-show="wan5GInfo.signal_level ==1" :icon-class="'client1'" class-name="client-svg"></svg-icon>
                     <svg-icon v-show='wan5GInfo.signal_level ==0' :icon-class="'client0'" class-name="client-svg"></svg-icon>
                   </div>
-                  <div v-if="wan5GInfo.sim_card_state == 0">{{ $t('other.noSimText') }}</div>
+                  <div v-if="wan5GInfo.sim_card_state == 0" class="pri-signal-gen">{{ $t('other.noSimText') }}</div>
                   <div v-else class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type}}</div>
                 </div>
                 <div class="pri-dashboard-traffic-value">

@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Порт получателя",
     "tableTarget": "Цель",
     "wanFirewallscri": "Настройте правило брандмауэра, чтобы принимать или сбрасывать запросы из Интернета.",
-    "noData": "Нет данных",
+    "NoData": "Нет данных",
     "commonServices": "Gemensamma tjänster",
     "getDeviceIP": "Hämta enhetens IP",
     "vpnServerScri": "Можно настроить VPN-сервер, чтобы удалённые пользователи могли подключаться к внутренней сети.",
@@ -689,4 +689,9 @@ export default {
     "startTime": "Время начала",
     "endTime": "Время окончания"
   },
+  "el": {
+    select: {
+      noData: "Нет данных",// 置为空字符串
+    }
+  }
 }

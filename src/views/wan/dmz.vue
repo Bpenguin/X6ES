@@ -14,10 +14,10 @@
         </el-col>
       </el-row> -->
       <el-form :model="dmzFormData" :rules="dmzFormDataRule" ref="dmzFormData" label-width="40%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('nav.wanDmz')" prop="dmzSwitch">
+        <el-form-item :label="$t('nav.wanDmz') +':'" prop="dmzSwitch">
           <el-switch v-model="dmzFormData.dmzSwitch" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
         </el-form-item>
-        <el-form-item :label="$t('wan.dmzHostIP')" prop="dmzHostIP">
+        <el-form-item :label="$t('wan.dmzHostIP') +':'" prop="dmzHostIP">
           <mine-input :key="'dmzHostIP'" v-model="dmzFormData.dmzHostIP" :disabled="!dmzFormData.dmzSwitch" :placeholder="$t('placeHolder.ipAddressPH')"></mine-input>
         </el-form-item>
       </el-form>
@@ -94,18 +94,18 @@ export default {
     // window.addEventListener('storage', this.afterQRScan)
   },
   mounted() {
-    getWanDMZInfo().then((data) => {
-      if (data.retcode == 0) {
-        this.defaultDmzSwitch = data.dmz_status == 0 ? false : true
-        this.defaultDmzHostIP = data.dmz_ipaddr
-      }
-      this.dmzFormData.dmzSwitch = this.defaultDmzSwitch
-      this.dmzFormData.dmzHostIP = this.defaultDmzHostIP
-    })
     getLanDhcpInfoApi().then((data) => {
       if (data.retcode == 0) {
         this.lanIp = data.ipaddr.split('.').slice(0, 3).join('.')
       }
+      getWanDMZInfo().then((data) => {
+        if (data.retcode == 0) {
+          this.defaultDmzSwitch = data.dmz_status == 0 ? false : true
+          this.defaultDmzHostIP = data.dmz_ipaddr
+        }
+        this.dmzFormData.dmzSwitch = this.defaultDmzSwitch
+        this.dmzFormData.dmzHostIP = this.defaultDmzHostIP
+      })
     })
   },
   methods: {

@@ -166,11 +166,11 @@ export default {
     let rememberInfo = localStorage.getItem('SIMPinInfo')
     if (rememberInfo) {
       rememberInfo = JSON.parse(rememberInfo)
-      if (rememberInfo.SIMPinNum) {
-        this.pinFormData.SIMPinNum = rememberInfo.SIMPinNum
-      }
       if (rememberInfo.localPinTag) {
         this.localPinTag = rememberInfo.localPinTag
+        if (rememberInfo.SIMPinNum) {
+          this.pinFormData.SIMPinNum = rememberInfo.SIMPinNum
+        }
       }
     }
     this.initData()
@@ -189,6 +189,9 @@ export default {
           this.PINStatus = data.pin_enable == 1 ? true : false
           this.pin_retry_times = data.pin_retry_times
           this.puk_retry_times = data.puk_retry_times
+          if (!this.localPinTag) {
+            this.pinFormData.SIMPinNum = ''
+          }
         }
       })
     },

@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Porta de destino",
     "tableTarget": "Alvo",
     "wanFirewallscri": "Configure a regra do firewall para aceitar ou rejeitar a solicitação de rede da Internet.",
-    "noData": "Nenhum dado",
+    "NoData": "Nenhum dado",
     "commonServices": "Serviços comuns",
     "getDeviceIP": "Obtenha o dispositivo IP",
     "vpnServerScri": "Configure o servidor VPN para que o usuário remoto se conecte à Internet interna.",
@@ -630,4 +630,9 @@ export default {
     "startTime": "Hora inicial",
     "endTime": "Hora final"
   },
+  "el": {
+    select: {
+      noData: "Nenhum dado",// 置为空字符串
+    }
+  }
 }

@@ -13,7 +13,7 @@
         </div>
       </div>
       <el-table :data="tableData" style="width: 100%">
-        <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+        <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
         <el-table-column prop="name" :label="$t('wan.tableName')" min-width="14%"></el-table-column>
         <el-table-column prop="WANPort" :label="$t('wan.tableWANPort')" min-width="14%"></el-table-column>
         <el-table-column prop="LanIPAddress" :label="$t('wan.tableLanIPAddress')" min-width="14%"></el-table-column>
@@ -36,35 +36,35 @@
     </div>
     <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" @leftBtnClick="cancelEdit" @closeDialog="cancelEdit" @rightBtnClick="apply">
       <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="40%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('wan.commonServices')" prop="commonServices">
+        <el-form-item :label="$t('wan.commonServices') +':'" prop="commonServices">
           <el-select v-model="formData.commonServices" popper-class="x6-select" @change="servicesChange" :placeholder="$t('placeHolder.protForwardServicePH')">
             <el-option v-for="item in commonServicesModes" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableName')" prop="name">
+        <el-form-item :label="$t('wan.tableName') +':'" prop="name">
           <mine-input :key="'name'" place :placeholder="$t('placeHolder.macFilterNamePH')" v-model="formData.name"></mine-input>
         </el-form-item>
         <!-- 更新设备IP -->
         <div class="device-btn">
           <div @click="openDeviceDialog">{{ $t('wan.getDeviceIP') }}</div>
         </div>
-        <el-form-item :label="$t('wan.tableLanIPAddress')" prop="lanIPAddress">
+        <el-form-item :label="$t('wan.tableLanIPAddress') +':'" prop="lanIPAddress">
           <mine-input :key="'lanIPAddress'" v-model="formData.lanIPAddress" :placeholder="$t('placeHolder.protForwardIPPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableLanPort')" prop="lanPort">
+        <el-form-item :label="$t('wan.tableLanPort') +':'" prop="lanPort">
           <mine-input :key="'lanPort'" v-model="formData.lanPort" :placeholder="$t('placeHolder.protForwardILanPortPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableWANPort')" prop="WANPort">
+        <el-form-item :label="$t('wan.tableWANPort') +':'" prop="WANPort">
           <mine-input :key="'WANPort'" v-model="formData.WANPort" :placeholder="$t('placeHolder.protForwardILanPortPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableProtocol')" prop="protocol">
+        <el-form-item :label="$t('wan.tableProtocol') +':'" prop="protocol">
           <el-select v-model="formData.protocol" popper-class="x6-select">
             <el-option v-for="item in protocolModes" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableStatus')" prop="status">
+        <el-form-item :label="$t('wan.tableStatus') +':'" prop="status">
           <el-select v-model="formData.status" popper-class="x6-select">
             <el-option v-for="item in statusModes" :key="item.value" :label="item.label" :value="item.value">
             </el-option>

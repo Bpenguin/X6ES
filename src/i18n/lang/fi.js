@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Kohdeportti",
     "tableTarget": "Kohde",
     "wanFirewallscri": "Aseta palomuurisääntö hyväksyäksesi tai hylätäksesi verkkopyynnön internetistä.",
-    "noData": "Ei dataa",
+    "NoData": "Ei dataa",
     "commonServices": "Gemeenschappelijke services",
     "getDeviceIP": "IP-adres van apparaat ophalen",
     "vpnServerScri": "VPN-server instellen voor externe gebruikers om verbinding te maken met het interne internet.",
@@ -627,4 +627,9 @@ export default {
     "startTime": "Aloitusaika",
     "endTime": "Lopetusaika"
   },
+  "el": {
+    select: {
+      noData: "Ei dataa" // 置为空字符串
+    }
+  }
 }

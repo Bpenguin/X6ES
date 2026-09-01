@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Port docelowy",
     "tableTarget": "Miejsce docelowe",
     "wanFirewallscri": "Skonfiguruj regułę firewalla w celu akceptowania lub usuwania żądań sieciowych z Internetu.",
-    "noData": "Brak danych",
+    "NoData": "Brak danych",
     "commonServices": "Usługi wspólne",
     "getDeviceIP": "Uzyskaj adres IP urządzenia",
     "vpnServerScri": "Konfiguracja serwera VPN dla użytkownika zdalnego w celu połączenia z wewnętrznym Internetem.",
@@ -627,4 +627,9 @@ export default {
     "startTime": "Czas rozpoczęcia",
     "endTime": "Czas zakończenia"
   },
+  "el": {
+    select: {
+      noData: "Brak danych", // 置为空字符串
+    }
+  }
 }

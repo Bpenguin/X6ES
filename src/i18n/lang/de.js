@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Zielport",
     "tableTarget": "Ziel",
     "wanFirewallscri": "Richten Sie die Firewall-Regel zum Annehmen oder Ablehnen einer Netzwerkanfrage vom Internet ein.",
-    "noData": "Keine Daten",
+    "NoData": "Keine Daten",
     "commonServices": "Allgemeine Dienste",
     "getDeviceIP": "Geräte-IP abrufen",
     "vpnServerScri": "Richten Sie einen VPN-Server ein, damit sich externe Nutzer mit dem internen Internet verbinden können.",
@@ -627,4 +627,9 @@ export default {
     "startTime": "Startzeitpunkt",
     "endTime": "Endzeitpunkt"
   },
+  "el": {
+    select: {
+      noData: "Keine Daten" // 置为空字符串
+    }
+  }
 }

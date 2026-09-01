@@ -499,4 +499,7 @@ export default {
   line-height: 18px;
   padding: 4px;
 }
+.item {
+  margin-left: 20px;
+}
 </style>

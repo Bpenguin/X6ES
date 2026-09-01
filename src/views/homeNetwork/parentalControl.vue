@@ -25,7 +25,7 @@
         <svg-icon v-show="!urlControllerSwitch" icon-class="add-2" class-name="link-svg"></svg-icon>
       </div>
       <el-table :data="tableData">
-        <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+        <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
         <el-table-column prop="device_name" :label="$t('homeNet.deviceName')" min-width="20%">
         </el-table-column>
         <el-table-column prop="mac" :label="$t('wan.macAddress')" min-width="25%"></el-table-column>
@@ -66,7 +66,7 @@
     </div>
     <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" @leftBtnClick="cancel" @closeDialog="cancel" @rightBtnClick="apply">
       <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="60%" label-position="top" size="mini">
-        <el-form-item v-if="!formData.rule_key" :label="$t('homeNet.deviceList')" prop="deviceList">
+        <el-form-item v-if="!formData.rule_key" :label="$t('homeNet.deviceList') +':'" prop="deviceList">
           <template>
             <el-select v-model="deviceSelect" @change="chooseDeviceList" popper-class="x6-select" :placeholder="$t('placeHolder.parentalDevicePH')">
               <el-option v-for="item in deviceIpLists" :key="item.value" :label="item.label" :value="item.value">
@@ -74,21 +74,21 @@
             </el-select>
           </template>
         </el-form-item>
-        <el-form-item :label="$t('homeNet.deviceName')" prop="deviceName">
+        <el-form-item :label="$t('homeNet.deviceName') +':'" prop="deviceName">
           <mine-input :key="'deviceName'" v-model="formData.deviceName" :placeholder="$t('placeHolder.macFilterNamePH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.macAddress')" prop="macAddress">
+        <el-form-item :label="$t('wan.macAddress') +':'" prop="macAddress">
           <mine-input :key="'macAddress'" v-model="formData.macAddress" :placeholder="$t('placeHolder.macFilterAddrPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('homeNet.url')" prop="url">
+        <el-form-item :label="$t('homeNet.url') +':'" prop="url">
           <mine-input :key="'url'" v-model="formData.url" :maxlength='256' :placeholder="$t('placeHolder.URLPH')"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.tableStatus')" prop="protocol">
+        <el-form-item :label="$t('wan.tableStatus') +':'" prop="protocol">
           <el-select v-model="formData.status" popper-class="x6-select">
             <el-option v-for="item in statusModes" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item :label="$t('homeNet.limitTime')" prop="time">
+        <el-form-item :label="$t('homeNet.limitTime') +':'" prop="time">
           <el-select class="time-select" v-model="formData.start_time" @change="startTimechoose" popper-class="x6-select" :placeholder="$t('placeHolder.startTime')">
             <el-option v-for="item in timeAreas" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
@@ -98,7 +98,7 @@
           </el-select>
           <span class="text-error" v-if="this.stop_time_visible">{{ $t('ruleTip.warningRule') }}</span>
         </el-form-item>
-        <el-form-item class="form-item" :label="$t('system.Repeat')" prop="Repeat">
+        <el-form-item class="form-item" :label="$t('system.Repeat') +':'" prop="Repeat">
           <el-checkbox-group v-model="formData.Repeat">
             <el-checkbox :label="'1'">{{ $t('system.Mon') }}</el-checkbox>
             <el-checkbox :label="'2'">{{ $t('system.Tue') }}</el-checkbox>

@@ -380,8 +380,8 @@ export default {
         let params = this.initFormParams()
         if (this.fromType == 'wifiBasic') {
           // // 关闭guest相关开关
-          // this.getGuestWifiParams(params)
-          // await setWlanGuestBasicInfoApi(this.guestData).then((data) => {})
+          this.getGuestWifiParams(params)
+          await setWlanGuestBasicInfoApi(this.guestData).then((data) => {})
           setWlanBasicInfo(params).then((data) => {
             if (data.retcode == 0) {
               this.$publicFun.showSucMessage(this)

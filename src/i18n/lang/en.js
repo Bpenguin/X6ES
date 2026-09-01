@@ -261,7 +261,7 @@ export default {
     tableDestinationPort: 'Destination port',
     tableTarget: 'Target',
     wanFirewallscri: 'Setup firewall rule to accept or drop network request from Internet.',
-    noData: 'No data',
+    NoData: 'No data',
     commonServices: 'Common services',
     getDeviceIP: 'Get device IP',
     vpnServerScri: 'Setup VPN server for remote user to conect to the internal Internet.',
@@ -597,6 +597,9 @@ export default {
     // 新增
     DMZUnsameIP: "The DMZ host IP address must be in the same subnet as gateway IP address.",
     fillWallPortNumRule: "End port numbers should be higher than the start port numbers.",
+    everyMonth: "Every Month",
+    everyday: "Everyday",
+    dataUsageRange: "Data warning of each month值不能大于Data limitation of each month值",
   },
   timeZone: {
     // time1: "Kwajalein",
@@ -819,6 +822,9 @@ export default {
         sat: 'Sat',
         sun: 'Sun'
       }
+    },
+    select: {
+      noData: 'No data' // 置为空字符串
     }
   }
 }

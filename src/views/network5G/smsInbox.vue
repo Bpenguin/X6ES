@@ -9,12 +9,12 @@
       <div class="block-body">
         <div class="c-row btn-row title-row">
           <div>{{ $t('network5G.SMSInboxTitle')+' ('+$t('network5G.usedCapacity')+'/'+$t('network5G.Total')+'):' }}{{ smsInfo.inBoxTotalCount }}/{{ smsInfo.localMax }}</div>
-          <mine-button :btn-title="$t('common.delete')" @clickBtn="deleteSms(2)"></mine-button>
+          <mine-button :btn-title="$t('common.delete')" :un-click="selectedData.length == 0" @clickBtn="deleteSms(2)"></mine-button>
         </div>
       </div>
       <div class="block-body">
         <el-table :data="tableData" @row-click="rowContentClick" @selection-change="handleSelectionChange">
-          <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+          <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
           <el-table-column :label="$t('network5G.state')" min-width="15%">
             <template slot-scope="scope">
               <div v-if="scope.row.read == 1">
@@ -85,6 +85,7 @@ export default {
 
   data() {
     return {
+      selectedData: [],
       simStatusTimer: '', // 实时刷新卡状态
       smsInfo: {
         localMax: 100,

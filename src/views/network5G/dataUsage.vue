@@ -33,7 +33,7 @@
           </el-col>
           <el-col :span="9" :xs="18">
             <mine-input :key="'deviceList'" v-model="DataLimitationData" :maxlength="8" @blur="validateInput" :disabled="!DataLimitationSwitch"></mine-input>
-            <span class="text-error" v-if="LimitationDataVisible">{{ $t('ruleTip.limitationRule') }}</span>
+            <span class="text-error" v-if="LimitationDataVisible && DataLimitationSwitch">{{ $t('ruleTip.limitationRule') }}</span>
           </el-col>
           <el-col :span="1">GB</el-col>
         </el-row>
@@ -46,7 +46,7 @@
           </el-col>
           <el-col :span="9" :xs="18">
             <mine-input :key="'deviceList'" v-model="DataWarningData" :maxlength="8" @blur="validateWarnInput" :disabled="!DataWarningSwitch"></mine-input>
-            <span class="text-error" v-if="WarningDataVisible">{{ $t('ruleTip.warningRule') }}</span>
+            <span class="text-error" v-if="WarningDataVisible && DataWarningSwitch">{{ $t('ruleTip.warningRule') }}</span>
           </el-col>
           <el-col :span="1">GB</el-col>
         </el-row>
@@ -206,8 +206,8 @@ export default {
       },
       Statistics: 0,
       StatisticsModes: [
-        { value: 0, label: 'Every Month' },
-        { value: 1, label: 'Everyday' }
+        { value: 0, label: this.$t('other.everyMonth') },
+        { value: 1, label: this.$t('other.everyday') }
       ],
       // 设置月套餐确认提示
       showDialogInfo: {
@@ -372,6 +372,8 @@ export default {
           this.showDialogInfo.showDialog = false
           sessionStorage.setItem('warningDataKey', 0)
           this.$publicFun.showSucMessage(this)
+        } else if (data.retcode == -1) {
+          this.$publicFun.showErrMessage(this, '')
         } else {
           this.$publicFun.showErrMessage(this)
         }

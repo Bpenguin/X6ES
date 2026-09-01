@@ -158,11 +158,11 @@ export default {
     let rememberInfo = localStorage.getItem('SIMPinInfo')
     if (rememberInfo) {
       rememberInfo = JSON.parse(rememberInfo)
-      if (rememberInfo.SIMPinNum) {
-        this.pinFormData.SIMPinNum = rememberInfo.SIMPinNum
-      }
       if (rememberInfo.localPinTag) {
         this.localPinTag = rememberInfo.localPinTag
+        if (rememberInfo.SIMPinNum) {
+          this.pinFormData.SIMPinNum = rememberInfo.SIMPinNum
+        }
       }
     }
     this.initData()

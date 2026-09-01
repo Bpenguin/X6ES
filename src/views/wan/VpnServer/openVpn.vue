@@ -2,26 +2,26 @@
   <div>
 
     <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="30%" :label-position="formLablePos" size="mini">
-      <el-form-item :label="$t('wan.tableName')" prop="name">
+      <el-form-item :label="$t('wan.tableName') +':'" prop="name">
         <div class="radio-view">
           <el-radio class="radio-item" v-model="formData.protocolRadio" label="UDP">UDP</el-radio>
           <el-radio class="radio-item" v-model="formData.protocolRadio" label="TCP">TCP</el-radio>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('wan.wanIP')" prop="wanIP">
+      <el-form-item :label="$t('wan.wanIP') +':'" prop="wanIP">
         <mine-input :key="'wanIP'" v-model="formData.wanIP"></mine-input>
       </el-form-item>
-      <el-form-item :label="$t('wan.servicePort')" prop="servicePort">
+      <el-form-item :label="$t('wan.servicePort') +':'" prop="servicePort">
         <mine-input :key="'servicePort'" v-model="formData.servicePort"></mine-input>
       </el-form-item>
-      <el-form-item :label="$t('wan.vpnSubnet')" prop="vpnSubnet">
+      <el-form-item :label="$t('wan.vpnSubnet') +':'" prop="vpnSubnet">
         <mine-input :key="'vpnSubnet'" v-model="formData.vpnSubnet"></mine-input>
       </el-form-item>
 
-      <el-form-item :label="$t('wan.vpnNetmask')" prop="vpnNetmask">
+      <el-form-item :label="$t('wan.vpnNetmask') +':'" prop="vpnNetmask">
         <mine-input :key="'vpnNetmask'" v-model="formData.vpnNetmask"></mine-input>
       </el-form-item>
-      <el-form-item :label="$t('wan.userAccess')" prop="userAccess">
+      <el-form-item :label="$t('wan.userAccess') +':'" prop="userAccess">
         <div>
           <el-radio class="user-access" v-model="formData.userAccess" label="1">{{ $t('wan.homeNetwork') }}</el-radio>
           <el-radio class="user-access" v-model="formData.userAccess" label="2">{{ $t('wan.internetAndNetwork') }}</el-radio>

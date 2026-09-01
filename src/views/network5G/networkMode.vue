@@ -309,6 +309,7 @@ export default {
 .item {
   margin-left: 20px;
 }
+
 .pop-view {
   width: 200px;
   line-height: 18px;

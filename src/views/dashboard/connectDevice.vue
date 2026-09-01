@@ -13,7 +13,7 @@
       </div>
       <div class="block-body table-block">
         <el-table v-if="index != 2" :data="item" style="width: 150%">
-          <div slot="empty" style="text-align: left;display: none;">{{$t('wan.noData')}}</div>
+          <div slot="empty" style="text-align: left;display: none;">{{$t('wan.NoData')}}</div>
           <el-table-column prop="DeviceName" :label="$t('homeNet.deviceName')" min-width="20%"></el-table-column>
           <el-table-column prop="Ip" :label="$t('quickSetup.ipAddress')" min-width="20%"></el-table-column>
           <el-table-column prop="Mac" :label="$t('wan.macAddress')" min-width="20%"></el-table-column>
@@ -28,7 +28,7 @@
           </el-table-column>
         </el-table>
         <el-table v-else :data="item" style="width: 150%">
-          <div slot="empty" style="text-align: left;display: none;">{{$t('wan.noData')}}</div>
+          <div slot="empty" style="text-align: left;display: none;">{{$t('wan.NoData')}}</div>
           <el-table-column prop="DeviceName" :label="$t('homeNet.deviceName')" min-width="30%"></el-table-column>
           <el-table-column prop="Mac" :label="$t('wan.macAddress')" min-width="40%"></el-table-column>
           <el-table-column prop="Edit" :label="$t('common.edit')" min-width="30%">
@@ -46,7 +46,7 @@
     </div>
     <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" @leftBtnClick="showAddDialogInfo.showDialog = false" @closeDialog="showAddDialogInfo.showDialog = false" @rightBtnClick="apply">
       <el-form ref="formData" :model="formData" :rules="formDataRules" label-width="60%" label-position="top" size="mini">
-        <el-form-item :label="$t('homeNet.deviceName')" prop="DeviceName">
+        <el-form-item :label="$t('homeNet.deviceName') +':'" prop="DeviceName">
           <mine-input :key="'DeviceName'" v-model="formData.DeviceName"></mine-input>
         </el-form-item>
       </el-form>

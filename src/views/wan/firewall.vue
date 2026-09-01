@@ -14,7 +14,7 @@
       </div>
       <div class="block-body" style="overflow: auto;">
         <el-table :data="tableData" style="width: 100%;">
-          <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+          <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
           <el-table-column prop="Name" :label="$t('wan.tableName')" min-width="10%"></el-table-column>
           <el-table-column prop="SourceIPAddr" :label="$t('wan.tableSourceIPAddress')" min-width="12%"></el-table-column>
           <el-table-column prop="SourcePort" :label="$t('wan.tableSourcePort')" min-width="12%"></el-table-column>

@@ -278,6 +278,7 @@ export default {
               (newValue == 0 ? '_OFF' : '')
           ]
         )
+        console.log('tempChannel:111')
         this.setDefaultChannel('5G')
       } else {
         this.tempConfirmFunc = () => {
@@ -335,23 +336,24 @@ export default {
           this.advancedSettingsInfo.bandwidth5G = data.Host2Bandwidth
           this.advancedSettingsInfo.isolation5G =
             data.Host2ApIsolation == 1 ? true : false
-          this.advancedSettingsInfo.dfs5G =
-            data.Host2Dfs === 1 ? 2 : data.Host2Dfs
+          // this.advancedSettingsInfo.dfs5G =
+          //   data.Host2Dfs === 1 ? 2 : data.Host2Dfs
           console.log(
             '222:',
 
             this.informtBandWith(data.Host2Bandwidth) +
               '_DFS' +
-              (this.advancedSettingsInfo.dfs5G == 0 ? '_OFF' : '')
+              (data.Host2Dfs == 0 ? '_OFF' : '')
           )
           this.channels_5G = this.initChannelFormate(
             this.channelListAll[
               'channel_5g_' +
                 this.informtBandWith(data.Host2Bandwidth) +
                 '_DFS' +
-                (this.advancedSettingsInfo.dfs5G == 0 ? '_OFF' : '')
+                (data.Host2Dfs == 0 ? '_OFF' : '')
             ]
           )
+
           this.advancedSettingsInfo.status6G =
             data.Host3Status == 1 ? true : false
           this.advancedSettingsInfo.psc6G = data.Host3Psc == 1 ? true : false
@@ -375,6 +377,9 @@ export default {
                 (data.Host3Psc === 1 ? '' : '_OFF')
             ]
           )
+          this.advancedSettingsInfo.dfs5G =
+            data.Host2Dfs === 1 ? 2 : data.Host2Dfs
+
           this.modeChange4G(data.Host1WifiStandard)
           this.modeChange5G(data.Host2WifiStandard)
 
@@ -492,6 +497,7 @@ export default {
             (this.advancedSettingsInfo.dfs5G == 0 ? '_OFF' : '')
         ]
       )
+      console.log('tempChannel:222::', this.advancedSettingsInfo.channel5G)
       this.setDefaultChannel('5G')
     },
     bandChange4G(val) {
@@ -532,12 +538,14 @@ export default {
       if (type == '5G') {
         tempChannel = this.advancedSettingsInfo.channel5G
         tempChannelList = this.channels_5G
+        console.log('tempChannel:', tempChannel)
+        console.log('tempChannelList:', tempChannelList)
       } else {
         tempChannel = this.advancedSettingsInfo.channel6G
         tempChannelList = this.channels_6G
       }
-      console.log('tempChannel:', tempChannel)
-      console.log('tempChannelList:', tempChannelList)
+      // console.log('tempChannel:', tempChannel)
+      // console.log('tempChannelList:', tempChannelList)
       for (let i = 0; i < tempChannelList.length; i++) {
         if (tempChannel == tempChannelList[i]['value']) {
           exitValue = true
@@ -665,7 +673,7 @@ export default {
     initChannelFormate(channelStr) {
       console.log('channelStr:', channelStr)
       if (channelStr == '') {
-        this.advancedSettingsInfo.channel5G = 0
+        // this.advancedSettingsInfo.channel5G = 0
         return [{ value: 0, label: 'Auto' }]
       }
       let arr = channelStr.split(',')

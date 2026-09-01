@@ -26,7 +26,7 @@
         <el-radio :label="'RSA'" v-model="securityRadio">RSA</el-radio>
       </section>
       <el-table :data="tableData" style="width: 85%">
-        <div slot="empty" style="text-align: left;">{{$t('wan.noData')}}</div>
+        <div slot="empty" style="text-align: left;">{{$t('wan.NoData')}}</div>
         <!-- <el-table-column prop="connectionType" :label="$t('wan.tableConnectionType')" width="120"></el-table-column>
       <el-table-column prop="remoteIP" :label="$t('wan.tableRemoteIP')" width="120"></el-table-column>
       <el-table-column prop="localIP" :label="$t('wan.tableLocalIP')" width="120"></el-table-column>
@@ -44,22 +44,22 @@
     </add-file-dialog>
     <add-file-dialog :show-dialog='showIKEServerdialogInfo.showDialog' :title-bg-img="showIKEServerdialogInfo.titleBgImg" :title="showIKEServerdialogInfo.title" :msg-title="showIKEServerdialogInfo.msgTitle" :show-close-btn="showIKEServerdialogInfo.showCloseBtn" :left-btn-text="showIKEServerdialogInfo.leftBtnText" :right-btn-text="showIKEServerdialogInfo.rightBtnText" @leftBtnClick="showIKEServerdialogInfo.showDialog = false" @rightBtnClick="IKEConfigSave" @closeDialog="showIKEServerdialogInfo.showDialog = false">
       <el-form ref="formData" :model="IKEformData" :rules="IKEformDataRules" label-width="60%" :label-position="formLablePos" size="mini">
-        <el-form-item :label="$t('wan.wanIP')" prop="wanIP">
+        <el-form-item :label="$t('wan.wanIP') +':'" prop="wanIP">
           <mine-input :key="'wanIP'" v-model="IKEformData.wanIP"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.clientIPAddress')" prop="clientIPAddress">
+        <el-form-item :label="$t('wan.clientIPAddress') +':'" prop="clientIPAddress">
           <div class="client-view">
             <mine-input :key="'clientIPAddress'" v-model="IKEformData.clientIPAddress"></mine-input>
             <div>~192.168.7.18</div>
           </div>
         </el-form-item>
-        <el-form-item :label="$t('quickSetup.primaryDNSServer')" prop="primaryDNSServer">
+        <el-form-item :label="$t('quickSetup.primaryDNSServer') +':'" prop="primaryDNSServer">
           <mine-input :key="'primaryDNSServer'" v-model="IKEformData.primaryDNSServer"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('quickSetup.secondaryDNSServer')" prop="secondaryDNSServer">
+        <el-form-item :label="$t('quickSetup.secondaryDNSServer') +':'" prop="secondaryDNSServer">
           <mine-input :key="'secondaryDNSServer'" v-model="IKEformData.secondaryDNSServer"></mine-input>
         </el-form-item>
-        <el-form-item :label="$t('wan.preSharedKey')" prop="preSharedKey">
+        <el-form-item :label="$t('wan.preSharedKey') +':'" prop="preSharedKey">
           <mine-input :key="'preSharedKey'" v-model="IKEformData.preSharedKey"></mine-input>
         </el-form-item>
       </el-form>

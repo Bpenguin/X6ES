@@ -78,6 +78,27 @@ export default {
     }
   },
   data() {
+    const isipValidate = (value) => {
+      const ipReg =
+        /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4])$/
+      if (ipReg.test(value || '')) {
+        const firstOctet = parseInt(value.split('.')[0], 10)
+        if (firstOctet >= 1 && firstOctet <= 126) {
+          return true
+        } else if (firstOctet >= 128 && firstOctet <= 191) {
+          return true
+        } else if (firstOctet >= 192 && firstOctet <= 223) {
+          return true
+        }
+      }
+      return false
+    }
+
+    const issubnetmaskValidate = (value) => {
+      var ipReg =
+        /^(254|252|248|240|224|192|128)\.0\.0\.0|255\.(254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(254|252|248|240|224|192|128|0)$/
+      return ipReg.test(value || '')
+    }
     // let startipValitate = (rule, value, callback) => {
     //   if (value == '') callback()
     //   var ipReg =
@@ -102,6 +123,8 @@ export default {
       }
     }
     return {
+      isipValidate: isipValidate,
+      issubnetmaskValidate: issubnetmaskValidate,
       showRestartLoading: false,
       // 2.4G数据
       lanSettingsInfo: {
@@ -119,35 +142,32 @@ export default {
         gatewayAddress: [
           {
             required: true,
-            message: this.$t('ruleTip.gatewayipRule'),
-            // validator: formVaRule.SubnetmaskRule,
+            // message: this.$t('ruleTip.gatewayipRule'),
+            validator: this.gatewayCheck,
             trigger: 'blur'
           }
         ],
         subnetMask: [
           {
             required: true,
-            validator: formVaRule.SubnetmaskRule,
-            trigger: ['blur', 'change']
-          },
-          {
-            validator: SubnetmaskValidate,
+            // validator: formVaRule.SubnetmaskRule,
+            validator: this.subnetmaskCheck,
             trigger: ['blur', 'change']
           }
         ],
         startIpAddress: [
           {
             required: true,
-            message: this.$t('ruleTip.startipRule'),
-            validator: formVaRule.startipRule,
+            // message: this.$t('ruleTip.startipRule'),
+            validator: this.startIpCheck,
             trigger: 'blur'
           }
         ],
         endIpAddress: [
           {
             required: true,
-            message: this.$t('ruleTip.endipRule'),
-            // validator: formVaRule.endipRule,
+            // message: this.$t('ruleTip.endipRule'),
+            validator: this.endIpCheck,
             trigger: 'blur'
           }
         ],
@@ -295,6 +315,34 @@ export default {
           this.lanSettingsInfo.endIpAddress = firstThreeSegments + '.254'
         }
         // this.lanSettingsInfo.endIpAddress = firstThreeSegments + '.254'
+      }
+    },
+    gatewayCheck(rule, value, callback) {
+      if (!this.isipValidate(value)) {
+        callback(new Error(this.$t('ruleTip.gatewayipRule')))
+      } else {
+        callback()
+      }
+    },
+    subnetmaskCheck(rule, value, callback) {
+      if (!this.issubnetmaskValidate(value)) {
+        callback(new Error(this.$t('ruleTip.SubnetmaskRule')))
+      } else {
+        callback()
+      }
+    },
+    startIpCheck(rule, value, callback) {
+      if (!this.isipValidate(value)) {
+        callback(new Error(this.$t('ruleTip.startipRule')))
+      } else {
+        callback()
+      }
+    },
+    endIpCheck(rule, value, callback) {
+      if (!this.isipValidate(value)) {
+        callback(new Error(this.$t('ruleTip.endipRule')))
+      } else {
+        callback()
       }
     }
   },

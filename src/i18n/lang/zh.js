@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "目標連接埠",
     "tableTarget": "目的\n",
     "wanFirewallscri": "使用者可以設定防火牆規則來允許或拒絕從網際網路來的連線要求。",
-    "noData": "沒有資料",
+    "NoData": "沒有資料",
     "commonServices": "常用服務",
     "getDeviceIP": "取得裝置 IP",
     "vpnServerScri": "可設定 VPN 伺服器供遠端使用者連線到內部網路。",
@@ -644,4 +644,9 @@ export default {
     "startTime": "開始時間",
     "endTime": "結束時間"
   },
+  "el": {
+    select: {
+      noData: "沒有資料"// 置为空字符串
+    }
+  }
 }

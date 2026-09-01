@@ -248,7 +248,7 @@ export default {
     "tableDestinationPort": "Cílový port",
     "tableTarget": "Cíl",
     "wanFirewallscri": "Nastavte pravidlo brány firewall tak, aby přijímalo nebo rušilo požadavky na síť z Internetu.",
-    "noData": "Žádná data",
+    "NoData": "Žádná data",
     "commonServices": "Obecné služby",
     "getDeviceIP": "Načíst IP adresu zařízení",
     "vpnServerScri": "Nastavte server VPN pro vzdáleného uživatele pro připojení k internímu internetu.",
@@ -627,4 +627,9 @@ export default {
     "startTime": "Počáteční čas",
     "endTime": "Koncový čas"
   },
+  "el": {
+    select: {
+      noData: "Žádná data" // 置为空字符串
+    }
+  }
 }
