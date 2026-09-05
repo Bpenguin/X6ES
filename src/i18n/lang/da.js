@@ -65,7 +65,7 @@ export default {
     "wanDmz": "DMZ",
     "wanPing": "WAN-ping",
     "wanNatPassthrough": "NAT-gennemgang",
-    "wanFirewall": "Брандмауэра",
+    "wanFirewall": "Firewall",
     "wanPortForwarding": "Portvideresendelse",
     "wanVPNServer": "VPN-server",
     "wifi": "Wi-Fi",
@@ -100,13 +100,13 @@ export default {
     "systemMainLED": "Основной светодиод",
     "systemLogout": "Log ud",
     "appDownload": "Download app",
-    "userGuide": "Руководства пользователя",
+    "userGuide": "Brugervejledning",
     "quickSetup": "Hurtig opsætning"
   },
   "networkSec": {
     "toNetWorkSecTip": "Для лучшей защиты рекомендуется включить подсистему безопасности. Хотите включить сейчас?",
     "turnOn": "Включить",
-    "skip": "Пропустить"
+    "skip": "Spring over"
   },
   "dashboard": {
     "Connection": "Forbindelse",
@@ -116,7 +116,7 @@ export default {
   "quickSetup": {
     "toSetupTips": "Du kan bruge din {ProductName} med det samme, eller du kan hurtigt konfigurere systemets standardindstillinger.",
     "startX6E": "Start X6ES",
-    "installation": "Установка",
+    "installation": "Installation",
     "pageOneText1": "Slut strømforsyningen til din {ProductName}, og tænd derefter for strømmen til din {ProductName}.",
     "pageOneText2": "Slut den ene ende af RJ-45-kablet til dit DSL- eller kabelmodem, og slut den anden ende til WAN-porten på din {ProductName}.",
     "pageOneText3": "Forbind din enhed til din {ProductName} enten via Wi-Fi eller med et LAN-kabel.",
@@ -136,7 +136,7 @@ export default {
     "security": "Sikkerhed",
     "encryption": "Kryptering",
     "wifiPwd": "Wi-Fi adgangskode",
-    "setSuccessTip": "Настройка завершена. Можно проверить статус интернет-соединения на панели управления или изменить настройки WAN/Wi-Fi на соответствующих страницах.",
+    "setSuccessTip": "Opsætningen er fuldført. Du kan kontrollere status for internetforbindelsen på dashboardet eller redigere WAN-/WiFi-indstillingerne yderligere på de relevante sider.",
     "setingComplete": "Indstillingerne er blevet konfigureret. Opret en forbindelse til din {ProductName} med dit nye Wi-Fi SSID-nummer eller et LAN-kabel. Du kan se status på internetforbindelsen på dashboardet. Du kan redigere WAN/WiFi-indstillingerne på dets relaterede sider."
   },
   "network5G": {
@@ -532,6 +532,12 @@ export default {
     "failuresFailoverRule": "Antallet af fejl, før WAN-failover, skal være mellem 0 og 10.",
     "successfulBackRule": "Antallet af vellykkede ping på den primære WAN-forbindelse før skift tilbage skal være mellem 0 og 10.",
     "loginPasswordRule": "Ugyldig adgangskode. Adgangskoden må kun indeholde tegnene a-z, A-Z, 0-9 eller standard ASCII-specialtegn, undtagen mellemrum.",
+    "success01": "Gennemført",
+    "wanPingscri01": "Denne indstilling giver {ProductName} mulighed for at svare på ping-anmodninger fra internettet.",
+    "wanPingscri02": "Af hensyn til bedre sikkerhed skal denne indstilling forblive deaktiveret. Enheden vil derefter ikke længere svare på WAN-ping.",
+    "disabled01": "Deaktiveret",
+    "failuresFailoverRqRule01": "Indtast det antal på hinanden følgende fejl, der kræves for at udløse WAN-failover.",
+    "successfulBackRqRule01": "Indtast det antal vellykkede ping på den primære WAN-forbindelse, der kræves, før der skiftes tilbage.",
   },
   "timeZone": {
     "time1": "International vestlig datolinje", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska",
@@ -540,6 +546,12 @@ export default {
     "time39": "Bukarest", "time40": "Kairo", "time41": "Harare, Pretoria", "time42": "Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius", "time43": "Jerusalem", "time44": "Bagdad", "time45": "Kuwait, Riyadh", "time46": "Moskva, Skt. Petersborg", "time47": "Volgograd", "time48": "Nairobi", "time49": "Teheran", "time50": "Abu Dhabi, Muscat", "time51": "Baku", "time52": "Tbilisi", "time53": "Jerevan", "time54": "Kabul", "time55": "Islamabad, Karachi", "time56": "Moskva, Skt. Petersborg, Volgograd", "time57": "Kathmandu", "time58": "Almaty",
     "time59": "Dhaka", "time60": "Sri Jayawardenepura", "time61": "Yangon (Rangoon)", "time62": "Novosibirsk", "time63": "Bangkok, Hanoi, Jakarta", "time64": "Krasnojarsk", "time65": "Beijing, Chongqing", "time66": "Hong Kong", "time67": "Urumqi", "time68": "Irkutsk, Ulaanbaatar", "time69": "Kuala Lumpur, Singapore", "time70": "Perth", "time71": "Taipei", "time72": "Osaka, Sapporo, Tokyo", "time73": "Seoul", "time74": "Yakutsk", "time75": "Adelaide", "time76": "Darwin", "time77": "Brisbane", "time78": "Canberra, Melbourne, Sydney", "time79": "Guam, Port Moresby", "time80": "Hobart", "time81": "Vladivostok", "time82": "Magadan, Salomonøerne", "time83": "Ny Kaledonien",
     "time84": "Auckland, Wellington", "time85": "Fiji, Kamchatka, Marshall-øerne", "time86": "Petropavlovsk-Kamchatsky",
+    "time22": "Godthab",
+    "time28": "Greenwich",
+    "time29": "Dublin",
+    "time30": "Lissabon",
+    "time38": "Minsk",
+    "time56": "Calcutta",
   },
   "ruleTip": {
     "pppoeUserNameRule": "Indtast venligst et brugernavn.",

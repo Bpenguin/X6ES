@@ -40,18 +40,19 @@ export default {
       chart: null,
       timer: null,
       options: {},
-      currentRate: 0
-      // hoverIndex: null // 保存当前悬浮的索引
+      currentRate: 0,
+      // 保存基准时间戳，统一时间源，不再依赖数组字符串计算
+      baseTimestamp: null
     }
   },
   mounted() {
     window.addEventListener('resize', this.reSizeChart)
+    // 监听页面可见性切换
+    document.addEventListener('visibilitychange', this.handleVisibilityChange)
+
     getSysNtpTime().then((data) => {
       if (data.retcode == 0) {
         let time = data.currentLocalTime
-        time = moment(time, 'YYYY-MM-DD HH:mm:ss').format(
-          'YYYY-MM-DD HH:mm:ss HH:mm:ss'
-        )
         this.initChart(time)
       } else {
         this.initChart()
@@ -59,23 +60,63 @@ export default {
     })
   },
   beforeDestroy() {
-    // ✅关键点：注册什么事件，就移除什么事件，原代码写的touchmove是错误！
     window.removeEventListener('resize', this.reSizeChart)
-
-    // 清除定时器
+    document.removeEventListener(
+      'visibilitychange',
+      this.handleVisibilityChange
+    )
     if (this.timer) {
       clearInterval(this.timer)
       this.timer = null
     }
-    //销毁echart实例
     if (this.chart) {
-      // this.chart.off('mouseover')
-      // this.chart.off('globalout')
       this.chart.dispose()
       this.chart = null
     }
   },
   methods: {
+    // 页面切回可见：重新对齐真实时间，修复后台漂移
+    handleVisibilityChange() {
+      if (!document.hidden && this.chart) {
+        this.rebuildTimeAxis()
+      }
+    },
+    // 根据基准时间重建完整61个时间刻度数组
+    rebuildTimeAxis() {
+      // 优先获取最新服务端时间；失败降级本地时间
+      getSysNtpTime()
+        .then((data) => {
+          let nowMoment
+          if (data.retcode === 0) {
+            nowMoment = moment(data.currentLocalTime, 'YYYY-MM-DD HH:mm:ss')
+          } else {
+            nowMoment = moment(Date.now())
+          }
+          this.baseTimestamp = nowMoment.valueOf()
+          // 往前推60秒生成完整x轴时间（共61个点）
+          const xData = []
+          for (let i = -60; i <= 0; i++) {
+            xData.push(
+              moment(this.baseTimestamp).add(i, 's').format('HH:mm:ss')
+            )
+          }
+          this.options.xAxis[0].data = xData
+          this.chart.setOption(this.options)
+        })
+        .catch(() => {
+          // 接口异常降级本地时间
+          const nowMoment = moment(Date.now())
+          this.baseTimestamp = nowMoment.valueOf()
+          const xData = []
+          for (let i = -60; i <= 0; i++) {
+            xData.push(
+              moment(this.baseTimestamp).add(i, 's').format('HH:mm:ss')
+            )
+          }
+          this.options.xAxis[0].data = xData
+          this.chart.setOption(this.options)
+        })
+    },
     initChart(currentTime = '') {
       this.chart = echarts.init(document.getElementById(this.id))
       this.options = {
@@ -87,14 +128,12 @@ export default {
           padding: 10,
           formatter: function (params) {
             let str = params[0].axisValueLabel + '<br />'
-            // console.log(params)
             str +=
               '<div style="display: flex;"><div style="padding-right: 5px; background-color: #00dc50; border-radius: 60%; width: 12px; height: 12px; margin: auto 10px auto auto;"></div><div style="width: 50px; text-align: left;">' +
               params[0].seriesName +
               '</div><div style="width: 70%; text-align: right; font-weight: bold;">' +
               params[0].data +
               ' Kbps</div></div>'
-            // '<br />'
             str +=
               '<div style="display: flex;"><div style="padding-right: 5px; background-color: #4AB7BD; border-radius: 60%; width: 12px; height: 12px; margin: auto 10px auto auto;"></div><div style="width: 50px; text-align: left;">' +
               params[1].seriesName +
@@ -104,7 +143,6 @@ export default {
             return str
           },
           textStyle: {
-            //提示框内文字样式的设置
             color: 'black'
           },
           axisPointer: {
@@ -114,7 +152,6 @@ export default {
           }
         },
         legend: {
-          // top: 20,
           x: 'left',
           y: 'top',
           icon: 'rect',
@@ -124,7 +161,7 @@ export default {
           itemHeight: 15,
           itemGap: 13,
           data: ['WAN', '5G'],
-          selectedMode: false, // 是否允许点击
+          selectedMode: false,
           textStyle: {
             fontSize: 16,
             color: '#00752b'
@@ -150,7 +187,6 @@ export default {
               }
             },
             axisLabel: {
-              // interval: 3
               interval: 'auto'
             },
             splitLine: {
@@ -279,59 +315,35 @@ export default {
           }
         ]
       }
-      if (currentTime == '') {
-        currentTime = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')
+      let initMoment
+      if (currentTime === '') {
+        initMoment = moment(Date.now())
+      } else {
+        initMoment = moment(currentTime, 'YYYY-MM-DD HH:mm:ss')
       }
-      console.log('currentTime:', currentTime)
-      let startTime = moment(currentTime, 'YYYY-MM-DD HH:mm:ss')
-        .subtract(1, 'm')
-        .subtract(1, 's')
-
-      this.options.xAxis[0].data = new Array(61).fill(0).map(() => {
-        return startTime.add(1, 's').format('HH:mm:ss')
-      })
-      // console.log('this.options.xAxis.data:', this.options.xAxis.data)
+      this.baseTimestamp = initMoment.valueOf()
+      // 初始化61个时间点：-60s ~ now
+      this.options.xAxis[0].data = []
+      for (let i = -60; i <= 0; i++) {
+        this.options.xAxis[0].data.push(
+          moment(this.baseTimestamp).add(i, 's').format('HH:mm:ss')
+        )
+      }
       this.options.series[0].data = new Array(61).fill(0)
       this.options.series[1].data = new Array(61).fill(0)
       this.chart.setOption(this.options)
-
-      // // ========== 监听鼠标移入，记录悬浮索引 ==========
-      // this.chart.on('mouseover', (params) => {
-      //   if (params.dataIndex !== undefined) {
-      //     this.hoverIndex = params.dataIndex
-      //   }
-      // })
-
-      // // ========== 鼠标离开图表，清空，隐藏tooltip ==========
-      // this.chart.on('globalout', () => {
-      //   this.hoverIndex = null
-      //   this.chart.dispatchAction({ type: 'hideTip' })
-      // })
 
       this.timer = setInterval(() => {
         if (!this.chart) return
         this.options.xAxis[0].data.shift()
         this.options.series[0].data.shift()
         this.options.series[1].data.shift()
-        let newTime = moment(this.options.xAxis[0].data.slice(-1), 'HH:mm:ss')
-          .add(1, 's')
-          .format('HH:mm:ss')
-        this.options.xAxis[0].data.push(newTime)
+        // ✅修复：不再拿数组末尾字符串+1s，基于基准时间戳取真实当前时间
+        const realNow = moment(Date.now())
+        this.options.xAxis[0].data.push(realNow.format('HH:mm:ss'))
         this.options.series[0].data.push(this.ethRateNum)
         this.options.series[1].data.push(this.rateNum)
-        console.log(this.rateNum, 'this.rateNum')
         this.chart.setOption(this.options)
-
-        // // ✅关键：如果有保存hoverIndex，刷新完成后重新唤起tooltip
-        // if (this.hoverIndex !== null) {
-        //   // 因为数组shift，原来的下标会-1；hoverIndex最小不能小于0
-        //   this.hoverIndex = Math.max(this.hoverIndex - 1, 0)
-        //   this.chart.dispatchAction({
-        //     type: 'showTip',
-        //     seriesIndex: 0,
-        //     dataIndex: this.hoverIndex
-        //   })
-        // }
       }, 1000)
     },
     reSizeChart() {
@@ -342,6 +354,8 @@ export default {
   }
 }
 </script>
+
+
 <style lang="scss" scoped>
 .chart {
   width: 100%;

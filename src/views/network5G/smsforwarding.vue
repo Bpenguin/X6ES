@@ -74,7 +74,7 @@ export default {
           this.defaultDmzSwitch = this.dmzSwitch
           this.defaultDmzHostIP = this.dmzHostIP
           Message({
-            message: this.$t('common.success'),
+            message: this.$t('other.success01'),
             type: 'success',
             duration: 2 * 1000
           })

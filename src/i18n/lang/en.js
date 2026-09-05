@@ -14,7 +14,6 @@ export default {
     done: 'Done',
     close: 'Close',
     ok: 'OK',
-    success: "Successful",
     add: 'Add',
     export: 'Export',
     none: 'none',
@@ -29,7 +28,6 @@ export default {
     download: 'Download',
     type: 'Type',
     enabled: 'Enabled',
-    disabled: 'Disabled',
     error: 'Error',
     // unuse: "unUsed",
     send: 'Send',
@@ -243,8 +241,6 @@ export default {
     numberOfSuccessful: "Number of successful ping of primary WAN before switch back",
     switchWanPort: 'You need to disable dual WAN mode and set primary WAN to 5G WAN before switching WAN port to LAN port.',
     wanPortPing: 'WAN port ping',
-    wanPingscri1: 'It will allow {ProductName} to respond to ping requests from the Internet.', //WAN PING
-    wanPingscri2: 'NOTE: For better security, stay in this setting turned off, and the device will not respond to a ping from the WAN.',
     wanNatPassthroughscri: 'NAT passthrough allows a Virtual Private Network (VPN) connection to pass through the router to the external network',
     wanPortForwardingscri: 'Port forwarding allows external users to connect to Local Area Network (LAN) services using Hypertext Transer Protocol(HTTP).File transfer protocols(FTP).and other protocols.',
     tableName: 'Name',
@@ -594,12 +590,22 @@ export default {
     failuresFailoverRule: 'Number of failures before WAN failover must be between 0-10.',
     successfulBackRule: "Number of successful pings on the primary WAN before switching back must be between 0 and 10.",
     loginPasswordRule: "Invalid password. Your password can only contain characters a-z, A-Z, 0-9 or standard ASCII special characters, excluding spaces.",
+
+    success01: "Success",
+    wanPingscri01: 'It will allow {ProductName} to respond to ping requests from the Internet.', //WAN PING
+    wanPingscri02: 'NOTE: For better security, stay in this setting turned off, and the device will not respond to a ping from the WAN.',
+    disabled01: 'Disabled',
+    failuresFailoverRqRule01: "Please enter the number of consecutive failures required before triggering WAN failover.",
+    successfulBackRqRule01: "Enter the number of successful pings required on the primary WAN before switching back.",
+
+
     // 新增
     DMZUnsameIP: "The DMZ host IP address must be in the same subnet as gateway IP address.",
     fillWallPortNumRule: "End port numbers should be higher than the start port numbers.",
     everyMonth: "Every Month",
     everyday: "Everyday",
     dataUsageRange: "Data warning of each month值不能大于Data limitation of each month值",
+    wpsPinRule: "The length of the WPS PIN is 8 digits",
   },
   timeZone: {
     // time1: "Kwajalein",
@@ -702,7 +708,6 @@ export default {
     gatewayRqRule: "Please enter gateway address.",
     defaultGatewayRule: 'The default gateway is invalid, please enter a valid address.',
     SubnetmaskRule: "Please enter a valid subnet mask.",
-
     WanIPRqRule: 'Please enter a WAN IP address.',
     WanIPRule: "The WAN IP address is invalid, please enter a valid address.",
     macAddressRule: "Please enter a valid Mac address.",
@@ -723,8 +728,6 @@ export default {
     APNRule: "Invalid APN, your APN can only contain characters a-z, A-Z, 0-9, . and -.",
     IPMatchGateRule: "The WAN IP address cannot match the default gateway.",
     intervalRqRule: "Please enter the value of check interval.",
-    failuresFailoverRqRule: "Please enter the number of consecutive failures required before triggering WAN failover.",
-    successfulBackRqRule: "Enter the number of successful pings required on the primary WAN before switching back.",
     intervalRule: "Check interval must be between 1-60 seconds.",
     wifiSSIDRqRule: "Please enter a SSID.",
     wifiSSIDRule: 'The maximum length of SSID is 32 characters, including 0-9, a-z, A-Z, -, _, . and spaces.',
@@ -755,7 +758,6 @@ export default {
     IPv4PeerAddrRqRule: 'Please enter an IPv4 peer address.',
     IPv4MaskLengthRule: "Please enter IPv4 mask length.",
     IPv6AFTRAddrRule: "Please enter a valid AFTR IPv6 address.",
-
     wifiPwdRule: "Invalid password. Your WiFi password should contain letters, numbers, or standard ASCII special characters excluding %, ', and `.",
     wifiSSIDLenRule1: "Invalid SSID. The length of your WiFi SSID must be at least 8 characters.",
     wifiSSIDLenRule: "Invalid SSID. Your WiFi name cannot be blank.",

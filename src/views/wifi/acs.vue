@@ -19,15 +19,15 @@
         <el-row class="c-row">
           <el-col :span="8" :xs="24">
             <div v-if="channel_4G_show">2.4GHz: {{ channel_4G}}</div>
-            <div v-else>2.4GHz: {{ $t('common.disabled')}}</div>
+            <div v-else>2.4GHz: {{ $t('other.disabled01')}}</div>
           </el-col>
           <el-col :span="8" :xs="24">
             <div v-if="channel_5G_show">5GHz: {{ channel_5G}}</div>
-            <div v-else>5GHz: {{ $t('common.disabled')}}</div>
+            <div v-else>5GHz: {{ $t('other.disabled01')}}</div>
           </el-col>
           <el-col :span="8" :xs="24">
             <div v-if="channel_6G_show">6GHz: {{ channel_6G}}</div>
-            <div v-else>6GHz: {{ $t('common.disabled')}}</div>
+            <div v-else>6GHz: {{ $t('other.disabled01')}}</div>
           </el-col>
         </el-row>
       </div>

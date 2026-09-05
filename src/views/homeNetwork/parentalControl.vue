@@ -172,13 +172,13 @@ export default {
             trigger: ['blur', 'change']
           }
         ],
-        // time: [
-        //   {
-        //     required: true,
-        //     validator: formVaRule.urlRule,
-        //     trigger: ['blur', 'change']
-        //   }
-        // ],
+        time: [
+          {
+            required: true,
+            validator: this.limitTimeRule,
+            trigger: ['blur', 'change']
+          }
+        ],
         Repeat: [
           {
             required: true,
@@ -483,6 +483,9 @@ export default {
           this.tableData[index].status = !this.tableData[index].status
         }
       })
+    },
+    limitTimeRule(rule, value, callback) {
+      callback()
     },
     urlChange() {}
   },

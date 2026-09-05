@@ -25,7 +25,7 @@
               <div class="left-label">{{ $t('quickSetup.SSIDBroadcast')+':' }}</div>
             </el-col>
             <el-col :span="10" :xs="12">
-              <div class="middle-label">{{ item.broadcastSwitch == 1? $t('common.enabled'):$t('common.disabled')}}</div>
+              <div class="middle-label">{{ item.broadcastSwitch == 1? $t('common.enabled'):$t('other.disabled01')}}</div>
             </el-col>
             <el-col :span="4">
               <div class="right-label"></div>
@@ -93,7 +93,7 @@
               <div></div>
             </el-col>
             <el-col :span="10" :xs="12">
-              <div class="middle-label">{{$t('common.disabled')}}</div>
+              <div class="middle-label">{{$t('other.disabled01')}}</div>
             </el-col>
             <el-col :span="4" :xs="12">
               <div class="right-label">

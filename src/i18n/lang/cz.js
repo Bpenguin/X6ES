@@ -528,6 +528,12 @@ export default {
     "failuresFailoverRule": "Počet selhání před přepnutím WAN musí být mezi 0 a 10.",
     "successfulBackRule": "Počet úspěšných pingů na primární WAN před přepnutím zpět musí být mezi 0 a 10.",
     "loginPasswordRule": "Neplatné heslo. Heslo může obsahovat pouze znaky a-z, A-Z, 0-9 nebo standardní speciální znaky ASCII, kromě mezer.",
+    "success01": "Úspěch",
+    "wanPingscri01": "Toto nastavení umožní zařízení {ProductName} odpovídat na požadavky ping z Internetu.",
+    "wanPingscri02": "Pro lepší zabezpečení ponechte toto nastavení vypnuté. Zařízení tak přestane odpovídat na všechny požadavky ping z WAN.",
+    "disabled01": "Zakázáno",
+    "failuresFailoverRqRule01": "Zadejte počet po sobě jdoucích selhání potřebných k aktivaci přepnutí WAN na záložní připojení.",
+    "successfulBackRqRule01": "Zadejte počet úspěšných pingů na primární WAN potřebných před přepnutím zpět.",
   },
   "timeZone": {
     "time1": "Mezinárodní datová čára, západ", "time2": "Ostrov Midway", "time3": "Havajské ostrovy", "time4": "Aljaška",
@@ -536,7 +542,12 @@ export default {
     "time39": "Bukurešť",
     "time40": "Káhira", "time41": "Harare, Pretoria", "time42": "Helsinky, Kyjev, Riga, Sofie, Tallin, Vilnius", "time43": "Jeruzalém", "time44": "Bagdád", "time45": "Kuvajt, Rijád", "time46": "Moskva, Petrohrad", "time47": " Volgograd", "time48": "Nairobi", "time49": "Teherán", "time50": "Abú Zabí, Maskat", "time51": "Baku", "time52": "Tbilisi", "time53": "Jerevan", "time54": "Kábul", "time55": "Islámábád, Karáčí", "time56": "Moskva, Petrohrad, Volgograd", "time57": "Káthmándú", "time58": "Alma-Ata",
     "time59": "Dháka", "time60": "Sri Jayawardenepura", "time61": "Yangon (Rangún)", "time62": "Novosibirsk", "time63": "Bangkok, Hanoj, Jakarta", "time64": "Krasnojarsk", "time65": "Peking, Čchung-čching", "time66": "Hongkong", "time67": "Urumqi", "time68": "Irkutsk, Ulánbátar", "time69": "Kuala Lumpur, Singapur", "time70": "Perth", "time71": "Tchaj-pej", "time72": "Osaka, Sapporo, Tokio", "time73": "Soul", "time74": "Jakutsk", "time75": "Adelaide", "time76": "Darwine", "time77": "Brisbane", "time78": "Canberra, Melbourne, Sydney", "time79": "Guam, Port Moresby", "time80": "Hobart", "time81": "Vladivostok", "time82": "Magadan, Šalamounovy ostrovy", "time83": "Nová Kaledonie",
-    "time84": "Auckland, Wellington", "time85": "Fidži, Kamčatka, Marshallovy ostrovy", "time86": "Petropavlovsk-Kamčatskij",
+    "time84": "Auckland, Wellington", "time85": "Fidži, Kamčatka, Marshallovy ostrovy", "time86": "Petropavlovsk-Kamčatskij", "time22": "Godthab",
+    "time28": "Greenwich",
+    "time29": "Dublin",
+    "time30": "Lisabon",
+    "time38": "Minsk",
+    "time56": "Kalkata",
   },
 
   "ruleTip": {

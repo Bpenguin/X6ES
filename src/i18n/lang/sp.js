@@ -528,6 +528,12 @@ export default {
     "failuresFailoverRule": "El número de fallos antes de la conmutación por error de WAN debe estar entre 0 y 10.",
     "successfulBackRule": "El número de pings exitosos en la WAN principal antes de volver a cambiar debe estar entre 0 y 10.",
     "loginPasswordRule": "Contraseña no válida. La contraseña solo puede contener caracteres a-z, A-Z, 0-9 o caracteres especiales ASCII estándar, sin espacios.",
+    "success01": "Éxito",
+    "wanPingscri01": "Esta configuración permitirá que {ProductName} responda a las solicitudes de ping desde Internet.",
+    "wanPingscri02": "Para mayor seguridad, mantenga esta configuración desactivada. De esta manera, el dispositivo dejará de responder a cualquier ping WAN.",
+    "disabled01": "Deshabilitado",
+    "failuresFailoverRqRule01": "Ingresa el número de fallas consecutivas necesarias para activar la conmutación por error de WAN.",
+    "successfulBackRqRule01": "Ingresa el número de pings exitosos necesarios en la WAN principal antes de volver a cambiar.",
   },
   "timeZone": {
     "time1": "Línea internacional de fecha oeste", "time2": "Isla Midway", "time3": "Hawái", "time4": "Alaska", "time5": "Tijuana, Baja California",
@@ -535,7 +541,12 @@ export default {
     "time23": "Medio Atlántico", "time24": "Azores", "time25": "Islas de Cabo Verde", "time26": "Casablanca", "time27": "Monrovia, Reikiavik", "time28": "Salvador", "time29": "Córdoba", "time30": "Buenos Aires", "time31": "Europa/Londres", "time32": "Ámsterdam, Berlín, Berna, Roma, Estocolmo, Viena", "time33": "Belgrado, Bratislava, Budapest, Liubliana, Praga", "time34": "Bruselas, Copenhague, Madrid, París", "time35": "Sarajevo, Skopie, Varsovia, Zagreb", "time36": "Atenas", "time37": "Estambul", "time38": "Bucarest",
     "time39": "Bucarest", "time40": "El Cairo", "time41": "Harare, Pretoria", "time42": "Helsinki, Kiev, Riga, Sofía, Tallin, Vilna", "time43": "Jerusalén", "time44": "Bagdad", "time45": "Kuwait, Riad", "time46": "Moscú, San Petersburgo", "time47": "Volgogrado", "time48": "Nairobi", "time49": "Teherán", "time50": "Abu Dabi, Mascate", "time51": "Bakú", "time52": "Tiflis", "time53": "Ereván", "time54": "Kabul", "time55": "Islamabad, Karachi", "time56": "Moscú, San Petersburgo, Volgogrado", "time57": "Katmandú", "time58": "Almaty",
     "time59": "Daca", "time60": "Sri Jayawardenapura", "time61": "Yangón (Rangún)", "time62": "Novosibirsk", "time63": "Bangkok, Hanói, Yakarta", "time64": "Krasnoyarsk", "time65": "Pekín, Chongqing", "time66": "Hong Kong", "time67": "Urumqi", "time68": "Irkutsk, Ulán Bator", "time69": "Kuala Lumpur, Singapur", "time70": "Perth", "time71": "Taipéi", "time72": "Osaka, Sapporo, Tokio", "time73": "Seúl", "time74": "Yakutsk", "time75": "Adelaida", "time76": "Darwin", "time77": "Brisbane", "time78": "Canberra, Melbourne, Sídney", "time79": "Guam, Port Moresby", "time80": "Hobart", "time81": "Vladivostok", "time82": "Magadán, Islas Salomón", "time83": "Nueva Caledonia",
-    "time84": "Auckland, Wellington", "time85": "Fiyi, Kamchatka, Islas Marshall", "time86": "Petropavlovsk-Kamchatsky",
+    "time84": "Auckland, Wellington", "time85": "Fiyi, Kamchatka, Islas Marshall", "time86": "Petropavlovsk-Kamchatsky", "time22": "Godthab",
+    "time28": "Greenwich",
+    "time29": "Dublín",
+    "time30": "Lisboa",
+    "time38": "Minsk",
+    "time56": "Calcuta",
   },
 
   "ruleTip": {

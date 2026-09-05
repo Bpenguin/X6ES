@@ -31,7 +31,7 @@
               </el-select>
             </el-form-item>
           </div>
-          <div v-else class="block-body">{{$t('common.disabled')}}</div>
+          <div v-else class="block-body">{{$t('other.disabled01')}}</div>
           <div class="block-divide-line"></div>
         </div>
         <!-- 5G菜单设置 -->
@@ -82,7 +82,7 @@
               </div>
             </el-form-item>
           </div>
-          <div v-else class="block-body">{{$t('common.disabled')}}</div>
+          <div v-else class="block-body">{{$t('other.disabled01')}}</div>
           <div class="block-divide-line"></div>
         </div>
         <!-- 6G菜单设置 -->
@@ -120,7 +120,7 @@
               </el-select>
             </el-form-item>
           </div>
-          <div v-else class="block-body">{{$t('common.disabled')}}</div>
+          <div v-else class="block-body">{{$t('other.disabled01')}}</div>
         </div>
       </el-form>
     </div>

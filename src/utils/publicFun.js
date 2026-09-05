@@ -5,7 +5,7 @@
 import { Message } from "element-ui"
 export default {
   /* 成功的弹框 */
-  showSucMessage (that, msg = 'common.success') {
+  showSucMessage (that, msg = 'other.success01') {
     Message({
       message: that.$t(msg),
       type: 'success',

@@ -39,6 +39,8 @@
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
               <mine-input v-model="wpsInfo_4G.methodClientPin" class="pin-input" :placeholder="''"></mine-input>
+              <div class="text-error">{{ $t('ruleTip.warningRule') }}</div>
+
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('4G')}"></mine-button>
             </div>
           </el-col>
@@ -79,7 +81,7 @@
       </div>
     </div>
     <div v-else class="c-row">
-      <div>{{$t('common.disabled')}}</div>
+      <div>{{$t('other.disabled01')}}</div>
     </div>
     <div class="block-divide-line"></div>
     <div class="block-header">5GHz</div>
@@ -158,7 +160,7 @@
       </div>
     </div>
     <div v-else class="c-row">
-      <div>{{$t('common.disabled')}}</div>
+      <div>{{$t('other.disabled01')}}</div>
     </div>
 
     <div class="block-divide-line"></div>
@@ -238,7 +240,7 @@
       </div>
     </div>
     <div v-else class="c-row">
-      <div>{{$t('common.disabled')}}</div>
+      <div>{{$t('other.disabled01')}}</div>
     </div>
     <div class="block-body">
       <div class="page-note">{{ $t('common.note') }}:<br />{{ $t('wifi.wpsBottomScr2',{ProductName:GLOBAL.PRODUCT_NAME})  }}<br />{{ $t('other.wpsBottomScr4')  }}</div>
@@ -529,6 +531,7 @@ export default {
           this.getWpsConnectState()
         } else {
           this.showWpsCancelDialogInfo.showDialog = false
+          this.cancelWpsConnectSwitch()
           this.$publicFun.showErrMessage(this)
         }
       })
@@ -644,5 +647,9 @@ export default {
   height: 1px;
   background: $light-style-color;
   margin: 0 0 20px 0;
+}
+.text-error {
+  margin: -15px 0 10px 0;
+  color: #f56c6c;
 }
 </style>

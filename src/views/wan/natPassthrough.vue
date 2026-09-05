@@ -13,7 +13,7 @@
         </el-col>
       </el-row>
     </div>
-    <!-- <div class="scri-view">{{ $t('wan.wanPingscri2') }}</div> -->
+    <!-- <div class="scri-view">{{ $t('other.wanPingscri02') }}</div> -->
   </div>
 </template>
 

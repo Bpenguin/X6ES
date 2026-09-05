@@ -147,7 +147,7 @@ export default {
         NumBeforeFailover: [
           {
             required: true,
-            message: this.$t('ruleTip.failuresFailoverRqRule'),
+            message: this.$t('other.failuresFailoverRqRule01'),
             trigger: ['blur', 'change']
           },
           {
@@ -158,7 +158,7 @@ export default {
         NumBeforeSwitchBack: [
           {
             required: true,
-            message: this.$t('ruleTip.successfulBackRqRule'),
+            message: this.$t('other.successfulBackRqRule01'),
             trigger: ['blur', 'change']
           },
           {

@@ -1,7 +1,7 @@
 <template>
   <div class="container-main-content-body">
     <div class="block-body">
-      <div class="page-description">{{ $t('wan.wanPingscri1',{ProductName:GLOBAL.PRODUCT_NAME}) }}</div>
+      <div class="page-description">{{ $t('other.wanPingscri01',{ProductName:GLOBAL.PRODUCT_NAME}) }}</div>
     </div>
     <div class="block-body">
       <el-row class="c-row">
@@ -18,7 +18,7 @@
       <div class="left-title">{{ $t('wan.wanPortPing') }}:</div>
     </section> -->
     <div class="block-body">
-      <div class="page-note">{{ $t('wan.wanPingscri2') }}</div>
+      <div class="page-note">{{ $t('other.wanPingscri02') }}</div>
     </div>
   </div>
 </template>
@@ -56,7 +56,7 @@ export default {
         if (data.retcode == 0) {
           this.defaultPingSwitch = this.pingSwitch
           Message({
-            message: this.$t('common.success'),
+            message: this.$t('other.success01'),
             type: 'success',
             duration: 2 * 1000
           })
