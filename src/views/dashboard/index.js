@@ -171,7 +171,7 @@ export default {
         })
         // 5GWAN IP地址
         getMobileInfoStatusApi({ hiddenLoading: true }).then((data) => {
-          if (data.retcode == 0) {
+          if (data.retcode == 0 && this.wan5GInfo.sim_card_state != 0) {
             this.wan5GInfo.ipv4Addr =
               data.mobile_ip_address == ''
                 ? '--.--.--.--'
