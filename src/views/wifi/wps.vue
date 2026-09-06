@@ -245,7 +245,7 @@
       <div>{{$t('other.disabled01')}}</div>
     </div>
     <div class="block-body">
-      <div class="page-note">{{ $t('common.note') }}:<br />{{ $t('wifi.wpsBottomScr2',{ProductName:GLOBAL.PRODUCT_NAME})  }}<br />{{ $t('other.wpsBottomScr4')  }}</div>
+      <div class="page-note">{{ $t('common.note') }}:<br />{{ $t('wifi.wpsBottomScr2',{ProductName:GLOBAL.PRODUCT_NAME})  }}<br />{{ $t('other.wpsBottomScr4')  }}<br />{{ $t('other.wpsBottomScr5')  }}</div>
     </div>
     <mine-dialog :show-dialog='showWpsSwitchDialogInfo.showDialog' :show-close-btn="showWpsSwitchDialogInfo.showCloseBtn" :title="showWpsSwitchDialogInfo.title" :msg-title="showWpsSwitchDialogInfo.msgTitle" :left-btn-text="showWpsSwitchDialogInfo.leftBtnText" :right-btn-text="showWpsSwitchDialogInfo.rightBtnText" @leftBtnClick="cancelChangeWpsSwitch" @rightBtnClick="showWpsSwitchDialogInfo.showDialog = false" @closeDialog="cancelChangeWpsSwitch"></mine-dialog>
     <mine-dialog :show-dialog='showSwitchDialogInfo.showDialog' :show-close-btn="showSwitchDialogInfo.showCloseBtn" :title="showSwitchDialogInfo.title" :msg-title="showSwitchDialogInfo.msgTitle" :left-btn-text="showSwitchDialogInfo.leftBtnText" @leftBtnClick="showSwitchDialogInfo.showDialog = false" @closeDialog="showSwitchDialogInfo.showDialog = false">
@@ -270,7 +270,8 @@ import {
   getWpsApRandomPinCodeApi,
   cancelWpsConnectCancelApi,
   getWpsConnectStateApi,
-  setWpsSwitchStateExe
+  setWpsSwitchStateExe,
+  getWlanBasicInfo
 } from '@/api/wifi'
 import { Message } from 'element-ui'
 export default {
@@ -297,7 +298,8 @@ export default {
         methodRadio: 2,
         methodClientPin: '',
         routerPinSwitch: false,
-        methodRouterPin: ''
+        methodRouterPin: '',
+        securitymode: ''
       },
       wpsInfo_5G: {
         SupportShow: false,
@@ -306,7 +308,8 @@ export default {
         methodRadio: 2,
         methodClientPin: '',
         routerPinSwitch: false,
-        methodRouterPin: ''
+        methodRouterPin: '',
+        securitymode: ''
       },
       wpsInfo_6G: {
         SupportShow: false,
@@ -315,7 +318,8 @@ export default {
         methodRadio: 2,
         methodClientPin: '',
         routerPinSwitch: false,
-        methodRouterPin: ''
+        methodRouterPin: '',
+        securitymode: ''
       },
       wpsInfoRouterPin_def: '',
       // WPS关闭提示语
@@ -357,13 +361,28 @@ export default {
     cancelWpsConnectCancelApi({ hiddenLoading: true }).then(() => {})
   },
   methods: {
-    initData() {
+    async initData() {
+      await getWlanBasicInfo().then((data) => {
+        if (data.retcode == 0) {
+          this.wpsInfo_4G.securitymode =
+            data.Host1Security == 0 || data.Host1Security == 4 ? true : false
+          this.wpsInfo_5G.securitymode =
+            data.Host2Security == 0 || data.Host2Security == 4 ? true : false
+          // 6G信息
+          this.wpsInfo_6G.securitymode =
+            data.Host4Security == 0 || data.Host3Security == 4 ? true : false
+        }
+      })
       // 获取WPS的4G信息
       getWpsStateApi().then((data) => {
         if (data.retcode == 0) {
           this.wpsInfo_4G.wpsSwicth = data.Host1WpsState == 1 ? true : false
           this.wpsInfo_4G.unsupportWpsSwitch =
             data.Host1SupportWps == 0 ? true : false
+          // 新增逻辑：unsupportWpsSwitch为false，但securitymode为true → 强制置true
+          if (this.wpsInfo_4G.securitymode) {
+            this.wpsInfo_4G.unsupportWpsSwitch = true
+          }
           this.wpsInfo_4G.methodRadio =
             data.Host1WpsMode == 1 ? 2 : data.Host1WpsMode
           this.wpsInfo_4G.SupportShow = data.Support2G == 1 ? true : false
@@ -371,16 +390,32 @@ export default {
           this.wpsInfo_5G.wpsSwicth = data.Host2WpsState == 1 ? true : false
           this.wpsInfo_5G.unsupportWpsSwitch =
             data.Host2SupportWps == 0 ? true : false
+          if (this.wpsInfo_5G.securitymode) {
+            this.wpsInfo_5G.unsupportWpsSwitch = true
+          }
           this.wpsInfo_5G.methodRadio =
             data.Host2WpsMode == 1 ? 2 : data.Host2WpsMode
           this.wpsInfo_5G.SupportShow = data.Support5G == 1 ? true : false
 
           this.wpsInfo_6G.wpsSwicth = data.Host3WpsState == 1 ? true : false
-          this.wpsInfo_6G.enditWpsSwitch =
+          this.wpsInfo_6G.unsupportWpsSwitch =
             data.Host3SupportWps == 0 ? true : false
           this.wpsInfo_6G.methodRadio =
             data.Host3WpsMode == 1 ? 2 : data.Host3WpsMode
           this.wpsInfo_6G.SupportShow = data.Support6G == 1 ? true : false
+          if (this.wpsInfo_6G.securitymode) {
+            this.wpsInfo_6G.unsupportWpsSwitch = true
+          }
+
+          if (this.wpsInfo_4G.unsupportWpsSwitch) {
+            this.wpsInfo_4G.wpsSwicth = false
+          }
+          if (this.wpsInfo_5G.unsupportWpsSwitch) {
+            this.wpsInfo_5G.wpsSwicth = false
+          }
+          if (this.wpsInfo_6G.unsupportWpsSwitch) {
+            this.wpsInfo_6G.wpsSwicth = false
+          }
         }
       })
       // 获取默认router PIN值

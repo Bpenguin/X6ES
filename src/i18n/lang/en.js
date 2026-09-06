@@ -603,6 +603,7 @@ export default {
     everyday: "Everyday",
     dataUsageRange: "Data warning of each month值不能大于Data limitation of each month值",
     wpsPinRule: "The length of the WPS PIN is 8 digits",
+    wpsBottomScr5: "當 security 被設定為 Open or Enhance Open 時 WPS 將會被禁用",
   },
   timeZone: {
     // time1: "Kwajalein",
