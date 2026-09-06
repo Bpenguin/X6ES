@@ -38,9 +38,8 @@
           <el-col :span="14">
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
-              <mine-input v-model="wpsInfo_4G.methodClientPin" class="pin-input" :placeholder="''"></mine-input>
-              <div class="text-error">{{ $t('ruleTip.warningRule') }}</div>
-
+              <mine-input v-model="wpsInfo_4G.methodClientPin" @blur="pinInput4G" @input="pinInput4G" class="pin-input" :placeholder="''"></mine-input>
+              <div v-show="pinError4G" class="text-error">{{ $t('other.wpsPinRule') }}</div>
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('4G')}"></mine-button>
             </div>
           </el-col>
@@ -119,7 +118,9 @@
           <el-col :span="14">
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
-              <mine-input v-model="wpsInfo_5G.methodClientPin" class="pin-input" :placeholder="''"></mine-input>
+              <mine-input v-model="wpsInfo_5G.methodClientPin" @blur="pinInput5G" @input="pinInput5G" class="pin-input" :placeholder="''"></mine-input>
+              <div v-show="pinError5G" class="text-error">{{ $t('ruleTip.warningRule') }}</div>
+
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('5G')}"></mine-button>
             </div>
           </el-col>
@@ -199,7 +200,8 @@
           <el-col :span="14">
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
-              <mine-input v-model="wpsInfo_6G.methodClientPin" class="pin-input" :placeholder="''"></mine-input>
+              <mine-input v-model="wpsInfo_6G.methodClientPin" @blur="pinInput6G" @input="pinInput6G" class="pin-input" :placeholder="''"></mine-input>
+              <div v-show="pinError6G" class="text-error">{{ $t('ruleTip.warningRule') }}</div>
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('6G')}"></mine-button>
             </div>
           </el-col>
@@ -279,6 +281,9 @@ export default {
   computed: {},
   data() {
     return {
+      pinError4G: false,
+      pinError5G: false,
+      pinError6G: false,
       timer: null,
       time: 120,
       cancelTimer: null,
@@ -464,6 +469,7 @@ export default {
       this.currentWPSType = val
       this.currentRouterType = false
       let params = {}
+      this['pinInput' + val]()
       if (val == '4G') {
         params.HostWpsIndex = 0
         params.HostWpsMethod = 1
@@ -477,7 +483,10 @@ export default {
         params.HostWpsMethod = 1
         params.PinCode = this.wpsInfo_6G.methodClientPin
       }
-      this.setWpsConnect(params)
+      console.log('1111:', this['pin' + val])
+      if (!this['pinError' + val]) {
+        this.setWpsConnect(params)
+      }
     },
     connectRouterPin(val) {
       this.currentWPSType = val
@@ -581,6 +590,36 @@ export default {
           }
         })
       }, 2000)
+    },
+    pinInput4G() {
+      if (
+        this.wpsInfo_4G.methodClientPin.length == 8 &&
+        /^\d{8}$/.test(this.wpsInfo_4G.methodClientPin)
+      ) {
+        this.pinError4G = false
+      } else {
+        this.pinError4G = true
+      }
+    },
+    pinInput5G() {
+      if (
+        this.wpsInfo_5G.methodClientPin.length == 8 &&
+        /^\d{8}$/.test(this.wpsInfo_5G.methodClientPin)
+      ) {
+        this.pinError5G = false
+      } else {
+        this.pinError5G = true
+      }
+    },
+    pinInput6G() {
+      if (
+        this.wpsInfo_6G.methodClientPin.length == 8 &&
+        /^\d{8}$/.test(this.wpsInfo_6G.methodClientPin)
+      ) {
+        this.pinError6G = false
+      } else {
+        this.pinError6G = true
+      }
     }
   },
   destroyed() {

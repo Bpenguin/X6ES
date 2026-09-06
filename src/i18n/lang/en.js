@@ -590,15 +590,12 @@ export default {
     failuresFailoverRule: 'Number of failures before WAN failover must be between 0-10.',
     successfulBackRule: "Number of successful pings on the primary WAN before switching back must be between 0 and 10.",
     loginPasswordRule: "Invalid password. Your password can only contain characters a-z, A-Z, 0-9 or standard ASCII special characters, excluding spaces.",
-
     success01: "Success",
     wanPingscri01: 'It will allow {ProductName} to respond to ping requests from the Internet.', //WAN PING
-    wanPingscri02: 'NOTE: For better security, stay in this setting turned off, and the device will not respond to a ping from the WAN.',
+    wanPingscri02: 'For better security, stay in this setting turned off, and the device will not respond to a ping from the WAN.',
     disabled01: 'Disabled',
     failuresFailoverRqRule01: "Please enter the number of consecutive failures required before triggering WAN failover.",
     successfulBackRqRule01: "Enter the number of successful pings required on the primary WAN before switching back.",
-
-
     // 新增
     DMZUnsameIP: "The DMZ host IP address must be in the same subnet as gateway IP address.",
     fillWallPortNumRule: "End port numbers should be higher than the start port numbers.",

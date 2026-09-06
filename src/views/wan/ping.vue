@@ -10,7 +10,6 @@
         </el-col>
         <el-col :span="12">
           <el-switch v-model="pingSwitch" active-color="#00dc50" inactive-color="#8d9092" @change="pingSwitchChange"></el-switch>
-
         </el-col>
       </el-row>
     </div>
@@ -18,7 +17,7 @@
       <div class="left-title">{{ $t('wan.wanPortPing') }}:</div>
     </section> -->
     <div class="block-body">
-      <div class="page-note">{{ $t('other.wanPingscri02') }}</div>
+      <div class="page-note">{{ $t('common.note') + ': ' + $t('other.wanPingscri02') }}</div>
     </div>
   </div>
 </template>
