@@ -535,6 +535,13 @@ export default {
     "disabled01": "Disabilitato",
     "failuresFailoverRqRule01": "Inserire il numero di errori consecutivi necessari per attivare il failover WAN.",
     "successfulBackRqRule01": "Inserire il numero di ping riusciti richiesti sulla WAN primaria prima di tornare a utilizzarla.",
+    "DMZUnsameIP": "L'indirizzo IP dell'host DMZ deve trovarsi nella stessa sottorete dell'indirizzo IP del gateway.",
+    "fillWallPortNumRule": "Il numero di porta finale deve essere maggiore del numero di porta iniziale.",
+    "everyMonth": "Ogni mese",
+    "everyday": "Ogni giorno",
+    "dataUsageRange": "Il valore di avviso dei dati non può essere maggiore del valore del limite dati.",
+    "wpsPinRule": "Il PIN WPS deve essere composto da 8 cifre.",
+    "wpsBottomScr5": "WPS è disabilitato quando la modalità di sicurezza è impostata su Open o Enhanced Open.",
   },
   "timeZone": {
     "time1": "Linea internazionale del cambio di data", "time2": "Isole Midway",

@@ -81,7 +81,7 @@
           <mine-input :key="'macAddress'" v-model="formData.macAddress" :placeholder="$t('placeHolder.macFilterAddrPH')"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('homeNet.url') +':'" prop="url">
-          <mine-input :key="'url'" v-model="formData.url" :maxlength='256' :placeholder="$t('placeHolder.URLPH')"></mine-input>
+          <mine-input :key="'url'" v-model="formData.url" :maxlength='255' :placeholder="$t('placeHolder.URLPH')"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('wan.tableStatus') +':'" prop="protocol">
           <el-select v-model="formData.status" popper-class="x6-select">
@@ -92,11 +92,11 @@
           <el-select class="time-select" v-model="formData.start_time" @change="startTimechoose" popper-class="x6-select" :placeholder="$t('placeHolder.startTime')">
             <el-option v-for="item in timeAreas" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
-          <span class="text-error" v-if="this.start_time_visible">{{ $t('ruleTip.warningRule') }}</span>
+          <span class="text-error" v-if="this.start_time_visible">{{ $t('ruleTip.startTimeRule') }}</span>
           <el-select class="time-select" v-model="formData.stop_time" @change="stopTimechoose" popper-class="x6-select" :placeholder="$t('placeHolder.endTime')">
             <el-option v-for="item in timeAreas" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
-          <span class="text-error" v-if="this.stop_time_visible">{{ $t('ruleTip.warningRule') }}</span>
+          <span class="text-error" v-if="this.stop_time_visible">{{ $t('ruleTip.endTimeRule') }}</span>
         </el-form-item>
         <el-form-item class="form-item" :label="$t('system.Repeat') +':'" prop="Repeat">
           <el-checkbox-group v-model="formData.Repeat">

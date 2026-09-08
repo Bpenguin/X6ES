@@ -23,10 +23,10 @@
           <el-switch v-model="formdata0.automaticDNS" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
         </el-form-item>
         <el-form-item v-if="!formdata0.automaticDNS" :label="$t('quickSetup.primaryDNSServer')+':'" prop="primaryDNSServer">
-          <mine-input :key="'primaryDNSServer'" v-model="formdata0.primaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'primaryDNSServer'" v-model="formdata0.primaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
         <el-form-item v-if="!formdata0.automaticDNS" :label="$t('quickSetup.secondaryDNSServer')+':'" prop="secondaryDNSServer">
-          <mine-input :key="'secondaryDNSServer'" v-model="formdata0.secondaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'secondaryDNSServer'" v-model="formdata0.secondaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
       </el-form>
     </div>
@@ -34,16 +34,16 @@
     <div class="block-body">
       <el-form v-show="connectMode == 2" ref="formdata1" key="formdata1" :model="formdata1" :rules="formdata1Rule" label-width="40%" :label-position="formLablePos" size="mini">
         <el-form-item :label="$t('network5G.IPv6Address')+':'" prop="ipv6Address">
-          <mine-input :key="'ipv6Address'" v-model="formdata1.ipv6Address" :placeholder="''"></mine-input>
+          <mine-input :key="'ipv6Address'" v-model="formdata1.ipv6Address" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('ipv6.ipv6DefaultGateway')+':'" prop="ipv6DefaultGateway">
-          <mine-input :key="'ipv6DefaultGateway'" v-model="formdata1.ipv6DefaultGateway" :placeholder="''"></mine-input>
+          <mine-input :key="'ipv6DefaultGateway'" v-model="formdata1.ipv6DefaultGateway" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('quickSetup.primaryDNSServer')+':'" prop="primaryDNSServer">
-          <mine-input :key="'primaryDNSServer'" v-model="formdata1.primaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'primaryDNSServer'" v-model="formdata1.primaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
         <el-form-item :label="$t('quickSetup.secondaryDNSServer')+':'" prop="secondaryDNSServer">
-          <mine-input :key="'secondaryDNSServer'" v-model="formdata1.secondaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'secondaryDNSServer'" v-model="formdata1.secondaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
       </el-form>
     </div>
@@ -60,10 +60,10 @@
           <el-switch v-model="formdata2.automaticDNS" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
         </el-form-item>
         <el-form-item v-if="!formdata2.automaticDNS" :label="$t('quickSetup.primaryDNSServer')+':'" prop="primaryDNSServer">
-          <mine-input :key="'primaryDNSServer'" v-model="formdata2.primaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'primaryDNSServer'" v-model="formdata2.primaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
         <el-form-item v-if="!formdata2.automaticDNS" :label="$t('quickSetup.secondaryDNSServer')+':'" prop="secondaryDNSServer">
-          <mine-input :key="'secondaryDNSServer'" v-model="formdata2.secondaryDNSServer" :placeholder="''"></mine-input>
+          <mine-input :key="'secondaryDNSServer'" v-model="formdata2.secondaryDNSServer" :maxlength='50' :placeholder="''"></mine-input>
         </el-form-item>
       </el-form>
     </div>
@@ -275,6 +275,8 @@ export default {
             data.DHCPv6.IPv6DNSObtainMethod == 0 ? true : false
           this.formdata0.primaryDNSServer = data.DHCPv6.IPv6PrimaryDNS
           this.formdata0.secondaryDNSServer = data.DHCPv6.IPv6SecondaryDNS
+            ? data.DHCPv6.IPv6SecondaryDNS
+            : ''
 
           //static
           this.formdata1.primaryDNSServer = data.StaticIPv6.IPv6PrimaryDNS
@@ -290,6 +292,8 @@ export default {
             data.PPPoEIPv6.IPv6DNSObtainMethod == 0 ? true : false
           this.formdata2.primaryDNSServer = data.PPPoEIPv6.IPv6PrimaryDNS
           this.formdata2.secondaryDNSServer = data.PPPoEIPv6.IPv6SecondaryDNS
+            ? data.PPPoEIPv6.IPv6SecondaryDNS
+            : ''
         }
       })
     },

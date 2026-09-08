@@ -40,7 +40,8 @@ export default {
         rx_rate: 0, // 接收
         tx_rate: 0, // 上传
         rx_unit: 'bps',
-        tx_unit: 'bps'
+        tx_unit: 'bps',
+        RoamStatus: true
       },
       ethWanInfo: {
         ipAddr: '--.--.--.--',
@@ -209,6 +210,7 @@ export default {
             this.wan5GInfo.signal_level = data.signal_level
             this.wan5GInfo.service_state = data.service_state
             this.wan5GInfo.sim_card_state = data.sim_card_state
+            this.wan5GInfo.RoamStatus = data.home_network == 1 ? false : true
             this.wan5GInfo.net_type = data.net_type // 待API添加该字段
             if (data.sim_card_state == 3) {
               if (!sessionStorage.getItem('needSIMPINKey')) {

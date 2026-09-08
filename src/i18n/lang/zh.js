@@ -535,6 +535,13 @@ export default {
     "disabled01": "已停用",
     "failuresFailoverRqRule01": "請輸入觸發 WAN 失效移轉前所需的連續失敗次數。",
     "successfulBackRqRule01": "請輸入切換回主要 WAN 前所需的成功 Ping 次數。",
+    "DMZUnsameIP": "DMZ 主機 IP 位址必須與閘道 IP 位址位於相同的子網路。",
+    "fillWallPortNumRule": "結束連接埠數字必須大於開始連接埠數字。",
+    "everyMonth": "每月",
+    "everyday": "每天",
+    "dataUsageRange": "資料警告值不能大於資料限制值。",
+    "wpsPinRule": "WPS PIN 必須為 8 位數。",
+    "wpsBottomScr5": "當安全性模式設定為 Open 或 Enhanced Open 時，WPS 將會停用。",
   },
   "timeZone": {
     "time1": "國際換日線西", "time2": "中途島", "time3": "夏威夷", "time4": "阿拉斯加", "time5": "蒂華納，下加利福尼亞州", "time6": "亞利桑那州", "time7": "馬薩特蘭", "time8": "契瓦瓦州", "time9": "北美山區時區（美國和加拿大）", "time10": "中部時間（美國和加拿大）", "time11": "瓜達拉哈拉市，墨西哥市，蒙特雷", "time12": "薩克其萬省", "time13": "波哥大，利馬，基多", "time14": "東部時間（美國和加拿大）", "time15": "印第安那州（東部）", "time16": "喬治城，拉巴斯，聖胡安", "time17": "大西洋時間（加拿大）", "time18": "加拉加斯", "time19": "聖地亞哥", "time20": "紐芬蘭島", "time21": "布宜諾斯艾利斯",

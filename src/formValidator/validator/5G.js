@@ -1,4 +1,5 @@
 import i18n from "../../i18n/index"
+// const net = require('net')
 export const SIMPinRule = (rule, value, callback) => {
   var re = /^\d+$/
   if (!re.test(value)) {
@@ -176,7 +177,9 @@ export const IPv6AFTRAddrRule = (rule, value, callback) => {
 
 // IPV6  DNS校验
 export const ipv6PriDNSRule = (rule, value, callback) => {
-  var re = /^(?:[0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:)|:((?::[0-9A-Fa-f]{1,4}){1,7}|:)$/
+  // var re = /^(?:[0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:)|:((?::[0-9A-Fa-f]{1,4}){1,7}|:)$/
+  // RFC4291 IPv6 正则(不含ipv4嵌入格式)
+  const re = /^(([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4}|([0-9A-Fa-f]{1,4}:){1,7}:|([0-9A-Fa-f]{1,4}:){1,6}:[0-9A-Fa-f]{1,4}|([0-9A-Fa-f]{1,4}:){1,5}(:[0-9A-Fa-f]{1,4}){1,2}|([0-9A-Fa-f]{1,4}:){1,4}(:[0-9A-Fa-f]{1,4}){1,3}|([0-9A-Fa-f]{1,4}:){1,3}(:[0-9A-Fa-f]{1,4}){1,4}|([0-9A-Fa-f]{1,4}:){1,2}(:[0-9A-Fa-f]{1,4}){1,5}|[0-9A-Fa-f]{1,4}:((:[0-9A-Fa-f]{1,4}){1,6})|:((:[0-9A-Fa-f]{1,4}){1,7}|:)|fe80:(:[0-9A-Fa-f]{0,4}){0,4}%[0-9a-zA-Z]{1,})$/
   if (!re.test(value)) {
     callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))
   } else {
@@ -186,7 +189,7 @@ export const ipv6PriDNSRule = (rule, value, callback) => {
 
 
 export const ipv6SecDNSRule = (rule, value, callback) => {
-  var re = /^(?:[0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:)|:((?::[0-9A-Fa-f]{1,4}){1,7}|:)$/
+  const re = /^(([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4}|([0-9A-Fa-f]{1,4}:){1,7}:|([0-9A-Fa-f]{1,4}:){1,6}:[0-9A-Fa-f]{1,4}|([0-9A-Fa-f]{1,4}:){1,5}(:[0-9A-Fa-f]{1,4}){1,2}|([0-9A-Fa-f]{1,4}:){1,4}(:[0-9A-Fa-f]{1,4}){1,3}|([0-9A-Fa-f]{1,4}:){1,3}(:[0-9A-Fa-f]{1,4}){1,4}|([0-9A-Fa-f]{1,4}:){1,2}(:[0-9A-Fa-f]{1,4}){1,5}|[0-9A-Fa-f]{1,4}:((:[0-9A-Fa-f]{1,4}){1,6})|:((:[0-9A-Fa-f]{1,4}){1,7}|:)|fe80:(:[0-9A-Fa-f]{0,4}){0,4}%[0-9a-zA-Z]{1,})$/
   if (value == '') callback()
   if (!re.test(value)) {
     callback(new Error(i18n.t('ruleTip.ipv6PriDNSRule')))

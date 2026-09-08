@@ -63,6 +63,7 @@
               </p>
               <div class="pri-dashboard-data-item-content pri-dashboard-traffic">
                 <div class="pri-signal-logo">
+                  <div v-show="wan5GInfo.RoamStatus" class="roaming-title">R</div>
                   <div class="pri-signal-bar">
                     <svg-icon v-show="wan5GInfo.signal_level == 4" :icon-class="'client4'" class-name="client-svg"></svg-icon>
                     <svg-icon v-show="wan5GInfo.signal_level == 3" :icon-class="'client3'" class-name="client-svg"></svg-icon>
@@ -103,14 +104,13 @@
               </p>
               <div class="pri-dashboard-data-item-content pri-dashboard-traffic">
                 <div class="pri-signal-logo">
+                  <div v-show="wan5GInfo.RoamStatus" class="roaming-title">R</div>
                   <div class="pri-signal-bar">
-                    <div class="pri-signal-bar">
-                      <svg-icon v-show="wan5GInfo.signal_level == 4" :icon-class="'client4'" class-name="client-svg"></svg-icon>
-                      <svg-icon v-show="wan5GInfo.signal_level ==3" :icon-class="'client3'" class-name="client-svg"></svg-icon>
-                      <svg-icon v-show="wan5GInfo.signal_level ==2" :icon-class="'client2'" class-name="client-svg"></svg-icon>
-                      <svg-icon v-show="wan5GInfo.signal_level ==1" :icon-class="'client1'" class-name="client-svg"></svg-icon>
-                      <svg-icon v-show='wan5GInfo.signal_level ==0' :icon-class="'client0'" class-name="client-svg"></svg-icon>
-                    </div>
+                    <svg-icon v-show="wan5GInfo.signal_level == 4" :icon-class="'client4'" class-name="client-svg"></svg-icon>
+                    <svg-icon v-show="wan5GInfo.signal_level ==3" :icon-class="'client3'" class-name="client-svg"></svg-icon>
+                    <svg-icon v-show="wan5GInfo.signal_level ==2" :icon-class="'client2'" class-name="client-svg"></svg-icon>
+                    <svg-icon v-show="wan5GInfo.signal_level ==1" :icon-class="'client1'" class-name="client-svg"></svg-icon>
+                    <svg-icon v-show='wan5GInfo.signal_level ==0' :icon-class="'client0'" class-name="client-svg"></svg-icon>
                   </div>
                   <div v-if="wan5GInfo.sim_card_state == 0" class="pri-signal-gen">{{ $t('other.noSimText') }}</div>
                   <div v-else class="pri-signal-gen">{{ wan5GInfo.net_type == ''? $t('other.NoService'):wan5GInfo.net_type}}</div>

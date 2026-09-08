@@ -534,6 +534,13 @@ export default {
     "disabled01": "Deaktiviert",
     "failuresFailoverRqRule01": "Geben Sie die Anzahl der aufeinanderfolgenden Fehler ein, die erforderlich sind, um das WAN-Failover auszulösen.",
     "successfulBackRqRule01": "Geben Sie die Anzahl erfolgreicher Pings über die primäre WAN-Verbindung ein, die vor dem Zurückschalten erforderlich ist.",
+    "DMZUnsameIP": "Die IP-Adresse des DMZ-Hosts muss sich im selben Subnetz wie die IP-Adresse des Gateways befinden.",
+    "fillWallPortNumRule": "Die Endportnummer muss größer als die Startportnummer sein.",
+    "everyMonth": "Jeden Monat",
+    "everyday": "Jeden Tag",
+    "dataUsageRange": "Der Datenwarnwert darf nicht größer als der Datenlimitwert sein.",
+    "wpsPinRule": "Die WPS-PIN muss 8 Ziffern lang sein.",
+    "wpsBottomScr5": "WPS ist deaktiviert, wenn der Sicherheitsmodus auf Open oder Enhanced Open eingestellt ist.",
   },
   "timeZone": {
     "time1": "Internationale Datumsgrenze im Westen", "time2": "Midwayinseln", "time3": "Hawaii", "time4": "Alaska",

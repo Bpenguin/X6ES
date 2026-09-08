@@ -534,6 +534,13 @@ export default {
     "disabled01": "Deaktivert",
     "failuresFailoverRqRule01": "Angi antall påfølgende feil som kreves for å utløse WAN-failover.",
     "successfulBackRqRule01": "Angi antall vellykkede ping på den primære WAN-tilkoblingen som kreves før det byttes tilbake.",
+    "DMZUnsameIP": "IP-adressen til DMZ-verten må være i samme delnett som gatewayens IP-adresse.",
+    "fillWallPortNumRule": "Sluttportnummeret må være større enn startportnummeret.",
+    "everyMonth": "Hver måned",
+    "everyday": "Hver dag",
+    "dataUsageRange": "Dataadvarselsverdien kan ikke være større enn datagrenseverdien.",
+    "wpsPinRule": "WPS-PIN-koden må bestå av 8 sifre.",
+    "wpsBottomScr5": "WPS er deaktivert når sikkerhetsmodusen er satt til Open eller Enhanced Open.",
   },
   "timeZone": {
     "time1": "Internasjonal datolinje vest", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska", "time5": "Tijuana Baja California",

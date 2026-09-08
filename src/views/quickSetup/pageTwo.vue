@@ -197,11 +197,19 @@ export default {
       },
       DHCPformformRules: {
         DHCPPrimaryDNS: [
-          { required: true, trigger: 'change' },
+          {
+            required: true,
+            message: this.$t('ruleTip.primaryDNSRule'),
+            trigger: 'change'
+          },
           { validator: formVaRule.primaryDNSRule, trigger: ['blur', 'change'] }
         ],
         DHCPSecondaryDNS: [
-          { required: false, trigger: 'change' },
+          {
+            required: false,
+            message: this.$t('ruleTip.secondaryDNSRule'),
+            trigger: 'change'
+          },
           {
             validator: formVaRule.secondaryDNSRule,
             trigger: ['blur', 'change']
@@ -363,6 +371,12 @@ export default {
       this.connectMode =
         data.EthConnectMode == 3 ? 'disable' : data.EthConnectMode
       const { DHCP, PPPoE, Static } = data
+      if (DHCP.DHCPPrimaryDNS == '') {
+        DHCP.DHCPPrimaryDNS = '8.8.8.8'
+      }
+      if (Static.StaticIPPrimaryDNS == '') {
+        Static.StaticIPPrimaryDNS = '8.8.8.8'
+      }
       this.DHCPform = { ...this.DHCPform, ...DHCP }
       this.PPPoEform = { ...this.PPPoEform, ...PPPoE }
       this.staticIPform = { ...this.staticIPform, ...Static }

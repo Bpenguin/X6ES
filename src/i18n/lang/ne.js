@@ -534,6 +534,13 @@ export default {
     "disabled01": "Uitgeschakeld",
     "failuresFailoverRqRule01": "Voer het aantal opeenvolgende fouten in dat nodig is om WAN-failover te activeren.",
     "successfulBackRqRule01": "Voer het aantal geslaagde pings via de primaire WAN-verbinding in dat vereist is voordat er wordt teruggeschakeld.",
+    "DMZUnsameIP": "Het IP-adres van de DMZ-host moet zich in hetzelfde subnet bevinden als het IP-adres van de gateway.",
+    "fillWallPortNumRule": "\tHet eindpoortnummer moet groter zijn dan het beginpoortnummer.",
+    "everyMonth": "Elke maand",
+    "everyday": "Elke dag",
+    "dataUsageRange": "De waarde voor de gegevenswaarschuwing mag niet groter zijn dan de gegevenslimiet.",
+    "wpsPinRule": "De WPS-pincode moet uit 8 cijfers bestaan.",
+    "wpsBottomScr5": "WPS on poistettu käytöstä, kun suojaustilaksi on asetettu Open tai Enhanced Open.",
   },
   "timeZone": {
     "time1": "Internationale datumgrens west", "time2": "Midway Island", "time3": "Hawai", "time4": "Alaska",

@@ -448,7 +448,10 @@ export default {
     clearInterval(this.simStatusTimer)
     this.simStatusTimer = null
   },
-  destroyed() {}
+  destroyed() {
+    clearInterval(this.simStatusTimer)
+    this.simStatusTimer = null
+  }
 }
 </script>
 

@@ -20,7 +20,7 @@
             <div>{{ $t('nav.networkMode') }}:</div>
           </el-col>
           <el-col :span="12" :xs="18">
-            <el-row>
+            <el-row class="c-row">
               <el-col :span="20">
                 <el-select v-model="networkModelInfo.networkModel" popper-class="x6-select" :placeholder="''">
                   <el-option v-for="item in networkModes" :key="item.value" :label="item.label" :value="item.value">

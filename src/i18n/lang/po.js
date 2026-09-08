@@ -534,6 +534,13 @@ export default {
     "disabled01": "Wyłączone",
     "failuresFailoverRqRule01": "Wprowadź liczbę kolejnych nieudanych prób wymaganą do uruchomienia przełączenia awaryjnego WAN.",
     "successfulBackRqRule01": "Wprowadź liczbę pomyślnych odpowiedzi na ping przez główne łącze WAN wymaganą przed przełączeniem z powrotem.",
+    "DMZUnsameIP": "Adres IP hosta DMZ musi znajdować się w tej samej podsieci co adres IP bramy.",
+    "fillWallPortNumRule": "Numer portu końcowego musi być większy niż numer portu początkowego.",
+    "everyMonth": "Co miesiąc",
+    "everyday": "Codziennie",
+    "dataUsageRange": "Wartość ostrzeżenia dotyczącego danych nie może być większa niż wartość limitu danych.",
+    "wpsPinRule": "Kod PIN WPS musi składać się z 8 cyfr.",
+    "wpsBottomScr5": "WPS jest wyłączony, gdy tryb zabezpieczeń jest ustawiony na Open lub Enhanced Open.",
   },
   "timeZone": {
     "time1": "Międzynarodowa Linia Zmiany Daty Zachód", "time2": "Wyspa Midway", "time3": "Hawaje", "time4": "Alaska",

@@ -534,6 +534,13 @@ export default {
     "disabled01": "Zakázáno",
     "failuresFailoverRqRule01": "Zadejte počet po sobě jdoucích selhání potřebných k aktivaci přepnutí WAN na záložní připojení.",
     "successfulBackRqRule01": "Zadejte počet úspěšných pingů na primární WAN potřebných před přepnutím zpět.",
+    "DMZUnsameIP": "IP adresa hostitele DMZ musí být ve stejné podsíti jako IP adresa brány.",
+    "fillWallPortNumRule": "Číslo koncového portu musí být vyšší než číslo počátečního portu.",
+    "everyMonth": "Každý měsíc",
+    "everyday": "Každý den",
+    "dataUsageRange": "Hodnota upozornění na data nesmí být vyšší než hodnota datového limitu.",
+    "wpsPinRule": "PIN WPS musí mít 8 číslic.",
+    "wpsBottomScr5": "WPS je zakázáno, když je režim zabezpečení nastaven na Open nebo Enhanced Open.",
   },
   "timeZone": {
     "time1": "Mezinárodní datová čára, západ", "time2": "Ostrov Midway", "time3": "Havajské ostrovy", "time4": "Aljaška",

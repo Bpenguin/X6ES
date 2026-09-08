@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="block-body">
-      <div class="page-note">{{ $t('wifi.acBottomScr') }}</div>
+      <div class="page-note">{{ $t('common.note') }}: {{ $t('wifi.acBottomScr') }}</div>
     </div>
     <mine-dialog :show-dialog='showApplyDialogInfo.showDialog' :title="showApplyDialogInfo.title" :msg-title="showApplyDialogInfo.msgTitle" :show-close-btn="showApplyDialogInfo.showCloseBtn" :left-btn-text="showApplyDialogInfo.leftBtnText" :right-btn-text="showApplyDialogInfo.rightBtnText" @closeDialog="showApplyDialogInfo.showDialog = false" @leftBtnClick="showApplyDialogInfo.showDialog = false" @rightBtnClick="applyAcs"></mine-dialog>
   </div>

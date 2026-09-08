@@ -299,7 +299,7 @@ export default {
         methodClientPin: '',
         routerPinSwitch: false,
         methodRouterPin: '',
-        securitymode: ''
+        securitymode: false
       },
       wpsInfo_5G: {
         SupportShow: false,
@@ -309,7 +309,7 @@ export default {
         methodClientPin: '',
         routerPinSwitch: false,
         methodRouterPin: '',
-        securitymode: ''
+        securitymode: false
       },
       wpsInfo_6G: {
         SupportShow: false,
@@ -319,7 +319,7 @@ export default {
         methodClientPin: '',
         routerPinSwitch: false,
         methodRouterPin: '',
-        securitymode: ''
+        securitymode: false
       },
       wpsInfoRouterPin_def: '',
       // WPS关闭提示语
@@ -364,13 +364,14 @@ export default {
     async initData() {
       await getWlanBasicInfo().then((data) => {
         if (data.retcode == 0) {
+          console.log('this.wpsInfo_4G.securitymode:')
           this.wpsInfo_4G.securitymode =
-            data.Host1Security == 0 || data.Host1Security == 4 ? true : false
+            data.Host1Security == 0 || data.Host1Security == 5 ? true : false
           this.wpsInfo_5G.securitymode =
-            data.Host2Security == 0 || data.Host2Security == 4 ? true : false
+            data.Host2Security == 0 || data.Host2Security == 5 ? true : false
           // 6G信息
           this.wpsInfo_6G.securitymode =
-            data.Host4Security == 0 || data.Host3Security == 4 ? true : false
+            data.Host3Security == 0 || data.Host3Security == 5 ? true : false
         }
       })
       // 获取WPS的4G信息
@@ -379,6 +380,10 @@ export default {
           this.wpsInfo_4G.wpsSwicth = data.Host1WpsState == 1 ? true : false
           this.wpsInfo_4G.unsupportWpsSwitch =
             data.Host1SupportWps == 0 ? true : false
+          console.log(
+            'this.wpsInfo_4G.securitymode:',
+            this.wpsInfo_4G.securitymode
+          )
           // 新增逻辑：unsupportWpsSwitch为false，但securitymode为true → 强制置true
           if (this.wpsInfo_4G.securitymode) {
             this.wpsInfo_4G.unsupportWpsSwitch = true
@@ -416,6 +421,10 @@ export default {
           if (this.wpsInfo_6G.unsupportWpsSwitch) {
             this.wpsInfo_6G.wpsSwicth = false
           }
+          console.log(
+            'this.wpsInfo_4G.unsupportWpsSwitch:',
+            this.wpsInfo_4G.unsupportWpsSwitch
+          )
         }
       })
       // 获取默认router PIN值

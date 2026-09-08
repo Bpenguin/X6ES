@@ -22,7 +22,7 @@ const state = {
     service_state: 0,
     signal_level: 0
   },
-  simStatus: ''
+  simStatus: 0
 }
 
 const getters = {

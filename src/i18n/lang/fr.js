@@ -534,6 +534,13 @@ export default {
     "disabled01": "Désactivé",
     "failuresFailoverRqRule01": "Veuillez saisir le nombre d’échecs consécutifs nécessaires pour déclencher le basculement WAN.",
     "successfulBackRqRule01": "Veuillez saisir le nombre de pings réussis requis sur le WAN principal avant de revenir à celui-ci.",
+    "DMZUnsameIP": "L’adresse IP de l’hôte DMZ doit se trouver sur le même sous-réseau que l’adresse IP de la passerelle.",
+    "fillWallPortNumRule": "Le numéro de port de fin doit être supérieur au numéro de port de début.",
+    "everyMonth": "Chaque mois",
+    "everyday": "Tous les jours",
+    "dataUsageRange": "La valeur d’avertissement des données ne peut pas être supérieure à la valeur de limite de données.",
+    "wpsPinRule": "Le code PIN WPS doit comporter 8 chiffres.",
+    "wpsBottomScr5": "Le WPS est désactivé lorsque le mode de sécurité est défini sur Open ou Enhanced Open.",
   },
   "timeZone": {
     "time1": "Ligne internationale de changement de date ouest", "time2": "Îles Midway", "time3": "Hawaï", "time4": "Alaska",

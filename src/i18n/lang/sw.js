@@ -534,6 +534,13 @@ export default {
     "disabled01": "Inaktiverad",
     "failuresFailoverRqRule01": "Ange antalet på varandra följande fel som krävs för att utlösa WAN-failover.",
     "successfulBackRqRule01": "Ange det antal lyckade pingningar på den primära WAN-anslutningen som krävs innan växling tillbaka.",
+    "DMZUnsameIP": "DMZ-värdens IP-adress måste finnas i samma subnät som gatewayens IP-adress.",
+    "fillWallPortNumRule": "Slutportnumret måste vara större än startportnumret.",
+    "everyMonth": "Varje månad",
+    "everyday": "Varje dag",
+    "dataUsageRange": "Datavarningsvärdet får inte vara större än datagränsvärdet.",
+    "wpsPinRule": "WPS-PIN-koden måste bestå av 8 siffror.",
+    "wpsBottomScr5": "WPS är inaktiverat när säkerhetsläget är inställt på Open eller Enhanced Open.",
   },
   "timeZone": {
     "time1": "Internationella datumlinjen, väst", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska",

@@ -142,11 +142,19 @@ export default {
       },
       DHCPformformRules: {
         DHCPPrimaryDNS: [
-          { required: true, trigger: 'change' },
+          {
+            required: true,
+            message: this.$t('ruleTip.primaryDNSRule'),
+            trigger: 'change'
+          },
           { validator: formVaRule.primaryDNSRule, trigger: ['blur', 'change'] }
         ],
         DHCPSecondaryDNS: [
-          { required: false, trigger: 'change' },
+          {
+            required: false,
+            message: this.$t('ruleTip.secondaryDNSRule'),
+            trigger: 'change'
+          },
           {
             validator: formVaRule.secondaryDNSRule,
             trigger: ['blur', 'change']
@@ -207,7 +215,11 @@ export default {
           { validator: formVaRule.primaryDNSRule, trigger: ['blur', 'change'] }
         ],
         StaticIPSecondaryDNS: [
-          { required: false, trigger: ['blur', 'change'] },
+          {
+            required: false,
+            message: this.$t('ruleTip.secondaryDNSRule'),
+            trigger: ['blur', 'change']
+          },
           {
             validator: formVaRule.secondaryDNSRule,
             trigger: ['blur', 'change']
@@ -245,7 +257,6 @@ export default {
           { validator: formVaRule.MtuPpoeRule, trigger: ['blur', 'change'] }
         ],
         PPPoEPrimaryDNS: [
-          // { required: false, trigger: 'change' },
           {
             required: false,
             validator: formVaRule.primaryDNSRule,
@@ -253,7 +264,6 @@ export default {
           }
         ],
         PPPoESecondaryDNS: [
-          // { required: false, trigger: 'change' },
           {
             required: false,
             validator: formVaRule.secondaryDNSRule,
@@ -316,9 +326,6 @@ export default {
       if (Static.StaticIPPrimaryDNS == '') {
         Static.StaticIPPrimaryDNS = '8.8.8.8'
       }
-      // if (PPPoE.PPPoEPrimaryDNS == '') {
-      //   PPPoE.PPPoEPrimaryDNS = '8.8.8.8'
-      // }
       this.DHCPform = { ...this.DHCPform, ...DHCP }
       this.PPPoEform = { ...this.PPPoEform, ...PPPoE }
       this.staticIPform = { ...this.staticIPform, ...Static }
