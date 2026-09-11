@@ -596,7 +596,6 @@ export default {
     disabled01: 'Disabled',
     failuresFailoverRqRule01: "Please enter the number of consecutive failures required before triggering WAN failover.",
     successfulBackRqRule01: "Enter the number of successful pings required on the primary WAN before switching back.",
-    // 新增
     DMZUnsameIP: "The DMZ host IP address must be on the same subnet as the gateway IP address.",
     fillWallPortNumRule: "The end port number must be greater than the start port number.",
     everyMonth: "Every Month",

@@ -251,7 +251,7 @@ export default {
     "NoData": "沒有資料",
     "commonServices": "常用服務",
     "getDeviceIP": "取得裝置 IP",
-    "vpnServerScri": "可設定 VPN 伺服器供遠端使用者連線到內部網路。",
+    "vpnServerScri": "設定 VPN 伺服器，讓遠端使用者連線至內部網路。",
     "openVPN": "OpenVPN",
     "IPsecVPN": "IPsec VPN",
     "tableConnectionType": "連線類型",

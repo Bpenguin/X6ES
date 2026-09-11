@@ -311,7 +311,7 @@ export default {
     "cancelWps": "WPS aktiveras. Anslut din trådlösa enhet till {ProductName}.",
     "wpsEnd": "WPS-sessionen har avslutats.",
     "acsScr": "ACS är en mekanism för att optimera kanalvalet. Den väljer den bästa tillgängliga kanalen, som är ledig och minst belastad i den aktuella situationen.",
-    "acBottomScr": "ACS er deaktivert når ingen av Wi-Fi-kanalene er satt til auto.",
+    "acBottomScr": "ACS kan inte aktiveras eftersom ingen WiFi-kanal är inställd på Auto.",
     "applyTip": "Når dette er tatt i brukt, kan Wi-Fi-tilkoblingen kobles fra en liten stund. Fortsette? ",
     "currentChannel": "Aktuell kanal",
     "modeWifi": "802.11-läge",
