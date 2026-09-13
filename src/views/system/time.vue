@@ -483,6 +483,7 @@ export default {
 
   background-color: #001e14;
   font-weight: 500;
+  font-family: acer-regular;
   /*
    * 覆盖在 select 上面
    */
