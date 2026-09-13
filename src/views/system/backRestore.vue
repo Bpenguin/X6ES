@@ -272,7 +272,6 @@ export default {
 
           if (contentWidth > viewWidth) {
             this.opfaNameOverflow = true
-
             this.opfaScrollDistance = viewWidth - contentWidth
           } else {
             this.opfaNameOverflow = false
@@ -322,20 +321,18 @@ export default {
             if (data.retcode == 0) {
               console.log('restoreDevice:res', data)
             } else {
-              Message({
-                message: 'Network error',
-                type: 'error',
-                duration: 2 * 1000
-              })
+              this.$publicFun.showErrMessage(this)
+              // Message({
+              //   message: 'Network error',
+              //   type: 'error',
+              //   duration: 2 * 1000
+              // })
             }
           })
-
           this.showRestartLoading = true
         } else {
           this.$publicFun.showErrMessage(this)
         }
-
-        console.log(data)
       })
     },
 

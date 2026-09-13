@@ -54,17 +54,9 @@ export default {
       setSecurityConfigApi(parma).then((data) => {
         if (data.retcode == 0) {
           this.defaultPingSwitch = this.pingSwitch
-          Message({
-            message: this.$t('other.success01'),
-            type: 'success',
-            duration: 2 * 1000
-          })
+          this.$publicFun.showErrMessage(this)
         } else {
-          Message({
-            message: 'Network error',
-            type: 'error',
-            duration: 2 * 1000
-          })
+          this.$publicFun.showErrMessage(this)
         }
       })
     },

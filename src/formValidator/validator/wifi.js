@@ -33,6 +33,16 @@ export const baseAddrRule = (rule, value, callback) => {
 }
 
 // MAC fillter 名称校验
+export const nameRule = (rule, value, callback) => {
+  var re = /^[\s\S]*$/
+  if (!re.test(value)) {
+    callback(new Error(i18n.t('ruleTip.fillWallNameRqRule')))
+  } else {
+    callback()
+  }
+}
+
+// MAC fillter 名称校验
 export const macFilterNameRule = (rule, value, callback) => {
   var re = /^[A-Za-z0-9_.\s-]+$/
   if (!re.test(value)) {
@@ -109,5 +119,6 @@ export default {
   macFilterAddrRule,
   deviceNameRule,
   urlRule,
-  dayRule
+  dayRule,
+  nameRule
 }

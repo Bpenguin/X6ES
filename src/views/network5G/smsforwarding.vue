@@ -73,11 +73,7 @@ export default {
         if (data.retcode == 0) {
           this.defaultDmzSwitch = this.dmzSwitch
           this.defaultDmzHostIP = this.dmzHostIP
-          Message({
-            message: this.$t('other.success01'),
-            type: 'success',
-            duration: 2 * 1000
-          })
+          this.$publicFun.showErrMessage(this, 'other.success01')
         }
       })
     },

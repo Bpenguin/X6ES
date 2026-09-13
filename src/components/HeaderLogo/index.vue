@@ -11,7 +11,7 @@
   <div class="pri-header-container">
     <div class="pri-header-brand">
       <div class="pri-header-logo">
-        <svg-icon @click="showMenuMobile" :class-name="'icon-svg pri-sidebar-menu'" icon-class="head-mobile"></svg-icon>
+        <svg-icon v-if="headTitle != 'login'" @click="showMenuMobile" :class-name="'icon-svg pri-sidebar-menu'" icon-class="head-mobile"></svg-icon>
         <img class="logo_img" src="../../assets/img/acer.png" alt="">
       </div>
       <div class="pri-header-title">Acer Connect X6ES</div>
@@ -24,7 +24,12 @@
 <script>
 export default {
   name: 'HeaderLogo',
-  computed: {},
+  computed: {
+    headTitle() {
+      console.log('headTitle:', this.$route.meta.title)
+      return this.$route.meta.title
+    }
+  },
   methods: {
     showMenuMobile() {
       let showNav = this.$store.state.user.showNav

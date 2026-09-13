@@ -126,7 +126,7 @@ export default {
         name: [
           {
             required: true,
-            validator: formVaRule.macFilterNameRule,
+            validator: formVaRule.nameRule,
             trigger: ['blur', 'change']
           }
         ],

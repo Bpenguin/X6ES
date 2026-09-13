@@ -115,11 +115,7 @@ export default {
           this.initData()
         } else {
           this.num = 0
-          Message({
-            message: 'Error',
-            type: 'error',
-            duration: 2 * 1000
-          })
+          this.$publicFun.showErrMessage(this)
         }
       })
     },
