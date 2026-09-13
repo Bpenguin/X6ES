@@ -285,9 +285,15 @@ export default {
      * 备份配置信息
      */
     backupSetting() {
+      const downloadWindow = window.open('', '_blank')
+
       exportFileApi().then((data) => {
         if (data.retcode == 0) {
-          window.open(data.url)
+          if (downloadWindow) {
+            downloadWindow.location.href = data.url
+          } else {
+            window.location.href = data.url
+          }
         }
       })
     },
@@ -305,10 +311,10 @@ export default {
     restoreConfigFile() {
       this.showDialogInfo.showDialog = false
 
-      if (this.fileName.indexOf('.') !== -1) {
-        this.showFileDialogInfo.showDialog = true
-        return
-      }
+      // if (this.fileName.indexOf('.') !== -1) {
+      //   this.showFileDialogInfo.showDialog = true
+      //   return
+      // }
 
       var formdata = new FormData()
 
