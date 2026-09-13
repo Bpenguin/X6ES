@@ -1,7 +1,7 @@
 <template>
   <div class="container-main-content-body">
     <div class="block-body">
-      <div class="page-description">{{ $t ('other.newFirmwareScr') }}</div>
+      <div class="page-description">{{ $t('other.newFirmwareScr',{checkTip:$t('system.checking'),Download:$t('common.download'),update:$t('common.update')}) }}</div>
     </div>
     <div class="block-body">
       <div class="c-row"></div>

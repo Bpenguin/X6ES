@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Zadejte platnou hodnotu MTU PPPoE.",
     "PPPoEMTUAreaRule": "MTU PPPoE musí být v rozmezí 576 až 1492.",
     "wifiPwdRuleNew": "Neplatné heslo. Heslo Wi-Fi musí obsahovat pouze tisknutelné znaky ASCII.",
-    "newFirmwareScr": "Klikněte na \"Check new\" a zkontrolujte dostupnost aktualizací. Router zkontroluje, zda je k dispozici aktualizace. Pokud je aktualizace nalezena, můžete kliknout na \"Download\". Po úspěšném stažení souboru můžete kliknout na \"Update\".",
+    "newFirmwareScr": "Klikněte na \"{checkTip}\" a zkontrolujte dostupnost aktualizací. Router zkontroluje, zda je k dispozici aktualizace. Pokud je aktualizace nalezena, můžete kliknout na \"{Download}\". Po úspěšném stažení souboru můžete kliknout na \"{update}\".",
     "firmwareVersionModule": "Verze modulu",
     "failuresFailoverRule": "Počet selhání před přepnutím WAN musí být mezi 0 a 10.",
     "successfulBackRule": "Počet úspěšných pingů na primární WAN před přepnutím zpět musí být mezi 0 a 10.",

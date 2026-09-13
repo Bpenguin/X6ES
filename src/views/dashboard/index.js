@@ -41,7 +41,7 @@ export default {
         tx_rate: 0, // 上传
         rx_unit: 'bps',
         tx_unit: 'bps',
-        RoamStatus: true
+        RoamStatus: false
       },
       ethWanInfo: {
         ipAddr: '--.--.--.--',
@@ -56,6 +56,7 @@ export default {
       duraDay: '', // 连接天数
       duraTime: '', // 连接时间
       duraTimer: '', // 持续时间计时器
+      hasClosePin: false,
       rxTxRate: {
         rx_rate: 0, // 接收
         tx_rate: 0, // 上传
@@ -126,6 +127,8 @@ export default {
   methods: {
     // 解锁PIN或者PUK码
     enterPinOrPuk () {
+      // sessionStorage.setItem('needSIMPINKey', 1)
+      this.hasClosePin = true
       this.showDialogInfo.showDialog = false
       this.$router.push({ path: '/network5G/simPinmana' })
     },
@@ -210,19 +213,19 @@ export default {
             this.wan5GInfo.signal_level = data.signal_level
             this.wan5GInfo.service_state = data.service_state
             this.wan5GInfo.sim_card_state = data.sim_card_state
-            this.wan5GInfo.RoamStatus = data.home_network == 1 ? false : true
-            this.wan5GInfo.net_type = data.net_type // 待API添加该字段
+            this.wan5GInfo.RoamStatus = data.home_network != 0 ? false : true
+            this.wan5GInfo.net_type = data.net_type
             if (data.sim_card_state == 3) {
-              if (!sessionStorage.getItem('needSIMPINKey')) {
-                sessionStorage.setItem('needSIMPINKey', 1)
+              if (!sessionStorage.getItem('needSIMPINKey') && !this.showDialogInfo.showDialog && !this.hasClosePin) {
+                // sessionStorage.setItem('needSIMPINKey', 1)
                 this.showDialogInfo.title = 'network5G.SIMPINBlocked'
                 this.showDialogInfo.msgTitle = 'other.unlockSimPin'
                 this.showDialogInfo.rightBtnText = 'other.enterSIMPIN'
                 this.showDialogInfo.showDialog = true
               }
             } else if (data.sim_card_state == 4) {
-              if (!sessionStorage.getItem('needPUKPINKey')) {
-                sessionStorage.setItem('needPUKPINKey', 1)
+              if (!sessionStorage.getItem('needPUKPINKey') && !this.showDialogInfo.showDialog && !this.hasClosePin) {
+                // sessionStorage.setItem('needPUKPINKey', 1)
                 this.showDialogInfo.title = 'network5G.SIMPIUKBlocked'
                 this.showDialogInfo.msgTitle = 'other.unlockSimPUK'
                 this.showDialogInfo.rightBtnText = 'other.enterSIMPUK'
@@ -407,6 +410,11 @@ export default {
           }
         }
       )
+    },
+    colsePinDia () {
+      this.hasClosePin = true
+      sessionStorage.setItem('needSIMPINKey', 1)
+      this.showDialogInfo.showDialog = false
     },
     goToWanDevice () {
       this.$router.push({ name: 'connectedDevices' })

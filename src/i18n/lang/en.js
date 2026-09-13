@@ -400,7 +400,6 @@ export default {
     automaticallySetTime: 'Automatically set time zone',
     automaticallySaveTime: 'Automatically adjust to daylight savings time',
     tmieZone: 'Time zone',
-    update: 'Update',
     Restarting: 'Restarting',
     Countingdown: "Counting down",
     restartingTip: 'The {ProductName} is restarting. Do not power off the {ProductName} while restarting.',
@@ -585,7 +584,7 @@ export default {
     PPPoEValidMTURule: "Please enter a valid PPPoE MTU.",
     PPPoEMTUAreaRule: "PPPoE MTU must be between 576 and 1492.",
     wifiPwdRuleNew: "Invalid password.Your Wi-Fi password should consist of ASCII printable characters.",
-    newFirmwareScr: 'Click "Check new" for updates. Your router will check if there is an update available. If one is found, you may click "Download". Once the file has downloaded successfully you will be able to click "Update".',
+    newFirmwareScr: 'Click \"{checkTip}\" for updates. Your router will check if there is an update available. If one is found, you may click \"{Download}\". Once the file has downloaded successfully you will be able to click \"{update}\".',
     firmwareVersionModule: 'Module version',
     failuresFailoverRule: 'Number of failures before WAN failover must be between 0-10.',
     successfulBackRule: "Number of successful pings on the primary WAN before switching back must be between 0 and 10.",
@@ -603,6 +602,8 @@ export default {
     dataUsageRange: "The data warning value cannot be greater than the data limit value.",
     wpsPinRule: "The WPS PIN must be 8 digits long.",
     wpsBottomScr5: "WPS is disabled when the security mode is set to Open or Enhanced Open.",
+    // 新增
+    exitApn: "This APN already exists",
   },
   timeZone: {
     // time1: "Kwajalein",

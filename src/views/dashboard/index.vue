@@ -339,7 +339,7 @@
         </div>
       </div>
     </section>
-    <mine-dialog :show-dialog='showDialogInfo.showDialog' :show-close-btn="showDialogInfo.showCloseBtn" :title="showDialogInfo.title" :msg-title="showDialogInfo.msgTitle" :left-btn-text="showDialogInfo.leftBtnText" :right-btn-text="showDialogInfo.rightBtnText" @leftBtnClick="showDialogInfo.showDialog = false" @rightBtnClick="enterPinOrPuk" @closeDialog="showDialogInfo.showDialog = false"></mine-dialog>
+    <mine-dialog :show-dialog='showDialogInfo.showDialog' :show-close-btn="showDialogInfo.showCloseBtn" :title="showDialogInfo.title" :msg-title="showDialogInfo.msgTitle" :left-btn-text="showDialogInfo.leftBtnText" :right-btn-text="showDialogInfo.rightBtnText" @leftBtnClick="colsePinDia" @rightBtnClick="enterPinOrPuk" @closeDialog="colsePinDia"></mine-dialog>
   </div>
 
 </template>

@@ -110,7 +110,7 @@ export default {
   },
   "dashboard": {
     "Connection": "Forbindelse",
-    "Disconnected": "Отключено",
+    "Disconnected": "Afbrudt",
     "Speedtest": "Hastighedstest"
   },
   "quickSetup": {
@@ -404,7 +404,7 @@ export default {
     "noNewVersionModule": "Du har den nyeste modulversion.",
     "systemFirmwareModule": "Modulopdatering",
     "updateVersionMsg": "Din {ProductName} har en ny firmwareversion tilgængelig.\nVersion:",
-    "firmwareScr": "Klik på \"Søg efter nye opdateringer\". Din router kontrollerer, om der er nye opdateringer. Hvis der er nye opdateringer, skal du klikke på \"Download\". Når filen er blevet downloadet, skal du klikke på \"Opdater\".",
+    "firmwareScr": "Klik på \"Søg efter nye opdateringer\". Din router kontrollerer, om der er nye opdateringer. Hvis der er nye opdateringer, skal du klikke på \"{Download}\". Når filen er blevet downloadet, skal du klikke på \"Opdater\".",
     "firmwareScr1": "Du må ikke slukke din {ProductName} under opdateringen, da dette kan få opdateringen til at mislykkes.",
     "downloading": "Downloader",
     "updateTitle": "Opdaterer...",
@@ -527,7 +527,7 @@ export default {
     "PPPoEValidMTURule": "Indtast en gyldig PPPoE-MTU-værdi.",
     "PPPoEMTUAreaRule": "PPPoE MTU skal være mellem 576 og 1492.",
     "wifiPwdRuleNew": "Ugyldig adgangskode. Din Wi-Fi-adgangskode skal bestå af udskrivbare ASCII-tegn.",
-    "newFirmwareScr": "Klik på \"Check new\" for at søge efter opdateringer. Din router vil kontrollere, om der er en tilgængelig opdatering. Hvis der findes en opdatering, kan du klikke på \"Download\". Når filen er downloadet, kan du klikke på \"Update\".",
+    "newFirmwareScr": "Klik på \"{checkTip}\" for at søge efter opdateringer. Din router vil kontrollere, om der er en tilgængelig opdatering. Hvis der findes en opdatering, kan du klikke på \"{Download}\". Når filen er downloadet, kan du klikke på \"{update}\".",
     "firmwareVersionModule": "Modulversion",
     "failuresFailoverRule": "Antallet af fejl, før WAN-failover, skal være mellem 0 og 10 gange.",
     "successfulBackRule": "Antallet af vellykkede ping på den primære WAN-forbindelse, før der skiftes tilbage, skal være mellem 0 og 10.",

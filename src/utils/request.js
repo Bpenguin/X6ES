@@ -58,7 +58,6 @@ service.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 // 请求拦截器
 service.interceptors.request.use(
   config => {
-    console.log('logoutTimeNum==:', logoutTimeNum)
     const params = config?.params;
     // if (!params) {
     //   autoLogOut();

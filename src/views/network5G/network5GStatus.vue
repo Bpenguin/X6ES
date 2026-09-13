@@ -159,6 +159,7 @@ export default {
   },
   data() {
     return {
+      statusTimer: '',
       simStatusTimer: '', // 实时刷新卡状态
       timer: '',
       time: 0,
@@ -376,6 +377,11 @@ export default {
     },
     initSimStatus() {
       this.simStatusTimer = setInterval(() => {
+        getMobileInfoStatusApi({ hiddenLoading: true }).then((data) => {
+          if (data.retcode == 0) {
+            this.ConnectionStatus = data.mobile_status
+          }
+        })
         this.$store.dispatch('status/setSimInfo')
       }, 3000)
     }

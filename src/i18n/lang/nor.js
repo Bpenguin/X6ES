@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Angi en gyldig PPPoE-MTU-verdi.",
     "PPPoEMTUAreaRule": "PPPoE MTU må være mellom 576 og 1492.",
     "wifiPwdRuleNew": "Ugyldig passord. Wi-Fi-passordet må bestå av utskrivbare ASCII-tegn.",
-    "newFirmwareScr": "Klikk på \"Check new\" for å se etter oppdateringer. Ruteren vil kontrollere om det finnes en tilgjengelig oppdatering. Hvis en oppdatering blir funnet, kan du klikke på \"Download\". Når filen er lastet ned, kan du klikke på \"Update\".",
+    "newFirmwareScr": "Klikk på \"{checkTip}\" for å se etter oppdateringer. Ruteren vil kontrollere om det finnes en tilgjengelig oppdatering. Hvis en oppdatering blir funnet, kan du klikke på \"{Download}\". Når filen er lastet ned, kan du klikke på \"{update}\".",
     "firmwareVersionModule": "Modulversjon",
     "failuresFailoverRule": "Antall feil før WAN-failover må være mellom 0 og 10.",
     "successfulBackRule": "Antall vellykkede ping på den primære WAN-tilkoblingen før tilbakekobling må være mellom 0 og 10.",

@@ -145,7 +145,11 @@ export default {
       },
       formdata1Rule: {
         ipv6Address: [
-          { required: true, validator: formVaRule.ipv6IPRule, trigger: 'blur' }
+          {
+            required: true,
+            validator: formVaRule.ipv6IPRule,
+            trigger: ['blur', 'change']
+          }
         ],
         ipv6DefaultGateway: [
           {
@@ -358,6 +362,10 @@ export default {
       })
     },
     cancelSetting() {
+      this.$refs.formdata0.resetFields()
+      this.$refs.formdata1.resetFields()
+      this.$refs.formdata2.resetFields()
+      this.$refs.lanSettingInfo.resetFields()
       this.initData()
     },
     changeSelectMode() {}

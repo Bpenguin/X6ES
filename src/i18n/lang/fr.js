@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Veuillez saisir une valeur MTU PPPoE valide.",
     "PPPoEMTUAreaRule": "Le MTU PPPoE doit être compris entre 576 et 1492.",
     "wifiPwdRuleNew": "Mot de passe non valide. Votre mot de passe Wi-Fi doit être composé de caractères ASCII imprimables.",
-    "newFirmwareScr": "Cliquez sur \"Check new\" pour rechercher les mises à jour. Votre routeur vérifiera si une mise à jour est disponible. Si une mise à jour est disponible, vous pouvez cliquer sur \"Download\". Une fois le fichier téléchargé avec succès, vous pouvez cliquer sur \"Update\".",
+    "newFirmwareScr": "Cliquez sur \"{checkTip}\" pour rechercher les mises à jour. Votre routeur vérifiera si une mise à jour est disponible. Si une mise à jour est disponible, vous pouvez cliquer sur \"{Download}\". Une fois le fichier téléchargé avec succès, vous pouvez cliquer sur \"{update}\".",
     "firmwareVersionModule": "Version du module",
     "failuresFailoverRule": "Le nombre d’échecs avant le basculement WAN doit être compris entre 0 et 10.",
     "successfulBackRule": "Le nombre de pings réussis sur le WAN principal avant le basculement doit être compris entre 0 et 10.",

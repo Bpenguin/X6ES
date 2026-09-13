@@ -146,6 +146,23 @@ export default {
   name: 'ConnectionConfig',
   components: { AddFileDialog, NoSim, MineDialog },
   data() {
+    const apnCheck = (rule, value, callback) => {
+      let tempNameList = this.dataList
+      if (this.formData.index) {
+        tempNameList = tempNameList.filter(
+          (item) => item.index !== this.formData.index
+        )
+      }
+      console.log('tempNameList:', tempNameList)
+      console.log('newApn:', value)
+      const hasApn = tempNameList.some((item) => item.apn === value)
+      console.log('hasApn:', hasApn)
+      if (hasApn) {
+        callback(new Error(this.$t('other.exitApn')))
+      } else {
+        callback()
+      }
+    }
     return {
       simStatusTimer: '', // 实时刷新卡状态
       defaultIndex: 0,
@@ -194,6 +211,10 @@ export default {
           },
           {
             validator: formVaRule.APNRule,
+            trigger: ['blur', 'change']
+          },
+          {
+            validator: apnCheck,
             trigger: ['blur', 'change']
           }
         ]

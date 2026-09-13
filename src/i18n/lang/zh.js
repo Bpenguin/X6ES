@@ -524,7 +524,7 @@ export default {
     "PPPoEValidMTURule": "請輸入有效的 PPPoE MTU。",
     "PPPoEMTUAreaRule": "PPPoE MTU 必須介於 576 和 1492 之間。",
     "wifiPwdRuleNew": "無效的密碼。您的 Wi-Fi 密碼只能包含 ASCII 可列印字元。",
-    "newFirmwareScr": "按一下「Check new」以檢查更新。您的路由器將檢查是否有可用的更新。如果找到更新，您可以按一下「Download」。檔案成功下載後，您可以按一下「Update」。",
+    "newFirmwareScr": "按一下\"{checkTip}\"以檢查更新。您的路由器將檢查是否有可用的更新。如果找到更新，您可以按一下\"{Download}\"。檔案成功下載後，您可以按一下\"{update}\"。",
     "firmwareVersionModule": "模組版本",
     "failuresFailoverRule": "WAN 失效轉換前的失效次數必須介於 0-10。",
     "successfulBackRule": "轉換回主 WAN 前成功 ping 主 WAN 的次數必須介於 0-10。",

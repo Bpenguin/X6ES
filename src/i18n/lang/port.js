@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Introduza um MTU PPPoE válido.",
     "PPPoEMTUAreaRule": "O MTU PPPoE deve estar entre 576 e 1492.",
     "wifiPwdRuleNew": "Palavra-passe inválida. A palavra-passe Wi-Fi deve ser composta por caracteres ASCII imprimíveis.",
-    "newFirmwareScr": "Clique em \"Check new\" para verificar se existem atualizações. O router irá verificar se existe alguma atualização disponível. Se for encontrada uma atualização, pode clicar em \"Download\". Depois de o ficheiro ser transferido com sucesso, pode clicar em \"Update\".",
+    "newFirmwareScr": "Clique em \"{checkTip}\" para verificar se existem atualizações. O router irá verificar se existe alguma atualização disponível. Se for encontrada uma atualização, pode clicar em \"{Download}\". Depois de o ficheiro ser transferido com sucesso, pode clicar em \"{update}\".",
     "firmwareVersionModule": "Versão do módulo",
     "failuresFailoverRule": "O número de falhas antes do failover da WAN deve estar entre 0 e 10.",
     "successfulBackRule": "O número de pings bem-sucedidos na WAN principal antes de voltar para ela deve estar entre 0 e 10.",

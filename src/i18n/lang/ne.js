@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Voer een geldige PPPoE MTU-waarde in.",
     "PPPoEMTUAreaRule": "De PPPoE MTU moet tussen 576 en 1492 liggen.",
     "wifiPwdRuleNew": "Ongeldig wachtwoord. Uw Wi-Fi-wachtwoord moet bestaan uit afdrukbare ASCII-tekens.",
-    "newFirmwareScr": "Klik op \"Check new\" om te controleren op updates. Uw router controleert of er een update beschikbaar is. Als er een update wordt gevonden, kunt u op \"Download\" klikken. Zodra het bestand succesvol is gedownload, kunt u op \"Update\" klikken.",
+    "newFirmwareScr": "Klik op \"{checkTip}\" om te controleren op updates. Uw router controleert of er een update beschikbaar is. Als er een update wordt gevonden, kunt u op \"{Download}\" klikken. Zodra het bestand succesvol is gedownload, kunt u op \"{update}\" klikken.",
     "firmwareVersionModule": "Moduleversie",
     "failuresFailoverRule": "Het aantal storingen vóór WAN-failover moet tussen de 0-10.",
     "successfulBackRule": "Het aantal geslaagde pings op de primaire WAN-verbinding voordat er wordt teruggeschakeld, moet tussen 0 en 10 liggen.",

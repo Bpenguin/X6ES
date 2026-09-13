@@ -523,7 +523,7 @@ export default {
     "PPPoEValidMTURule": "Anna kelvollinen PPPoE MTU -arvo.",
     "PPPoEMTUAreaRule": "PPPoE MTU:n on oltava välillä 576–1492.",
     "wifiPwdRuleNew": "Virheellinen salasana. Wi-Fi-salasanan tulee sisältää vain tulostettavia ASCII-merkkejä.",
-    "newFirmwareScr": "Napsauta \"Check new\" tarkistaaksesi päivitykset. Reititin tarkistaa, onko saatavilla päivitystä. Jos päivitys löytyy, voit napsauttaa \"Download\". Kun tiedosto on ladattu onnistuneesti, voit napsauttaa \"Update\".",
+    "newFirmwareScr": "Napsauta \"{checkTip}\" tarkistaaksesi päivitykset. Reititin tarkistaa, onko saatavilla päivitystä. Jos päivitys löytyy, voit napsauttaa \"{Download}\". Kun tiedosto on ladattu onnistuneesti, voit napsauttaa \"{update}\".",
     "firmwareVersionModule": "Moduuliversio",
     "failuresFailoverRule": "Virheiden määrän ennen WAN-varayhteyteen siirtymistä on oltava 0–10.",
     "successfulBackRule": "Ensisijaisen WAN-yhteyden onnistuneiden ping-vastausten määrän ennen takaisin vaihtamista on oltava 0–10.",
