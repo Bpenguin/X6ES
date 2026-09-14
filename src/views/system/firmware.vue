@@ -37,7 +37,7 @@
     </div>
     <div class="block-body">
       <div class="page-note">
-        {{$t('common.note')+':'}}<br />
+        {{$t('common.note')+': '}}<br />
         {{$t('system.firmwareScr1',{ProductName:GLOBAL.PRODUCT_NAME})}}
       </div>
     </div>

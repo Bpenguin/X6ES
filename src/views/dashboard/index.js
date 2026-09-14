@@ -213,7 +213,7 @@ export default {
             this.wan5GInfo.signal_level = data.signal_level
             this.wan5GInfo.service_state = data.service_state
             this.wan5GInfo.sim_card_state = data.sim_card_state
-            this.wan5GInfo.RoamStatus = data.home_network != 0 ? false : true
+            this.wan5GInfo.RoamStatus = (data.sim_card_state != 0 && data.home_network == 0) ? true : false
             this.wan5GInfo.net_type = data.net_type
             if (data.sim_card_state == 3) {
               if (!sessionStorage.getItem('needSIMPINKey') && !this.showDialogInfo.showDialog && !this.hasClosePin) {

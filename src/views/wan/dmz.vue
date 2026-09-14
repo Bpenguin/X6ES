@@ -17,7 +17,7 @@
         <el-form-item :label="$t('nav.wanDmz') +':'" prop="dmzSwitch">
           <el-switch v-model="dmzFormData.dmzSwitch" active-color="#00dc50" inactive-color="#8d9092"></el-switch>
         </el-form-item>
-        <el-form-item :label="$t('wan.dmzHostIP') +':'" prop="dmzHostIP">
+        <el-form-item v-if="dmzFormData.dmzSwitch" :label="$t('wan.dmzHostIP') +':'" prop="dmzHostIP">
           <mine-input :key="'dmzHostIP'" v-model="dmzFormData.dmzHostIP" :disabled="!dmzFormData.dmzSwitch" :placeholder="$t('placeHolder.ipAddressPH')"></mine-input>
         </el-form-item>
       </el-form>

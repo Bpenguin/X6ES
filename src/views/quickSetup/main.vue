@@ -67,7 +67,7 @@
         </div>
         <div class="pri-setup-row">
           <div class="pri-setup-row-text" style="padding-inline-start: 40px;">
-            {{$t('common.note')+':'+$t('other.title4')}}
+            {{$t('common.note')+': '+$t('other.title4')}}
           </div>
         </div>
         <div class="pri-setup-row mt-5">

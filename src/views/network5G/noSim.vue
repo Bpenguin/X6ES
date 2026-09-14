@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="block-body">
-        <div class="page-note">{{ $t('common.note')+':' + $t('network5G.SIMPinManagementNote') }}</div>
+        <div class="page-note">{{ $t('common.note')+': ' + $t('network5G.SIMPinManagementNote') }}</div>
       </div>
     </div>
 

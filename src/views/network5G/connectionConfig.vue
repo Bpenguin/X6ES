@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="block-body">
-        <div class="page-note">{{$t('common.note')+':' + $t('network5G.configurationManagementNote') }}</div>
+        <div class="page-note">{{$t('common.note')+': ' + $t('network5G.configurationManagementNote') }}</div>
       </div>
       <mine-dialog :show-dialog='showDelDialogInfo.showDialog' :title="showDelDialogInfo.title" :msg-title="showDelDialogInfo.msgTitle" :left-btn-text="showDelDialogInfo.leftBtnText" @leftBtnClick="showDelDialogInfo.showDialog = false" :right-btn-text="showDelDialogInfo.rightBtnText" @rightBtnClick="deleteApnProfile" @closeDialog="showDelDialogInfo.showDialog = false">
         <template>

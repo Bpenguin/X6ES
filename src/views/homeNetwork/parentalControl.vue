@@ -61,7 +61,7 @@
     </div>
     <div class="block-body">
       <div class="page-note">
-        {{ $t('common.note')+':' }}<br />{{ $t('homeNet.homeNetScr1')}}<br />{{ $t('homeNet.homeNetScr2')}}<br />
+        {{ $t('common.note')+': ' }}<br />{{ $t('homeNet.homeNetScr1')}}<br />{{ $t('homeNet.homeNetScr2')}}<br />
       </div>
     </div>
     <add-file-dialog :show-dialog='showAddDialogInfo.showDialog' :title-bg-img="showAddDialogInfo.titleBgImg" :title="showAddDialogInfo.title" @leftBtnClick="cancel" @closeDialog="cancel" @rightBtnClick="apply">

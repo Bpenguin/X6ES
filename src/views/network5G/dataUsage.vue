@@ -87,12 +87,12 @@
             </div> -->
           </el-col>
           <el-col :span='14' :xs="24">
-            <el-row>
+            <el-row class="c-row">
               <el-col :span="10" :xs="18">
                 <el-date-picker v-model="searchParmas.startDate" @change="changeDate" format="dd-MM-yyyy" value-format="dd-MM-yyyy" :picker-options='pickerOptions' type="date" :clearable='false'></el-date-picker>
               </el-col>
               <el-col :span="2" :xs="8">
-                <div>~</div>
+                <div class="moddel-view">~</div>
               </el-col>
               <el-col :span="10" :xs="18">
                 <el-date-picker v-model="searchParmas.endDate" @change="changeDate" type="date" format="dd-MM-yyyy" value-format="dd-MM-yyyy" :clearable='false' :picker-options='pickerOptions'></el-date-picker>
@@ -501,5 +501,12 @@ export default {
   div {
     margin-right: 20px;
   }
+}
+.moddel-view {
+  text-align: center;
+  align-items: center;
+  line-height: 45px;
+  height: 45px;
+  padding-right: 16px;
 }
 </style>

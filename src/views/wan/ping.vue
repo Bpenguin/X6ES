@@ -17,7 +17,7 @@
       <div class="left-title">{{ $t('wan.wanPortPing') }}:</div>
     </section> -->
     <div class="block-body">
-      <div class="page-note">{{ $t('common.note') + ': ' + $t('other.wanPingscri02') }}</div>
+      <div class="page-note">{{ $t('common.note') + ':  ' + $t('other.wanPingscri02') }}</div>
     </div>
   </div>
 </template>
