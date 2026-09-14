@@ -110,7 +110,7 @@ export default {
   },
   "dashboard": {
     "Connection": "Yhteys",
-    "Disconnected": "Verbinding verbroken",
+    "Disconnected": "Yhteys katkaistu",
     "Speedtest": "Nopeustesti"
   },
   "quickSetup": {
@@ -287,7 +287,7 @@ export default {
     "dfsOn": "DFS Päällä",
     "dfsOnScr": "DFS-kanavat Päällä, Säätutkakanavat Pois, vain DFS-haku, 1 min hakuaika.",
     "dfsWeatherRaderOn": "DFS/Säätutka Päällä",
-    "dfsweatherScr": "DFS-kanavat Päällä, Säätutkakanavat Päällä, 1 min 10 min hakuaika.",
+    "dfsweatherScr": "DFS-kanava ja säätutkakanava ovat käytössä, ja skannausaika on 1–10 minuuttia.",
     "dfsTip1": "DFS (Dynaanimen taajuus -valinta) on toiminto, joka käyttää 5 GHz:n WiFi-taajuuksia, jotka on yleensä varattu tutkalle kuten sotilastutkalle ja säätutkalle.",
     "dfsTip2": "Jos DFS-kanava on otettu käyttöön, CAC (Kanavan käytettävyystarkistus) on säädösten mukaan pakollinen. ",
     "dfsTip3": "CAC-prosessi estää sähkömagneettista häiriötä 5 GHz:n taajuudella tutkan kanssa. CAC-prosessin aikana, WiFi-tukiasema pysyy hiljainen-tilassa tutkapulssin tunnistamiseksi. WiFi-käyttäjän tulee odottaa 5 GHz:n kaistaa 1–10 minuuttia.",
@@ -357,7 +357,7 @@ export default {
     "deviceList": "Laiteluettelo",
     "url": "URL",
     "limitTime": "Internetkäytön rajoitusaika",
-    "homeNetScr1": "1. De URL-controller kan alleen website-URL's of URL-trefwoorden beheren, apps kunnen niet worden geblokkeerd.",
+    "homeNetScr1": "1. URL-ohjain voi hallita vain verkkosivustojen URL-osoitteita; sovelluksia ei voi estää.",
     "homeNetScr2": "2. Ennen kuin estetyt URL:t tulevat voimaan, tämä asetus voi pyytää sinua tyhjentämään laitteiden DNS-välimuistin."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "Datavaroituksen arvo ei voi olla suurempi kuin dataraja-arvo.",
     "wpsPinRule": "WPS-PIN-koodin on oltava 8 numeroa pitkä.",
     "wpsBottomScr5": "WPS on poistettu käytöstä, kun suojaustilaksi on asetettu Open tai Enhanced Open.",
+    "exitApn": "Tämä APN on jo olemassa.",
   },
   "timeZone": {
     "time1": "Kansainvälinen vuorokausiraja Länsi", "time2": "Midwaysaaret", "time3": "Hawaiji", "time4": "Alaska",

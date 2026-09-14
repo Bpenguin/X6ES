@@ -357,7 +357,7 @@ export default {
     "deviceList": "Seznam zařízení",
     "url": "Adresa URL",
     "limitTime": "Časový limit přístupu na internet",
-    "homeNetScr1": "1. Ovladač URL může spravovat pouze adresy URL webových stránek nebo klíčová slova URL, aplikace nelze blokovat.",
+    "homeNetScr1": "1. Ovladač URL může spravovat pouze adresy URL webových stránek; aplikace nelze blokovat.",
     "homeNetScr2": "2. Než se blokované adresy URL projeví, může vás toto nastavení požádat o vymazání mezipaměti DNS v zařízeních."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "Hodnota upozornění na data nesmí být vyšší než hodnota datového limitu.",
     "wpsPinRule": "PIN WPS musí mít 8 číslic.",
     "wpsBottomScr5": "WPS je zakázáno, když je režim zabezpečení nastaven na Open nebo Enhanced Open.",
+    "exitApn": "Tento APN již existuje.",
   },
   "timeZone": {
     "time1": "Mezinárodní datová čára, západ", "time2": "Ostrov Midway", "time3": "Havajské ostrovy", "time4": "Aljaška",

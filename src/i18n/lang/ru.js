@@ -357,7 +357,7 @@ export default {
     "deviceList": "Список устройств",
     "url": "URL",
     "limitTime": "Ограничение времени доступа в Интернет",
-    "homeNetScr1": "1. URL-kontrollanten kan endast hantera webbadresser eller nyckelord för webbplatser, appar kan inte blockeras.",
+    "homeNetScr1": "1. Контроллер URL может управлять только URL-адресами веб-сайтов; приложения нельзя заблокировать.",
     "homeNetScr2": "2. Прежде чем блокировка URL-адресов начнет действовать, данная функция может запросить очистку кэша DNS на устройствах."
   },
   "system": {
@@ -540,7 +540,8 @@ export default {
     "everyday": "Каждый день",
     "dataUsageRange": "Значение предупреждения об использовании данных не может быть больше значения лимита данных.",
     "wpsPinRule": "PIN-код WPS должен состоять из 8 цифр.",
-    "wpsBottomScr5": "WPS отключается, если режим безопасности установлен на Open или Enhanced Open."
+    "wpsBottomScr5": "WPS отключается, если режим безопасности установлен на Open или Enhanced Open.",
+    "exitApn": "Этот APN уже существует.",
   },
   "timeZone": {
     "time1": "Западная международная линия перемены дат",

@@ -361,7 +361,7 @@ export default {
     "deviceList": "Enhedsliste",
     "url": "URL",
     "limitTime": "Tidsbegrænsning på internetadgang",
-    "homeNetScr1": "1. URL-controlleren kan kun administrere websteds-URL'er eller URL-nøgleord; apps kan ikke blokeres.",
+    "homeNetScr1": "1. URL-controlleren kan kun administrere webadresser; apps kan ikke blokeres.",
     "homeNetScr2": "2. Før internetadresserne spærres, beder dette punkt dig muligvis om at rydde DNS-cachen på enhederne."
   },
   "system": {
@@ -545,6 +545,7 @@ export default {
     "dataUsageRange": "Dataværdien for advarsel må ikke være større end datagrænseværdien.",
     "wpsPinRule": "WPS-pinkoden skal være på 8 cifre.",
     "wpsBottomScr5": "WPS er deaktiveret, når sikkerhedstilstanden er indstillet til Open eller Enhanced Open.",
+    "exitApn": "Denne APN findes allerede.",
   },
   "timeZone": {
     "time1": "International vestlig datolinje", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska",

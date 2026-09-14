@@ -357,7 +357,7 @@ export default {
     "deviceList": "Lista de dispositivos",
     "url": "URL",
     "limitTime": "Tempo limite de acesso à Internet",
-    "homeNetScr1": "1. O controlador de URL pode gerir apenas URL de websites ou palavras-chave de URL, e não permite o bloqueio de aplicações.",
+    "homeNetScr1": "1. O controlador de URL só pode gerir URLs de sites Web; não é possível bloquear aplicações.",
     "homeNetScr2": "2. Antes que os URL bloqueados tenham efeito, esta definição pode pedir-lhe para limpar a cache de DNS nos dispositivos."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "O valor de aviso de dados não pode ser superior ao valor do limite de dados.",
     "wpsPinRule": "O PIN WPS deve ter 8 dígitos.",
     "wpsBottomScr5": "O WPS é desativado quando o modo de segurança está definido como Open ou Enhanced Open.",
+    "exitApn": "Este APN já existe.",
   },
   "timeZone": {
     "time1": "Linha Internacional de Datas Oeste", "time2": "Atol Midway", "time3": "Havaí", "time4": "Alasca",

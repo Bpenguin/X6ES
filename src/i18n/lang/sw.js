@@ -110,7 +110,7 @@ export default {
   },
   "dashboard": {
     "Connection": "Anslutning",
-    "Disconnected": "Koble fra",
+    "Disconnected": "Frånkopplad",
     "Speedtest": "Hastighetstest"
   },
   "quickSetup": {
@@ -357,7 +357,7 @@ export default {
     "deviceList": "Enhetslista",
     "url": "URL",
     "limitTime": "Begränsad tid för tillgång till Internet",
-    "homeNetScr1": "1. URL-kontrolleren kan bare styre nettadresser eller søkeord; apper kan ikke sperres.",
+    "homeNetScr1": "1. URL-kontrollern kan endast hantera webbadresser; appar kan inte blockeras.",
     "homeNetScr2": "2. Innan blockerade webbadresser träder i kraft kan den här inställningen be dig rensa DNS-cachen på enheterna."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "Datavarningsvärdet får inte vara större än datagränsvärdet.",
     "wpsPinRule": "WPS-PIN-koden måste bestå av 8 siffror.",
     "wpsBottomScr5": "WPS är inaktiverat när säkerhetsläget är inställt på Open eller Enhanced Open.",
+    "exitApn": "Den här APN:en finns redan.",
   },
   "timeZone": {
     "time1": "Internationella datumlinjen, väst", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska",

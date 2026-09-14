@@ -357,7 +357,7 @@ export default {
     "deviceList": "Lijst met apparaten",
     "url": "URL",
     "limitTime": "Beperkte tijd voor internettoegang",
-    "homeNetScr1": "1. De URL-controller kan alleen website-URL's of URL-trefwoorden beheren, apps kunnen niet worden geblokkeerd.",
+    "homeNetScr1": "1. De URL-controller kan alleen URL's van websites beheren; apps kunnen niet worden geblokkeerd.",
     "homeNetScr2": "2. Voordat geblokkeerde URL's van kracht worden, wordt u met deze instelling mogelijk gevraagd de DNS-cache op de apparaten te wissen."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "De waarde voor de gegevenswaarschuwing mag niet groter zijn dan de gegevenslimiet.",
     "wpsPinRule": "De WPS-pincode moet uit 8 cijfers bestaan.",
     "wpsBottomScr5": "WPS on poistettu käytöstä, kun suojaustilaksi on asetettu Open tai Enhanced Open.",
+    "exitApn": "Deze APN bestaat al.",
   },
   "timeZone": {
     "time1": "Internationale datumgrens west", "time2": "Midway Island", "time3": "Hawai", "time4": "Alaska",

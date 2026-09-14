@@ -110,7 +110,7 @@ export default {
   },
   "dashboard": {
     "Connection": "Tilkobling",
-    "Disconnected": "Afbrudt",
+    "Disconnected": "Frakoblet",
     "Speedtest": "Fartstest"
   },
   "quickSetup": {
@@ -357,7 +357,7 @@ export default {
     "deviceList": "Enhetsliste",
     "url": "Nettadresse",
     "limitTime": "Begrensningstid for internett-tilgang",
-    "homeNetScr1": "1. URL-controlleren kan kun styre internetadresser og søgeord. Apps kan ikke spærres.",
+    "homeNetScr1": "1. URL-kontrolleren kan bare administrere nettadresser; apper kan ikke blokkeres.",
     "homeNetScr2": "2. Før sperrede nettadresser er trer i kraft, kan denne innstillingen be deg om å tømme DNS-bufferen på enhetene."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "Dataadvarselsverdien kan ikke være større enn datagrenseverdien.",
     "wpsPinRule": "WPS-PIN-koden må bestå av 8 sifre.",
     "wpsBottomScr5": "WPS er deaktivert når sikkerhetsmodusen er satt til Open eller Enhanced Open.",
+    "exitApn": "Dette APN-et finnes allerede.",
   },
   "timeZone": {
     "time1": "Internasjonal datolinje vest", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska", "time5": "Tijuana Baja California",

@@ -307,7 +307,7 @@ export default {
     dfsOn: 'DFS On',
     dfsOnScr: 'DFS Channels On. Weather Radar Channels off,DFS scanning only, 1 min scanning time.',
     dfsWeatherRaderOn: 'DFS/Weather Rader On',
-    dfsweatherScr: 'DFS Channels On. Weather Radar Channels On, 1 min + 10 min scanning time.',
+    dfsweatherScr: 'DFS Channels On. Weather Radar Channels On, 1 min - 10 min scanning time.',
     dfsTip1: 'Dynamic Frequency Selection; DFS is a function of using 5 GHz WiFi frequencies that are generally reserved for radar, such as military radar, and weather radar.',
     dfsTip2: 'If DFS channel is enabled, Channel Availability Check; CAC is required according to regulation.',
     dfsTip3: 'CAC process will prevent electromagnetic interference the 5 GHz frequency with the radar. During CAC process, WiFi AP will keep in silent mode for radar pulse detection. WiFi user should wait for 5GHz band 1-10 minutes.',
@@ -384,7 +384,7 @@ export default {
     deviceList: 'Device list',
     url: 'URL',
     limitTime: 'Internet access limit time',
-    homeNetScr1: '1. URL controller can only manage website URLs or URL keywords, apps are unable to be blocked.',
+    homeNetScr1: '1. URL controller can only manage website URLs, apps are unable to be blocked.',
     homeNetScr2: '2. Before blocked URLs take effect, this setting may ask you to clear the DNS cache on the devices.',
   },
   system: {
@@ -602,7 +602,6 @@ export default {
     dataUsageRange: "The data warning value cannot be greater than the data limit value.",
     wpsPinRule: "The WPS PIN must be 8 digits long.",
     wpsBottomScr5: "WPS is disabled when the security mode is set to Open or Enhanced Open.",
-    // 新增
     exitApn: "This APN already exists",
   },
   timeZone: {

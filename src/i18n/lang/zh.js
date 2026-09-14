@@ -357,7 +357,7 @@ export default {
     "deviceList": "裝置列表",
     "url": "網址",
     "limitTime": "網路禁用時間",
-    "homeNetScr1": "1. 網址管控只能管理網站網址和網址關鍵字，應用程式不會被阻擋。",
+    "homeNetScr1": "1. URL 控制器只能管理網站 URL，無法封鎖應用程式。",
     "homeNetScr2": "2. 被阻擋的網址生效前，這個設定可能會要求您清除裝置上的 DNS 快取。"
   },
   "system": {
@@ -542,6 +542,7 @@ export default {
     "dataUsageRange": "資料警告值不能大於資料限制值。",
     "wpsPinRule": "WPS PIN 必須為 8 位數。",
     "wpsBottomScr5": "當安全性模式設定為 Open 或 Enhanced Open 時，WPS 將會停用。",
+    "exitApn": "此APN已存在。",
   },
   "timeZone": {
     "time1": "國際換日線西", "time2": "中途島", "time3": "夏威夷", "time4": "阿拉斯加", "time5": "蒂華納，下加利福尼亞州", "time6": "亞利桑那州", "time7": "馬薩特蘭", "time8": "契瓦瓦州", "time9": "北美山區時區（美國和加拿大）", "time10": "中部時間（美國和加拿大）", "time11": "瓜達拉哈拉市，墨西哥市，蒙特雷", "time12": "薩克其萬省", "time13": "波哥大，利馬，基多", "time14": "東部時間（美國和加拿大）", "time15": "印第安那州（東部）", "time16": "喬治城，拉巴斯，聖胡安", "time17": "大西洋時間（加拿大）", "time18": "加拉加斯", "time19": "聖地亞哥", "time20": "紐芬蘭島", "time21": "布宜諾斯艾利斯",

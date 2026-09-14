@@ -357,7 +357,7 @@ export default {
     "deviceList": "Geräteliste",
     "url": "URL",
     "limitTime": "Internetzugangsbegrenzungszeit",
-    "homeNetScr1": "1. URL-Controller kann nur Website-URLs oder URL-Schlüsselbegriffe verwalten, Apps können nicht blockiert werden.",
+    "homeNetScr1": "1. Der URL-Controller kann nur Website-URLs verwalten; Apps können nicht blockiert werden.",
     "homeNetScr2": "2. Bevor blockierte URLs wirksam werden, könnte Sie diese Einstellung auffordern, den DNS-Cache an den Geräten zu leeren."
   },
   "system": {
@@ -541,6 +541,7 @@ export default {
     "dataUsageRange": "Der Datenwarnwert darf nicht größer als der Datenlimitwert sein.",
     "wpsPinRule": "Die WPS-PIN muss 8 Ziffern lang sein.",
     "wpsBottomScr5": "WPS ist deaktiviert, wenn der Sicherheitsmodus auf Open oder Enhanced Open eingestellt ist.",
+    "exitApn": "Dieser APN ist bereits vorhanden.",
   },
   "timeZone": {
     "time1": "Internationale Datumsgrenze im Westen", "time2": "Midwayinseln", "time3": "Hawaii", "time4": "Alaska",
