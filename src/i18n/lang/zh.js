@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "您可以立即開始使用 {ProductName} 或通過快速設定更改系統預設的設定。",
     "startX6E": "啟動 X6ES",
     "installation": "安裝",
-    "pageOneText1": "將電源連接到 {ProductName}，然後打開 {ProductName} 的電源。",
+    "pageOneText1": "將電源連接到 {ProductName}，然後 {ProductName} 會自動開機。",
     "pageOneText2": "將 RJ-45 纜線的一端插入您的 DSL 或纜線數據機，另一端插入 {ProductName} 的 WAN 連接埠。",
     "pageOneText3": "通過 WiFi 或 LAN 纜線將您的設備連接到 {ProductName}。",
     "pageOneText25G": "將 SIM 卡插入 {ProductName} 底部的 SIM 卡槽。",
@@ -509,7 +509,7 @@ export default {
     "lanRestartSrc": "若您變更此設定，系統將重新啟動。您是否確定？",
     "IncorrectFileSrc": "檔案錯誤，請使用正確檔案再試一次。",
     "IncorrectFile": "檔案錯誤",
-    "dataUsageApplySrc": "請注意，若您啟用資料用量限制，您的網際網路連線將在您的用量到達限制時中斷連接。",
+    "dataUsageApplySrc": "請注意，若您啟用數據用量限制，您的網際網路連線將在您的用量到達限制時中斷連接。",
     "ethernet": '乙太網路',
     "errPwdReset": "您已輸入錯誤密碼次數過多。請重新啟動裝置，或等待5分鐘後再嘗試登入。",
     "dfsOn1": "當前配置將使用 DFS 頻道。路由器將花費 1 分鐘掃描區域以檢查是否有雷達在使用此頻道。在此期間，5GHz WiFi 將無法使用。您是否要這麼做？",
@@ -543,6 +543,9 @@ export default {
     "wpsPinRule": "WPS PIN 必須為 8 位數。",
     "wpsBottomScr5": "當安全性模式設定為 Open 或 Enhanced Open 時，WPS 將會停用。",
     "exitApn": "此APN已存在。",
+    "searchtips": "搜尋可用網路可能需要幾分鐘，請稍候。",
+    "modemTips": "Modem 沒有回應，請稍後再試。",
+
   },
   "timeZone": {
     "time1": "國際換日線西", "time2": "中途島", "time3": "夏威夷", "time4": "阿拉斯加", "time5": "蒂華納，下加利福尼亞州", "time6": "亞利桑那州", "time7": "馬薩特蘭", "time8": "契瓦瓦州", "time9": "北美山區時區（美國和加拿大）", "time10": "中部時間（美國和加拿大）", "time11": "瓜達拉哈拉市，墨西哥市，蒙特雷", "time12": "薩克其萬省", "time13": "波哥大，利馬，基多", "time14": "東部時間（美國和加拿大）", "time15": "印第安那州（東部）", "time16": "喬治城，拉巴斯，聖胡安", "time17": "大西洋時間（加拿大）", "time18": "加拉加斯", "time19": "聖地亞哥", "time20": "紐芬蘭島", "time21": "布宜諾斯艾利斯",

@@ -173,10 +173,13 @@ export const fillWallPortRule = (rule, value, callback) => {
       callback(new Error(i18n.t('ruleTip.fillWallPortRule')))
     } else {
       let arr = tempArray.filter((item) => {
-        return item != '' && /^[0-9]*$/.test(item) && item > 0 && item < 65536
+        return item != '' && /^[0-9]*$/.test(item) && Number(item) > 0 && Number(item) < 65536
       })
       if (arr.length == 2) {
-        if (arr[0] < arr[1]) {
+        // 转数字再对比
+        const start = Number(arr[0])
+        const end = Number(arr[1])
+        if (start < end) {
           callback()
         } else {
           callback(new Error(i18n.t('other.fillWallPortNumRule')))

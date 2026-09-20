@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "U kunt {ProductName} direct gebruiken of de standaardinstellingen van het systeem wijzigen via snelle installatie.",
     "startX6E": "X6ES starten",
     "installation": "Installatie",
-    "pageOneText1": "Sluit de voeding aan op {ProductName} en schakel vervolgens {ProductName} in.",
+    "pageOneText1": "Sluit de voeding aan op {ProductName}. {ProductName} wordt automatisch ingeschakeld.",
     "pageOneText2": "Sluit het ene uiteinde van de RJ-45-kabel aan op uw DSL- of kabelmodem en het andere uiteinde op de WAN-poort van {ProductName}.",
     "pageOneText3": "Sluit uw apparaat aan op {ProductName} via een WiFi- of LAN-kabel.",
     "pageOneText25G": "Plaats de SIM-kaart in de SIM-kaartsleuf aan de onderkant van de {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "De WPS-pincode moet uit 8 cijfers bestaan.",
     "wpsBottomScr5": "WPS on poistettu käytöstä, kun suojaustilaksi on asetettu Open tai Enhanced Open.",
     "exitApn": "Deze APN bestaat al.",
+    "searchtips": "Het zoeken naar beschikbare netwerken kan enkele minuten duren. Even geduld.",
+    "modemTips": "De modem reageert niet. Probeer het later opnieuw.",
   },
   "timeZone": {
     "time1": "Internationale datumgrens west", "time2": "Midway Island", "time3": "Hawai", "time4": "Alaska",

@@ -120,7 +120,7 @@ export default {
     toSetupTips: 'You can start using {ProductName} immediately or change the system default settings through quick setup.', // 首次登录修改密码后的引导弹框
     startX6E: 'Start X6ES', // 首次登录修改密码后的引导弹框
     installation: 'Installation',
-    pageOneText1: 'Connect the power supply to {ProductName}, and then turn on the power of {ProductName}.',
+    pageOneText1: 'Connect the power supply to {ProductName}, and {ProductName} will automatically power on.',
     pageOneText2: 'Plug one end of the RJ-45 cable into your DSL or cable modem and the other end into {ProductName}\'s WAN port.',
     pageOneText3: 'Connect your device to {ProductName} via WIFI or LAN cable.',
     pageOneText25G: "Insert the SIM card into the SIM card slot at the bottom of the {ProductName}.",
@@ -215,7 +215,7 @@ export default {
     // connectMode: 'Connection mode',
     dmzScri: "If external users can't access certain network services provided by the Local Area Network (LAN), use the DMZ function to set the client that provides the required network services as the DMZ host. External users will then have access to all services. Note that clients in the DMZ will be exposed to WAN traffic.",
     dmzHostIP: 'DMZ host IP address',
-    wanSetScriTop: 'Set Ethernet WAN connection mode. It can be dynamic IP, static IP, PPPoE. You can also set this port as LAN port.',
+    wanSetScriTop: 'Set Ethernet WAN connection mode. It can be dynamic IP. static IP. PPPoE. You can also set this port as LAN port.',
     wanSetScribottom: 'Note: After switching to Bridge mode,',
     wanSetScribottom1: '1. Please disable the DHCP Server on the {ProductName} according to your network topology.',
     wanSetScribottom2: '2. Some functions may not work as how it does in router mode. Ex: Home network security, Hybrid QoS, Guest WiFi, Smart Home WiFi, IPv6, DMZ, Firewall, NAT passthrough, Port forwarding, VPN, WAN ping, WAN setting ,etc.',
@@ -583,7 +583,7 @@ export default {
     ipv6Src: "IPv6 configuration for connected devices",
     PPPoEValidMTURule: "Please enter a valid PPPoE MTU.",
     PPPoEMTUAreaRule: "PPPoE MTU must be between 576 and 1492.",
-    wifiPwdRuleNew: "Invalid password.Your Wi-Fi password should consist of ASCII printable characters.",
+    wifiPwdRuleNew: "Invalid password. Your Wi-Fi password should consist of ASCII printable characters.",
     newFirmwareScr: 'Click \"{checkTip}\" for updates. Your router will check if there is an update available. If one is found, you may click \"{Download}\". Once the file has downloaded successfully you will be able to click \"{update}\".',
     firmwareVersionModule: 'Module version',
     failuresFailoverRule: 'Number of failures before WAN failover must be between 0-10.',
@@ -603,6 +603,8 @@ export default {
     wpsPinRule: "The WPS PIN must be 8 digits long.",
     wpsBottomScr5: "WPS is disabled when the security mode is set to Open or Enhanced Open.",
     exitApn: "This APN already exists",
+    searchtips: "It may take a few minutes to search for available networks. Please wait.",
+    modemTips: "The modem is not responding. Please try again later.",
   },
   timeZone: {
     // time1: "Kwajalein",

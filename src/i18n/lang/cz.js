@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "Můžete začít používat {ProductName} přímo nebo změnit výchozí nastavení systému v krátkém nastavení.",
     "startX6E": "Spustit X6ES",
     "installation": "Instalace",
-    "pageOneText1": "Připojte napájecí zdroj k routeru {ProductName} a poté zapněte napájení routeru {ProductName}.",
+    "pageOneText1": "Připojte napájecí zdroj k zařízení {ProductName} a zařízení {ProductName} se automaticky zapne.",
     "pageOneText2": "Připojte jeden konec kabelu RJ-45 k vašemu DSL nebo kabelovému modemu a druhý konec k portu WAN routeru {ProductName}.",
     "pageOneText3": "Připojte své zařízení k routeru {ProductName} pomocí WiFi nebo kabelové sítě LAN.",
     "pageOneText25G": "Vložte SIM kartu do slotu pro SIM kartu ve spodní části routeru {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "PIN WPS musí mít 8 číslic.",
     "wpsBottomScr5": "WPS je zakázáno, když je režim zabezpečení nastaven na Open nebo Enhanced Open.",
     "exitApn": "Tento APN již existuje.",
+    "searchtips": "Vyhledávání dostupných sítí může trvat několik minut. Počkejte prosím.",
+    "modemTips": "Modem nereaguje. Zkuste to znovu později.",
   },
   "timeZone": {
     "time1": "Mezinárodní datová čára, západ", "time2": "Ostrov Midway", "time3": "Havajské ostrovy", "time4": "Aljaška",

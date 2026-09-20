@@ -29,7 +29,6 @@ export default {
     return {
       timer: null,
       idleTime: 5 * 60 * 1000, // 5分钟
-
       // mousemove节流
       lastMouseMoveTime: 0,
       mouseMoveInterval: 1000 // 1秒内只处理一次

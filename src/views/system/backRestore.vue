@@ -291,6 +291,12 @@ export default {
         if (data.retcode == 0) {
           if (downloadWindow) {
             downloadWindow.location.href = data.url
+            setTimeout(() => {
+              // 安全判断，防止已经关闭时报错
+              if (!downloadWindow.closed) {
+                downloadWindow.close()
+              }
+            }, 800)
           } else {
             window.location.href = data.url
           }
@@ -325,17 +331,11 @@ export default {
         if (data.retcode == 0) {
           restoreDevice().then((data) => {
             if (data.retcode == 0) {
-              console.log('restoreDevice:res', data)
+              this.showRestartLoading = true
             } else {
               this.$publicFun.showErrMessage(this)
-              // Message({
-              //   message: 'Network error',
-              //   type: 'error',
-              //   duration: 2 * 1000
-              // })
             }
           })
-          this.showRestartLoading = true
         } else {
           this.$publicFun.showErrMessage(this)
         }
@@ -430,13 +430,10 @@ export default {
               console.log('restoreDevice:res', data)
             }
           })
-
           this.showRestartLoading = true
         } else {
           this.$publicFun.showErrMessage(this)
         }
-
-        console.log(data)
       })
     }
   },

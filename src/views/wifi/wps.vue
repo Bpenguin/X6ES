@@ -119,8 +119,7 @@
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
               <mine-input v-model="wpsInfo_5G.methodClientPin" @blur="pinInput5G" @input="pinInput5G" class="pin-input" :placeholder="''"></mine-input>
-              <div v-show="pinError5G" class="text-error">{{ $t('ruleTip.warningRule') }}</div>
-
+              <div v-show="pinError5G" class="text-error">{{ $t('other.wpsPinRule') }}</div>
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('5G')}"></mine-button>
             </div>
           </el-col>
@@ -201,7 +200,7 @@
             <div>
               <div>{{ $t('wifi.clinetPinScr') }}</div>
               <mine-input v-model="wpsInfo_6G.methodClientPin" @blur="pinInput6G" @input="pinInput6G" class="pin-input" :placeholder="''"></mine-input>
-              <div v-show="pinError6G" class="text-error">{{ $t('ruleTip.warningRule') }}</div>
+              <div v-show="pinError6G" class="text-error">{{ $t('other.wpsPinRule') }}</div>
               <mine-button :btn-title="$t('common.connect')" @clickBtn="(val)=>{connectClientPin('6G')}"></mine-button>
             </div>
           </el-col>

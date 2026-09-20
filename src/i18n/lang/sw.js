@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "Du kan börja använda {ProductName} direkt eller ändra systemets standardinställningar genom snabbinställningar.",
     "startX6E": "Starta X6ES",
     "installation": "Installasjon",
-    "pageOneText1": "Anslut strömförsörjningen till {ProductName} och slå sedan på strömmen till {ProductName}.",
+    "pageOneText1": "Anslut strömförsörjningen till {ProductName}, så startar {ProductName} automatiskt.",
     "pageOneText2": "Anslut den ena änden av RJ-45-kabeln till ditt DSL- eller kabelmodem och den andra änden till {ProductName}:s WAN-port.",
     "pageOneText3": "Anslut enheten till {ProductName} via WiFi eller LAN-kabel.",
     "pageOneText25G": "Sätt in SIM-kortet i SIM-kortfacket på undersidan av {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "WPS-PIN-koden måste bestå av 8 siffror.",
     "wpsBottomScr5": "WPS är inaktiverat när säkerhetsläget är inställt på Open eller Enhanced Open.",
     "exitApn": "Den här APN:en finns redan.",
+    "searchtips": "Det kan ta några minuter att söka efter tillgängliga nätverk. Vänta.",
+    "modemTips": "Modemet svarar inte. Försök igen senare.",
   },
   "timeZone": {
     "time1": "Internationella datumlinjen, väst", "time2": "Midway Island", "time3": "Hawaii", "time4": "Alaska",

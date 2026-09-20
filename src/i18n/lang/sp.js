@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "Puede comenzar a usar {ProductName} inmediatamente o cambiar la configuración predeterminada del sistema con la configuración rápida.",
     "startX6E": "Inicie X6ES",
     "installation": "Instalación",
-    "pageOneText1": "Conecte el tomacorriente a {ProductName} y luego encienda la alimentación del {ProductName}.",
+    "pageOneText1": "Conecte la fuente de alimentación a {ProductName} y {ProductName} se encenderá automáticamente.",
     "pageOneText2": "Conecte un extremo del cable RJ-45 a su módem DSL o módem de cable y el otro extremo al puerto WAN del {ProductName}.",
     "pageOneText3": "Conecte su dispositivo al {ProductName} mediante Wi-Fi o cable LAN.",
     "pageOneText25G": "Inserte la tarjeta SIM en la ranura para tarjetas SIM en la parte inferior del {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "El PIN de WPS debe tener 8 dígitos.",
     "wpsBottomScr5": "WPS está deshabilitado cuando el modo de seguridad está configurado como Open o Enhanced Open.",
     "exitApn": "Este APN ya existe.",
+    "searchtips": "La búsqueda de redes disponibles puede tardar unos minutos. Espere.",
+    "modemTips": "El módem no responde. Inténtelo de nuevo más tarde.",
   },
   "timeZone": {
     "time1": "Línea internacional de fecha oeste", "time2": "Isla Midway", "time3": "Hawái", "time4": "Alaska", "time5": "Tijuana, Baja California",

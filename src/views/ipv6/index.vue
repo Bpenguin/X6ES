@@ -90,7 +90,7 @@
       <div v-show="connectMode == 2">
         <el-form ref="ipv6PrefixForm" key="ipv6PrefixForm" :model="ipv6PrefixForm" :rules="ipv6PrefixFormRule" label-width="40%" :label-position="formLablePos" size="mini">
           <el-form-item :label="$t('ipv6.ipv6Prefix')+':'" prop="ipv6Prefix">
-            <mine-input :key="'ipv6Prefix'" v-model="ipv6PrefixForm.ipv6Prefix" :placeholder="''"></mine-input>
+            <mine-input :key="'ipv6Prefix'" v-model="ipv6PrefixForm.ipv6Prefix" :maxlength='50' :placeholder="''"></mine-input>
           </el-form-item>
         </el-form>
       </div>
@@ -308,9 +308,11 @@ export default {
       if (this.connectMode == 1) {
         //  DHCP
         params.IPv6DNSObtainMethod = this.formdata0.automaticDNS ? 0 : 1
+        params.IPv6DNSObtainMethod = 0
         if (!this.formdata0.automaticDNS) {
           params.IPv6PrimaryDNS = this.formdata0.primaryDNSServer
           params.IPv6SecondaryDNS = this.formdata0.secondaryDNSServer
+          params.IPv6DNSObtainMethod = 1
         }
       } else if (this.connectMode == 2) {
         /* static */
@@ -321,11 +323,13 @@ export default {
         params.StaticIPv6Prefix = this.ipv6PrefixForm.ipv6Prefix
       } else if (this.connectMode == 3) {
         /* pppoe */
+        params.IPv6DNSObtainMethod = 0
         params.IPv6PPPoEUserName = this.formdata2.username
         params.IPv6PPPoEPassword = this.formdata2.password
         if (!this.formdata2.automaticDNS) {
           params.IPv6PrimaryDNS = this.formdata2.primaryDNSServer
           params.IPv6SecondaryDNS = this.formdata2.secondaryDNSServer
+          params.IPv6DNSObtainMethod = 1
         }
       } else if (this.connectMode == 4) {
       }

@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "Pode começar a utilizar o {ProductName} imediatamente ou alterar as predefinições do sistema através do configuração rápida.",
     "startX6E": "Iniciar o X6ES",
     "installation": "Instalação",
-    "pageOneText1": "Ligue a fonte de alimentação ao {ProductName} e depois ligue o {ProductName}.",
+    "pageOneText1": "Ligue a fonte de alimentação ao {ProductName} e o {ProductName} ligar-se-á automaticamente.",
     "pageOneText2": "Ligue uma extremidade do cabo RJ-45 à sua DSL ou modem a cabo e a outra extremidade na porta WAN do {ProductName}.",
     "pageOneText3": "Ligue o seu dispositivo ao {ProductName} via WiFi ou cabo LAN.",
     "pageOneText25G": "Insira o cartão SIM na abertura do cartão SIM na parte inferior do {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "O PIN WPS deve ter 8 dígitos.",
     "wpsBottomScr5": "O WPS é desativado quando o modo de segurança está definido como Open ou Enhanced Open.",
     "exitApn": "Este APN já existe.",
+    "searchtips": "A pesquisa de redes disponíveis pode demorar alguns minutos. Aguarde.",
+    "modemTips": "O modem não está a responder. Tente novamente mais tarde.",
   },
   "timeZone": {
     "time1": "Linha Internacional de Datas Oeste", "time2": "Atol Midway", "time3": "Havaí", "time4": "Alasca",

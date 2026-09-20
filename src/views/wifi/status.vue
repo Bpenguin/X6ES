@@ -4,7 +4,7 @@
     <!-- 2.4G菜单设置 -->
     <div class="block-body" v-for="(item,index) in [wifiInfo_4G,wifiInfo_5G,wifiInfo_6G]" :key="index">
       <template>
-        <div class="block-header">{{index == 0?'2.4GHz':index == 1?'5Ghz':index == 2?'6GHz':''}}</div>
+        <div class="block-header">{{index == 0?'2.4GHz':index == 1?'5GHz':index == 2?'6GHz':''}}</div>
 
         <div v-if="item.hzSwitch" class="block-body">
           <el-row class="c-row">

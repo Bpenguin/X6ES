@@ -117,7 +117,7 @@ export default {
     "toSetupTips": "Można natychmiast rozpocząć używanie routera {ProductName} lub zmienić domyślne ustawienia systemu przez szybkie ustawienia.",
     "startX6E": "Uruchom X6ES",
     "installation": "Instalacja",
-    "pageOneText1": "Podłącz zasilacz do routera {ProductName}, a następnie włącz zasilanie routera {ProductName}.",
+    "pageOneText1": "Podłącz zasilacz do urządzenia {ProductName}, a urządzenie {ProductName} włączy się automatycznie.",
     "pageOneText2": "Podłącz jeden koniec kabla RJ-45 do używanego modemu DSL lub kablowego, a drugi koniec do portu WAN routera {ProductName}.",
     "pageOneText3": "Podłącz używane urządzenie do routera {ProductName} przez WiFi lub kabel LAN.",
     "pageOneText25G": "Włóż kartę SIM do gniazda karty SIM na spodzie routera {ProductName}.",
@@ -542,6 +542,8 @@ export default {
     "wpsPinRule": "Kod PIN WPS musi składać się z 8 cyfr.",
     "wpsBottomScr5": "WPS jest wyłączony, gdy tryb zabezpieczeń jest ustawiony na Open lub Enhanced Open.",
     "exitApn": "Ten APN już istnieje.",
+    "searchtips": "Wyszukiwanie dostępnych sieci może potrwać kilka minut. Proszę czekać.",
+    "modemTips": "Modem nie odpowiada. Spróbuj ponownie później.",
   },
   "timeZone": {
     "time1": "Międzynarodowa Linia Zmiany Daty Zachód", "time2": "Wyspa Midway", "time3": "Hawaje", "time4": "Alaska",
